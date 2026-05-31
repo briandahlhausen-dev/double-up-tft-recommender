@@ -1,0 +1,90 @@
+// ---------------------------------------------------------------------------
+// Shared CommunityDragon TFT data access (no API key needed). Used by the
+// champion-catalog generator and the champion-stats aggregator so both pull
+// names, costs, traits, items, and image URLs from the same source of truth.
+// ---------------------------------------------------------------------------
+import { normalizeName } from '../classify';
+
+const CDRAGON_TFT = 'https://raw.communitydragon.org/latest/cdragon/tft/en_us.json';
+const GAME_CDN = 'https://raw.communitydragon.org/latest/game/';
+export const SET_MUTATOR = 'TFTSet17'; // the base Set 17 (not _PAIRS / _PVEMODE)
+
+// CommunityDragon stores asset paths like "ASSETS/Characters/…/X.TFT_Set17.tex".
+// The raw game CDN serves them lowercased with a .png extension.
+export function assetUrl(path: string | undefined | null): string {
+  if (!path) return '';
+  return GAME_CDN + path.toLowerCase().replace(/\.(tex|dds)$/, '.png');
+}
+
+export interface CdragonChampion {
+  apiName: string;
+  name: string;
+  cost: number;
+  traits: string[];
+  tileIcon: string; // HUD square portrait
+  squareIcon: string; // splash tile
+}
+export interface CdragonItem {
+  apiName: string;
+  name: string;
+  icon: string;
+  completed: boolean; // a standard 2-component combat item (not a component/emblem/consumable)
+}
+
+// A "best item" worth showing is an evergreen completed combat item: the
+// TFT_Item_ namespace (no set prefix), built from exactly two components, and
+// not a trait Emblem (Spatula/Frying Pan builds). The raw catalog also carries
+// thousands of dead items from old sets — those never appear in a Set 17 match,
+// so resolving against this flag keeps champion item stats to the real ~48.
+function isCompletedItem(apiName: string, composition: string[]): boolean {
+  if (!/^TFT_Item_[A-Za-z]/.test(apiName)) return false;
+  if (composition.length !== 2) return false;
+  if (/emblem/i.test(apiName)) return false;
+  if (composition.some((c) => /spatula|fryingpan/i.test(c))) return false;
+  return true;
+}
+export interface Cdragon {
+  champions: CdragonChampion[];
+  items: Map<string, CdragonItem>; // keyed by exact apiName (match-v1 itemNames)
+}
+
+// Playable Set 17 units only: the set's champion list also carries summons,
+// PvE monsters, and armory props (cost 8/11, foreign prefixes), so filter to
+// the TFT17_ prefix, shop costs 1..5, and units that actually have traits.
+function isPlayable(c: any): boolean {
+  return /^TFT17_/.test(c.apiName) && c.cost >= 1 && c.cost <= 5 && Array.isArray(c.traits) && c.traits.length > 0;
+}
+
+export async function fetchCdragon(): Promise<Cdragon> {
+  const res = await fetch(CDRAGON_TFT);
+  if (!res.ok) throw new Error(`CommunityDragon fetch failed: ${res.status}`);
+  const data = (await res.json()) as any;
+
+  const set = (data.setData as any[]).find((s) => s.mutator === SET_MUTATOR);
+  if (!set) throw new Error(`set "${SET_MUTATOR}" not found in CommunityDragon data`);
+
+  const champions: CdragonChampion[] = (set.champions as any[]).filter(isPlayable).map((c) => ({
+    apiName: c.apiName,
+    name: c.name,
+    cost: c.cost,
+    traits: (c.traits as string[]).filter((t) => t && t !== 'Choose Trait'),
+    tileIcon: c.tileIcon,
+    squareIcon: c.squareIcon,
+  }));
+
+  const items = new Map<string, CdragonItem>();
+  for (const i of data.items as any[]) {
+    if (!i.apiName || !i.name || !i.icon) continue;
+    const composition: string[] = Array.isArray(i.composition) ? i.composition : [];
+    items.set(i.apiName, {
+      apiName: i.apiName,
+      name: i.name,
+      icon: i.icon,
+      completed: isCompletedItem(i.apiName, composition),
+    });
+  }
+
+  return { champions, items };
+}
+
+export { normalizeName };

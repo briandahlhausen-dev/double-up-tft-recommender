@@ -1,0 +1,12 @@
+{
+  "darkstar-karma":          { "avgPlace": 3.50, "top4": 60, "first": 18, "contested": "severe" },
+  "nova-brawler-viktor":     { "avgPlace": 3.24, "top4": 76, "first": 24, "contested": "moderate" },
+  "vanguard-vex":            { "avgPlace": 2.39, "top4": 70, "first": 20, "contested": "low" },
+  "marauder-yi-kindred":     { "avgPlace": 2.34, "top4": 72, "first": 22, "contested": "moderate" },
+  "brawler-reroll-gragas":   { "avgPlace": 2.24, "top4": 65, "first": 20, "contested": "high" },
+  "fateweaver-rogue-reroll": { "avgPlace": 3.51, "top4": 68, "first": 22, "contested": "moderate" },
+  "space-groove-snipers":    { "avgPlace": 3.69, "top4": 58, "first": 19, "contested": "low" },
+  "replicator-nova-mf":      { "avgPlace": 3.62, "top4": 67, "first": 19, "contested": "moderate" },
+  "bastion-meeple-cait":     { "avgPlace": 3.82, "top4": 63, "first": 20, "contested": "moderate" },
+  "meeple-reroll":           { "avgPlace": 4.31, "top4": 49, "first": 16, "contested": "severe" }
+}
