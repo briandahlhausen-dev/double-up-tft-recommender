@@ -1,0 +1,75 @@
+name: Refresh comp + champion data
+
+# Regenerates src/data/stats.ts (comp performance) and src/data/champion-stats.ts
+# (per-champion performance) from the Riot API on a schedule, with no human in
+# the loop, and commits the diff. The app stays 100% static — this runs in CI
+# only. Requires a repo secret RIOT_API_KEY (a PRODUCTION key; a dev key expires
+# every 24h and will start failing with 401/403). The two refreshes each run
+# their own Double Up crawl, so the job makes two independent passes.
+
+on:
+  schedule:
+    - cron: '0 12 * * 1' # Mondays 12:00 UTC
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: Riot platform host (na1, euw1, kr…)
+        default: na1
+      seed_players:
+        description: Double Up apex players to seed the snowball
+        default: '100'
+      max_boards:
+        description: Max boards to collect
+        default: '8000'
+      max_requests:
+        description: Hard cap on Riot API requests (safety bound)
+        default: '20000'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Refresh comp stats
+        env:
+          RIOT_API_KEY: ${{ secrets.RIOT_API_KEY }}
+        run: |
+          npm run refresh -- \
+            --platform=${{ github.event.inputs.platform || 'na1' }} \
+            --seed-players=${{ github.event.inputs.seed_players || '100' }} \
+            --max-boards=${{ github.event.inputs.max_boards || '8000' }} \
+            --max-requests=${{ github.event.inputs.max_requests || '20000' }}
+
+      - name: Refresh champion stats
+        env:
+          RIOT_API_KEY: ${{ secrets.RIOT_API_KEY }}
+        run: |
+          npm run refresh:champions -- \
+            --platform=${{ github.event.inputs.platform || 'na1' }} \
+            --seed-players=${{ github.event.inputs.seed_players || '100' }} \
+            --max-boards=${{ github.event.inputs.max_boards || '8000' }} \
+            --max-requests=${{ github.event.inputs.max_requests || '20000' }}
+
+      - name: Commit if changed
+        run: |
+          FILES="src/data/stats.ts src/data/augment-stats.ts src/data/champion-stats.ts"
+          if [[ -n "$(git status --porcelain $FILES)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add $FILES
+            git commit -m "chore(data): scheduled stats refresh"
+            git push
+          else
+            echo "No data changes."
+          fi

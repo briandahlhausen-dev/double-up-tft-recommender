@@ -13,6 +13,7 @@ export interface Board {
   placement: number;
   units: BoardUnit[];
   traits: string[]; // normalized active-trait keys (tier_current > 0)
+  augments: string[]; // raw augment apiNames, exactly as Riot reports them
 }
 
 // Collapse a Riot id or a display name to a comparable key:

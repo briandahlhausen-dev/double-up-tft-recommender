@@ -4,6 +4,7 @@
 // names, costs, traits, items, and image URLs from the same source of truth.
 // ---------------------------------------------------------------------------
 import { normalizeName } from '../classify';
+import type { AugmentTier } from '../../src/types';
 
 const CDRAGON_TFT = 'https://raw.communitydragon.org/latest/cdragon/tft/en_us.json';
 const GAME_CDN = 'https://raw.communitydragon.org/latest/game/';
@@ -85,6 +86,53 @@ export async function fetchCdragon(): Promise<Cdragon> {
   }
 
   return { champions, items };
+}
+
+// ---- Augment metadata ----------------------------------------------------
+// match-v1 reports the augments a player took as raw apiNames. CommunityDragon
+// carries each one in the same `items` array (apiName contains "_Augment_"),
+// with a display name + an ASSETS icon path. There is NO explicit rarity field,
+// so tier is read from the well-known roman-numeral suffix the art uses
+// (…_I / …_II / …_III, or the "Missing-T2/3" placeholders) — null when the icon
+// doesn't encode it, so the overlay never invents a rarity it can't prove.
+export interface CdragonAugment {
+  apiName: string;
+  name: string;
+  icon: string; // raw ASSETS path — run through assetUrl() before use
+  tier: AugmentTier | null;
+}
+
+const ROMAN_TIER: Record<string, AugmentTier> = { I: 'silver', II: 'gold', III: 'prismatic' };
+const NUM_TIER: Record<string, AugmentTier> = { '1': 'silver', '2': 'gold', '3': 'prismatic' };
+
+export function augmentTierFromIcon(icon: string | undefined | null): AugmentTier | null {
+  if (!icon) return null;
+  const file = (icon.split('/').pop() ?? '').replace(/\.(tex|dds|png)$/i, '');
+  const base = file.split('.')[0]; // drop the ".TFT_Set17…/.TFT_17_3" cdragon tag
+  const roman = base.match(/[_-](III|II|I)$/);
+  if (roman) return ROMAN_TIER[roman[1]];
+  const placeholder = base.match(/[_-]T([123])$/i); // "Missing-T2" art placeholders
+  if (placeholder) return NUM_TIER[placeholder[1]];
+  return null;
+}
+
+/** Map of augment apiName -> display metadata, for resolving crawled augments. */
+export async function fetchAugmentMeta(): Promise<Map<string, CdragonAugment>> {
+  const res = await fetch(CDRAGON_TFT);
+  if (!res.ok) throw new Error(`CommunityDragon fetch failed: ${res.status}`);
+  const data = (await res.json()) as any;
+
+  const map = new Map<string, CdragonAugment>();
+  for (const i of data.items as any[]) {
+    if (!i.apiName || !/_Augment_/i.test(i.apiName) || !i.name || !i.icon) continue;
+    map.set(i.apiName, {
+      apiName: i.apiName,
+      name: i.name,
+      icon: i.icon,
+      tier: augmentTierFromIcon(i.icon),
+    });
+  }
+  return map;
 }
 
 export { normalizeName };

@@ -11,6 +11,7 @@ interface Participant {
   placement: number;
   units: { character_id: string; itemNames?: string[]; tier?: number }[];
   traits: { name: string; tier_current: number }[];
+  augments?: string[]; // augment apiNames the player took (match-v1)
 }
 interface MatchDetail {
   metadata: { participants: string[] };
@@ -111,6 +112,7 @@ export async function crawl(client: RiotClient, opts: CrawlOptions): Promise<Cra
             tier: u.tier ?? 0,
           })),
           traits: p.traits.filter((t) => t.tier_current > 0).map((t) => normalizeName(t.name)),
+          augments: p.augments ?? [],
         });
       }
       // Everyone in a Double Up game is a Double Up player — chase them.

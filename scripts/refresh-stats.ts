@@ -3,7 +3,10 @@ import { buildSignatures } from './classify';
 import { RiotClient } from './riot/client';
 import { crawl } from './riot/crawl';
 import { aggregate } from './aggregate';
+import { aggregateAugments } from './aggregate-augments';
 import { writeStatsFile } from './lib/write-stats';
+import { writeAugmentStatsFile } from './lib/write-augment-stats';
+import { fetchAugmentMeta } from './lib/cdragon';
 
 // ---------------------------------------------------------------------------
 // FULL REFRESH — crawl the Riot API and recompute src/data/stats.ts.
@@ -32,6 +35,8 @@ async function main(): Promise<void> {
     maxRequests: Number(arg('max-requests', '100000')),
   };
   const minSample = Number(arg('min-sample', '25'));
+  const augMinSample = Number(arg('aug-min-sample', '15'));
+  const augTop = Number(arg('aug-top', '6'));
 
   console.log(`Refreshing from Riot API · platform=${platform} · min-sample=${minSample}`);
   const client = new RiotClient();
@@ -42,6 +47,21 @@ async function main(): Promise<void> {
   const result = aggregate(boards, signatures, minSample);
 
   const written = writeStatsFile(result.stats, `riot-api:${platform}`);
+
+  // Augment overlay: resolve display metadata from CommunityDragon (no key needed)
+  // and tally per-comp pick + placement from the same boards. Best-effort — the
+  // comp stats above are already written, so a cdragon hiccup must not sink the run.
+  let augSummary = '';
+  let augWritten = '';
+  try {
+    const meta = await fetchAugmentMeta();
+    const aug = aggregateAugments(boards, signatures, meta, { minSample: augMinSample, top: augTop });
+    augWritten = writeAugmentStatsFile(aug.byComp, `riot-api:${platform}`);
+    augSummary = `${aug.compsWithData}/${COMPS.length} comps · ${aug.augmentsSeen} distinct seen · cdragon meta ${meta.size}`;
+  } catch (e) {
+    augSummary = `FAILED (${(e as Error).message}) — overlay left unchanged`;
+  }
+
   const secs = Math.round((Date.now() - t0) / 1000);
 
   console.log('\n──────── refresh summary ────────');
@@ -57,6 +77,7 @@ async function main(): Promise<void> {
     console.log(`sample traits:   ${boards[0].traits.slice(0, 6).join(', ')}`);
   }
   console.log(`comps written:   ${Object.keys(result.stats).length}/${COMPS.length}`);
+  console.log(`augments:        ${augSummary}`);
 
   for (const c of COMPS) {
     const s = result.stats[c.id];
@@ -70,6 +91,7 @@ async function main(): Promise<void> {
       ' be empty or unreachable. Raise --seed-players / --max-requests, or try another platform.');
   }
   console.log(`\n✓ wrote ${written}`);
+  if (augWritten) console.log(`✓ wrote ${augWritten}`);
 }
 
 main().catch((e) => {
