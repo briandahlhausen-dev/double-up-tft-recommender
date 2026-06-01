@@ -28,6 +28,27 @@ export interface Comp {
   augments: string[]; // archetype guidance, not exact names
 }
 
+// ---- Comp guide: positioning + augments ----
+/** One unit placed on the board. row 0 = front line (engages first), row 3 = backline; col 0..6. */
+export interface BoardSlot {
+  unit: string; // catalog DISPLAY name — matches Comp.units / catalog `name`
+  row: number; // 0 (front) .. 3 (back)
+  col: number; // 0 .. 6
+}
+
+/** A recommended augment for a comp, backed by real crawled Double Up data. */
+export interface AugmentStat {
+  id: string; // Riot augment apiName, e.g. "TFT17_Augment_DarkStarHeart"
+  name: string; // display name
+  icon: string; // icon URL (CommunityDragon)
+  tier: AugmentTier | null; // augment slot rarity; null when cdragon doesn't encode it
+  pickRate: number; // % of this comp's boards that ran it
+  avgPlace: number; // team-scale avg place (1..4) when taken
+  top4: number; // % top-4 when taken
+  n: number; // boards observed
+}
+export type AugmentTier = 'silver' | 'gold' | 'prismatic';
+
 // ---- User preferences ----
 export type PlaystylePref = Playstyle | 'any';
 export type TempoPref = 'reroll' | 'fast8' | 'any';

@@ -6,6 +6,7 @@ import { cx } from '../lib/cx';
 import { MatchRing } from './MatchRing';
 import { ContestedBadge } from './ContestedBadge';
 import { DamageTag } from './DamageTag';
+import { useCompGuide } from './CompGuide';
 
 const RING_ACCENT: Record<DamageType, 'ad' | 'ap' | 'mix'> = {
   AD: 'ad',
@@ -30,6 +31,7 @@ export function ResultCard({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   const { comp, matchPct, reasons } = scored;
+  const guide = useCompGuide();
   const isTop = rank === 1;
 
   return (
@@ -108,6 +110,18 @@ export function ResultCard({
           ))}
         </ul>
       </div>
+
+      {/* Guide CTA — positioning + augments, opens the comp guide overlay */}
+      <button
+        type="button"
+        onClick={() => guide.open(comp)}
+        className="no-print mt-3 inline-flex items-center justify-center gap-1.5 rounded-xl border border-nebula/40 bg-nebula/10 px-3 py-2 font-display text-xs font-bold uppercase tracking-wide text-violet-200 transition hover:border-nebula/70 hover:bg-nebula/20 hover:text-white"
+      >
+        <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+          <path d="M3 3h6v6H3V3zm8 0h6v6h-6V3zm-8 8h6v6H3v-6zm8 0h6v6h-6v-6z" />
+        </svg>
+        Positioning &amp; augments
+      </button>
 
       {/* Details */}
       <button

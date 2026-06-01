@@ -91,7 +91,7 @@ function joinNames(names: string[]): string {
  * alone made the overlap check silently miss those, reporting "zero overlap" for
  * a champion both boards actually run.
  */
-function rosterOf(c: Comp): string[] {
+export function rosterOf(c: Comp): string[] {
   return [...new Set([...c.units, ...c.frontline, ...c.carries.map((x) => x.name)])];
 }
 
@@ -294,4 +294,128 @@ export function recommend(partner: Comp, prefs: Prefs): ScoredComp[] {
   return COMPS.filter((c) => c.id !== partner.id)
     .map((c) => scoreComp(c, partner, prefs))
     .sort((a, b) => b.matchPct - a.matchPct || a.comp.avgPlace - b.comp.avgPlace);
+}
+
+// ===========================================================================
+// Board-fit recommender — a DIFFERENT question from recommend(). Instead of
+// "which comp best complements my partner", this answers "given the champions I
+// already have, which comps am I closest to and should build toward". It ranks
+// every comp by how much of its roster (and its payoff carries) you already own,
+// tie-broken by the comp's standalone strength and the prefs you set.
+// ===========================================================================
+
+/** Levers for the board-fit score, mirroring WEIGHTS for the partner engine. */
+export const FIT_WEIGHTS = {
+  coverage: 50, // share of the comp's roster you already field
+  carries: 30, // share of the comp's carries you own — the payoff units
+  strength: 15, // the comp's standalone Double Up performance
+  prefs: 5, // alignment with the prefs you set (dropped when 'any'/'flexible')
+} as const;
+
+export interface BoardFit {
+  comp: Comp;
+  fitPct: number; // 0–100, for display
+  have: string[]; // comp roster units you already field
+  missing: string[]; // comp roster units you still need
+  haveCarries: string[]; // carry names you already own
+  missingCarries: string[]; // carry names you still need
+  reasons: ReasonLine[]; // sorted by descending salience, like ScoredComp
+}
+
+/** How well a comp lines up with the prefs the user set (skips 'any'/'flexible'). */
+function prefAlignment(cand: Comp, prefs: Prefs): { score: number; slots: number } {
+  let hits = 0;
+  let slots = 0;
+  if (prefs.playstyle !== 'any') {
+    slots++;
+    if (cand.playstyle === prefs.playstyle) hits++;
+  }
+  if (prefs.tempo !== 'any') {
+    slots++;
+    if (cand.tempo === prefs.tempo) hits++;
+  }
+  if (prefs.itemLean !== 'flexible') {
+    slots++;
+    if (cand.primaryDamage === prefs.itemLean) hits++;
+  }
+  return { score: slots ? hits / slots : 0, slots };
+}
+
+function fitComp(cand: Comp, owned: Set<string>, prefs: Prefs): BoardFit {
+  const roster = rosterOf(cand);
+  const have = roster.filter((u) => owned.has(u));
+  const missing = roster.filter((u) => !owned.has(u));
+  const coverage = roster.length ? have.length / roster.length : 0;
+
+  const carryNames = cand.carries.map((c) => c.name);
+  const haveCarries = carryNames.filter((n) => owned.has(n));
+  const missingCarries = carryNames.filter((n) => !owned.has(n));
+  const carryFit = carryNames.length ? haveCarries.length / carryNames.length : 0;
+
+  const strength = strengthScore(cand);
+  const pref = prefAlignment(cand, prefs);
+
+  // Drop a component's weight from BOTH numerator and denominator when it can't
+  // apply (a comp with no carries, or no prefs set) so it neither helps nor hurts
+  // — the same neutral-weight trick the partner engine uses for "no preference".
+  const wCov = FIT_WEIGHTS.coverage;
+  const wCar = carryNames.length ? FIT_WEIGHTS.carries : 0;
+  const wStr = FIT_WEIGHTS.strength;
+  const wPref = pref.slots ? FIT_WEIGHTS.prefs : 0;
+  const fit01 = clamp01(
+    (wCov * coverage + wCar * carryFit + wStr * strength + wPref * pref.score) / (wCov + wCar + wStr + wPref),
+  );
+
+  const reasons: ReasonLine[] = [];
+
+  // Coverage — the headline signal, always surfaced first.
+  if (have.length === 0) {
+    reasons.push({ text: `You don't own any of this comp's units yet — a full pivot from here.`, tone: 'negative', impact: 50 });
+  } else {
+    reasons.push({
+      text: `You already field ${have.length} of ${roster.length} units — ${listUnits(have)}.`,
+      tone: coverage >= 0.5 ? 'positive' : 'neutral',
+      impact: 20 + 50 * coverage,
+    });
+  }
+
+  // Carries — the payoff units count for more than a filler frontliner.
+  if (carryNames.length) {
+    if (missingCarries.length === 0) {
+      reasons.push({
+        text: `You've already hit ${haveCarries.length === 1 ? 'the carry' : 'both carries'} — ${joinNames(haveCarries)}.`,
+        tone: 'positive',
+        impact: 35,
+      });
+    } else if (haveCarries.length) {
+      reasons.push({
+        text: `You have ${joinNames(haveCarries)}, but still need ${joinNames(missingCarries)} to carry.`,
+        tone: 'neutral',
+        impact: 12,
+      });
+    } else {
+      reasons.push({
+        text: `You're missing the payoff ${missingCarries.length === 1 ? 'carry' : 'carries'} — ${joinNames(missingCarries)}.`,
+        tone: 'negative',
+        impact: 30,
+      });
+    }
+  }
+
+  // Standalone strength + contested fit reuse the partner engine's reason text.
+  reasons.push({ ...strengthReason(cand, strength), impact: WEIGHTS.strength * (strength - 0.5) });
+  const contested = contestedScore(cand, prefs);
+  reasons.push({ ...contestedReason(cand, prefs, contested), impact: WEIGHTS.contestedFit * (contested - 0.5) });
+
+  reasons.sort((x, y) => Math.abs(y.impact) - Math.abs(x.impact));
+
+  return { comp: cand, fitPct: Math.round(fit01 * 100), have, missing, haveCarries, missingCarries, reasons };
+}
+
+/** Pure: rank every comp by how well the units you already own fit it, best-first. */
+export function recommendForBoard(myUnits: string[], prefs: Prefs): BoardFit[] {
+  const owned = new Set(myUnits);
+  return COMPS.map((c) => fitComp(c, owned, prefs)).sort(
+    (a, b) => b.fitPct - a.fitPct || a.comp.avgPlace - b.comp.avgPlace,
+  );
 }

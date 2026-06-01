@@ -1,5 +1,5 @@
 import { Fragment, useMemo, useState } from 'react';
-import type { KeyboardEvent } from 'react';
+import type { KeyboardEvent, ReactNode } from 'react';
 import { CHAMPIONS } from '../data/champions';
 import { cx } from '../lib/cx';
 import { costStyle } from '../lib/cost';
@@ -41,14 +41,32 @@ function copyViaTextarea(text: string): boolean {
 }
 
 /**
- * Assemble the partner's actual board from the champion catalog. Owns no comp
- * logic itself — it edits a BuilderState that the parent turns into a synthetic
- * Comp via buildCustomComp(). State is lifted so it survives mode switches.
+ * Assemble a board from the champion catalog. Owns no comp logic itself — it
+ * edits a BuilderState that the parent turns into a synthetic Comp via
+ * buildCustomComp(). State is lifted so it survives mode switches.
  *
  * The roster is an always-visible click-to-toggle palette (not a type-then-pick
  * dropdown) so building a board is a few taps rather than a search per unit.
+ *
+ * Generic over WHOSE board it is: the partner flow uses the defaults ("Partner's
+ * board", share enabled), while the "build my board" flow relabels it and hides
+ * the share link via props.
  */
-export function PartnerBuilder({ state, onChange }: { state: BuilderState; onChange: (s: BuilderState) => void }) {
+export function BoardBuilder({
+  state,
+  onChange,
+  title = "Partner's board",
+  playstyleLabel = 'Partner playstyle',
+  showShare = true,
+  emptyHint,
+}: {
+  state: BuilderState;
+  onChange: (s: BuilderState) => void;
+  title?: string;
+  playstyleLabel?: string;
+  showShare?: boolean;
+  emptyHint?: ReactNode;
+}) {
   const [query, setQuery] = useState('');
   const [copied, setCopied] = useState(false);
 
@@ -129,9 +147,9 @@ export function PartnerBuilder({ state, onChange }: { state: BuilderState; onCha
   return (
     <div>
       <div className="mb-1.5 flex items-baseline justify-between gap-2">
-        <label className="font-display text-xs uppercase tracking-wider text-slate-300">Partner&apos;s board</label>
+        <label className="font-display text-xs uppercase tracking-wider text-slate-300">{title}</label>
         <div className="flex items-baseline gap-2.5 text-[11px] text-slate-500">
-          {state.unitIds.length > 0 && (
+          {showShare && state.unitIds.length > 0 && (
             <button
               type="button"
               onClick={shareBoard}
@@ -221,8 +239,12 @@ export function PartnerBuilder({ state, onChange }: { state: BuilderState; onCha
       {/* Selected board — assign carries here */}
       {state.unitIds.length === 0 ? (
         <p className="mt-3 rounded-xl border border-dashed border-white/10 bg-white/[0.02] p-4 text-center text-sm text-slate-400">
-          Tap your partner&apos;s champions above to build their board, then mark each carry{' '}
-          <DamageTag type="AD" className="mx-0.5" /> or <DamageTag type="AP" className="mx-0.5" /> so the engine can route items around them.
+          {emptyHint ?? (
+            <>
+              Tap your partner&apos;s champions above to build their board, then mark each carry{' '}
+              <DamageTag type="AD" className="mx-0.5" /> or <DamageTag type="AP" className="mx-0.5" /> so the engine can route items around them.
+            </>
+          )}
         </p>
       ) : (
         <ul className="mt-3 space-y-1.5">
@@ -345,7 +367,7 @@ export function PartnerBuilder({ state, onChange }: { state: BuilderState; onCha
       {/* Playstyle + derived item type */}
       <div className="mt-3 grid gap-3 sm:grid-cols-2">
         <Segmented
-          label="Partner playstyle"
+          label={playstyleLabel}
           hint="early vs late"
           value={state.playstyle}
           onChange={(v) => onChange({ ...state, playstyle: v })}

@@ -40,9 +40,11 @@ export const ALL_TRAITS: string[] = [...new Set(CHAMPIONS.flatMap((c) => c.trait
 );
 const VALID_TRAITS = new Set(ALL_TRAITS);
 
-// Remember the partner board between sessions so you don't re-enter it every
-// game. Pure client-side (localStorage) — no account, no server.
-const LS_KEY = 'dutft.partner-board.v1';
+// Remember boards between sessions so you don't re-enter them every game. Pure
+// client-side (localStorage) — no account, no server. The partner board and your
+// own board are stored under separate keys so they never overwrite each other.
+export const PARTNER_BOARD_KEY = 'dutft.partner-board.v1';
+export const MY_BOARD_KEY = 'dutft.my-board.v1';
 
 /**
  * Validate a loosely-typed board (from storage OR a share link) into a clean
@@ -73,9 +75,9 @@ function sanitize(parsed: Partial<BuilderState> | null | undefined): BuilderStat
 }
 
 /** Read a saved board, dropping any ids the current catalog no longer has. */
-export function loadBuilder(): BuilderState {
+export function loadBuilder(key: string = PARTNER_BOARD_KEY): BuilderState {
   try {
-    const raw = localStorage.getItem(LS_KEY);
+    const raw = localStorage.getItem(key);
     if (!raw) return EMPTY_BUILDER;
     return sanitize(JSON.parse(raw) as Partial<BuilderState> | null);
   } catch {
@@ -126,10 +128,10 @@ export function decodeBuilder(code: string): BuilderState | null {
   }
 }
 
-/** Persist the partner board. Silently no-ops if storage is unavailable. */
-export function saveBuilder(state: BuilderState): void {
+/** Persist a board under its key. Silently no-ops if storage is unavailable. */
+export function saveBuilder(state: BuilderState, key: string = PARTNER_BOARD_KEY): void {
   try {
-    localStorage.setItem(LS_KEY, JSON.stringify(state));
+    localStorage.setItem(key, JSON.stringify(state));
   } catch {
     /* private mode / quota / disabled — fine to skip */
   }
