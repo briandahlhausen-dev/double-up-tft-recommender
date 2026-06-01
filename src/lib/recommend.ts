@@ -84,6 +84,17 @@ function joinNames(names: string[]): string {
   return `${names.slice(0, -1).join(', ')} & ${names[names.length - 1]}`;
 }
 
+/**
+ * A comp's full roster for overlap detection: the deduped union of `units`,
+ * `frontline`, and carry names. Some comps list a frontliner (e.g. Cho'Gath in
+ * the Brawler reroll) in `frontline` but omit it from `units`; reading `units`
+ * alone made the overlap check silently miss those, reporting "zero overlap" for
+ * a champion both boards actually run.
+ */
+function rosterOf(c: Comp): string[] {
+  return [...new Set([...c.units, ...c.frontline, ...c.carries.map((x) => x.name)])];
+}
+
 // ---- 1. Item complement (weight 30) ----
 function itemComplementScore(cand: Comp, partner: Comp, prefs: Prefs): number {
   const a = cand.primaryDamage;
@@ -137,7 +148,8 @@ function scoreComp(cand: Comp, partner: Comp, prefs: Prefs): ScoredComp {
     if (reason) reasons.push({ ...reason, impact: weight * (score01 - 0.5) });
   };
 
-  const sharedUnits = cand.units.filter((u) => partner.units.includes(u));
+  const partnerRoster = rosterOf(partner);
+  const sharedUnits = rosterOf(cand).filter((u) => partnerRoster.includes(u));
 
   // 1. Item complement
   const item = itemComplementScore(cand, partner, prefs);
