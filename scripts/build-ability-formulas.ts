@@ -383,12 +383,17 @@ async function askClaudeApi(client: any, model: string, u: UnitMath): Promise<Se
  *  instead of silently switching to metered API billing. */
 function runClaudeCli(args: string[], input: string): Promise<string> {
   return new Promise((resolve, reject) => {
-    const bin = process.platform === 'win32' ? 'claude.cmd' : 'claude';
+    // On Windows the CLI is a `.cmd` shim; Node ≥20 refuses to spawn `.cmd`
+    // without a shell (EINVAL, the CVE-2024-27980 mitigation). `shell` is safe
+    // here: every arg is a static literal (no user input in argv) and the prompt
+    // is fed on stdin, never the command line.
+    const isWin = process.platform === 'win32';
+    const bin = isWin ? 'claude.cmd' : 'claude';
     const env = { ...process.env };
     delete env.ANTHROPIC_API_KEY; // force subscription auth, never metered API
     let child;
     try {
-      child = spawn(bin, args, { env, stdio: ['pipe', 'pipe', 'pipe'] });
+      child = spawn(bin, args, { env, stdio: ['pipe', 'pipe', 'pipe'], shell: isWin });
     } catch (e) {
       reject(e as Error);
       return;
@@ -486,6 +491,19 @@ async function claudePass(
   return { formulas: out, providerTag };
 }
 
+// Units the Claude pass must NOT touch: their ability damage scales off the
+// target's/caster's Armor+MR or max-HP (e.g. "deal coefficient × (Armor+MR)"),
+// and cdragon persists only the bare scaling coefficient — the resolved damage
+// variable isn't in the dataset. No expression over the available variables is
+// meaningful, so a model will reliably produce a junk formula (a ~1.0 coefficient
+// read as flat damage). Skipping leaves them to the heuristic, which honestly
+// reports ~0 ability damage for a resist-scaling tank. Keep this list tight —
+// only units proven unrepresentable, not merely hard.
+const SKIP_CLAUDE = new Set<string>([
+  'TFT17_Galio', // ModifiedDamage = ARMARScaling × (Armor+MR), %i:scaleArmor%%i:scaleMR%
+  'TFT17_Jax', //   ModifiedDamage = ArmorMRScale × (Armor+MR), %i:scaleArmor%%i:scaleMR%
+]);
+
 async function main(): Promise<void> {
   console.log('Building ability formulas (Stage 3)…');
   const t0 = Date.now();
@@ -539,7 +557,9 @@ async function main(): Promise<void> {
   // 2) Claude pass for everything not in the seed (CI, auth-gated). Only units
   //    that actually have ability variables are worth asking about. Subscription
   //    CLI is tried first (free), then the metered API; neither overwrites the seed.
-  const remaining = ALL_UNITS.filter((u) => !covered.has(u.apiName) && u.ability.variables.length > 0);
+  const remaining = ALL_UNITS.filter(
+    (u) => !covered.has(u.apiName) && !SKIP_CLAUDE.has(u.apiName) && u.ability.variables.length > 0,
+  );
   const pass = await claudePass(remaining);
   formulas.push(...pass.formulas);
 
