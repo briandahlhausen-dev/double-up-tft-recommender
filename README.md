@@ -223,22 +223,36 @@ npm run build:theorycraft # src/data/theorycraft.ts — discovered high-synergy 
 ```
 
 **Stage 3 (`build:formulas`).** The name-only ability heuristic can't tell a
-"big nuke every 5th cast" (Sona) from a single hit, or a 6-strike active (Fiora)
-from its 2-attack passive cadence. So an offline pass reads each ability's
-**description** and pins an exact per-cast formula — an arithmetic expression
-over the ability's own variables — evaluated per star into plain numbers the
-runtime reads (it never parses the string). A hand-verified seed (Sona, Fiora)
-runs with **no key**. To cover the rest, set `ANTHROPIC_API_KEY` and the
-generator asks Claude for the *structure* only — code does the arithmetic:
+"big nuke every 5th cast" (Sona) from a single hit, a 12-strike volley (Bel'Veth)
+from one hit, or a multi-second channel (Mordekaiser, Pantheon) from an instant
+nuke — and it mis-scales neutrally-named AD bursts (Graves, Samira) as AP. So an
+offline pass reads each ability's **description** and pins an exact per-cast
+formula — an arithmetic expression over the ability's own variables — evaluated
+per star into plain numbers the runtime reads (it never parses the string).
+
+A **committed seed of 23 formulas** (hand-verified + authored from the tooltips)
+runs with **no key** and covers the cases the heuristic provably gets wrong. To
+fill in the remaining units, the generator asks Claude for the *structure* only —
+code does the arithmetic — and it authenticates **two ways**:
 
 ```powershell
-$env:ANTHROPIC_API_KEY="sk-ant-…"   # offline / CI only — NEVER shipped to the client
+# Preferred — your Claude subscription, $0 against API credits:
+claude setup-token                          # one-time: prints a long-lived token
+$env:CLAUDE_CODE_OAUTH_TOKEN="…"            # offline / CI only — NEVER shipped to the client
+npm run build:formulas
+
+# Or — the metered Anthropic API:
+$env:ANTHROPIC_API_KEY="sk-ant-…"           # offline / CI only — NEVER shipped to the client
 npm run build:formulas
 ```
 
-The key lives **only** in CI (a repo secret) or your shell; it is never read at
-runtime and never bundled. The scheduled Action runs this step automatically
-when the secret is present, and keeps the committed seed formulas when it isn't.
+When the subscription token is set the generator shells out to the Claude Code
+CLI (`claude -p … --output-format json`) and **strips `ANTHROPIC_API_KEY` from the
+child env** so it can't silently fall back to metered billing; `USE_CLAUDE_CLI=1`
+forces the CLI path with a local `claude` login. Either credential lives **only**
+in CI (a repo secret) or your shell — never read at runtime, never bundled. The
+scheduled Action runs this step automatically when **either** secret is present
+(subscription first), and keeps the committed seed formulas when neither is.
 
 ---
 

@@ -6,10 +6,12 @@ name: Refresh comp + champion data
 # damage), and src/data/theorycraft.ts (discovered boards) on a schedule, with no
 # human in the loop, and commits the diff. The app stays 100% static — this runs
 # in CI only. Requires a repo secret RIOT_API_KEY (a PRODUCTION key; a dev key
-# expires every 24h and will start failing with 401/403). ANTHROPIC_API_KEY is
-# OPTIONAL (the Stage 3 Claude pass); without it the committed seed formulas are
-# kept. The two refreshes each run their own Double Up crawl, so the job makes two
-# independent passes.
+# expires every 24h and will start failing with 401/403). The Stage 3 Claude pass
+# is OPTIONAL and auth'd EITHER way: CLAUDE_CODE_OAUTH_TOKEN (a Claude
+# subscription token from `claude setup-token` — free against API credits,
+# preferred) OR ANTHROPIC_API_KEY (metered). With neither, the committed seed
+# formulas are kept. The two refreshes each run their own Double Up crawl, so the
+# job makes two independent passes.
 
 on:
   schedule:
@@ -35,11 +37,16 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    # ANTHROPIC_API_KEY is OPTIONAL — set it as a repo secret to let the Stage 3
-    # step regenerate exact ability formulas via the offline Claude pass. Resolves
-    # to '' when unset, which skips that step (see its `if`). Never read
-    # client-side; the app stays 100% static.
+    # Both are OPTIONAL — set EITHER as a repo secret to let the Stage 3 step
+    # regenerate exact ability formulas via the offline Claude pass. The generator
+    # prefers the subscription token (free) when present and only falls back to the
+    # metered API key. Each resolves to '' when unset; with both empty the Stage 3
+    # step is skipped (see its `if`). Neither is ever read client-side — the app
+    # stays 100% static.
+    #   • CLAUDE_CODE_OAUTH_TOKEN — Claude subscription token (`claude setup-token`).
+    #   • ANTHROPIC_API_KEY       — metered Anthropic API key.
     env:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
     steps:
       - uses: actions/checkout@v4
@@ -75,12 +82,21 @@ jobs:
         run: npm run build:math
 
       - name: Build ability formulas (Stage 3 · exact per-cast damage)
-        # The hand-verified seed runs keyless, but it's already committed, so
-        # there's nothing to regenerate without the key — only the offline Claude
-        # pass adds units. Skipped when ANTHROPIC_API_KEY is absent so a keyless
-        # run can't overwrite Claude-enriched formulas with the seed alone.
-        if: ${{ env.ANTHROPIC_API_KEY != '' }}
-        run: npm run build:formulas
+        # The manual + authored seed runs keyless, but it's already committed, so
+        # there's nothing to regenerate without auth — only the offline Claude pass
+        # adds the remaining units. Skipped when BOTH the subscription token and the
+        # API key are absent, so a keyless run can't overwrite Claude-enriched
+        # formulas with the seed alone. When the subscription token is present the
+        # generator shells out to the Claude Code CLI, so install it first.
+        if: ${{ env.CLAUDE_CODE_OAUTH_TOKEN != '' || env.ANTHROPIC_API_KEY != '' }}
+        run: |
+          if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "Stage 3: using the Claude subscription (CLI)."
+            npm install -g @anthropic-ai/claude-code
+          else
+            echo "Stage 3: using the metered Anthropic API."
+          fi
+          npm run build:formulas
 
       - name: Discover high-synergy boards (theorycraft · keyless)
         # Runs AFTER formulas so board discovery uses the corrected ability damage.
