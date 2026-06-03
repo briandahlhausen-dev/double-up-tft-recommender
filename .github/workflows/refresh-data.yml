@@ -1,11 +1,15 @@
 name: Refresh comp + champion data
 
-# Regenerates src/data/stats.ts (comp performance) and src/data/champion-stats.ts
-# (per-champion performance) from the Riot API on a schedule, with no human in
-# the loop, and commits the diff. The app stays 100% static — this runs in CI
-# only. Requires a repo secret RIOT_API_KEY (a PRODUCTION key; a dev key expires
-# every 24h and will start failing with 401/403). The two refreshes each run
-# their own Double Up crawl, so the job makes two independent passes.
+# Regenerates src/data/stats.ts (comp performance), src/data/champion-stats.ts
+# (per-champion performance), src/data/unit-math.ts (theorycraft inputs from
+# CommunityDragon, no key), src/data/ability-formulas.ts (Stage 3 exact per-cast
+# damage), and src/data/theorycraft.ts (discovered boards) on a schedule, with no
+# human in the loop, and commits the diff. The app stays 100% static — this runs
+# in CI only. Requires a repo secret RIOT_API_KEY (a PRODUCTION key; a dev key
+# expires every 24h and will start failing with 401/403). ANTHROPIC_API_KEY is
+# OPTIONAL (the Stage 3 Claude pass); without it the committed seed formulas are
+# kept. The two refreshes each run their own Double Up crawl, so the job makes two
+# independent passes.
 
 on:
   schedule:
@@ -31,6 +35,12 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    # ANTHROPIC_API_KEY is OPTIONAL — set it as a repo secret to let the Stage 3
+    # step regenerate exact ability formulas via the offline Claude pass. Resolves
+    # to '' when unset, which skips that step (see its `if`). Never read
+    # client-side; the app stays 100% static.
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
     steps:
       - uses: actions/checkout@v4
 
@@ -61,9 +71,24 @@ jobs:
             --max-boards=${{ github.event.inputs.max_boards || '8000' }} \
             --max-requests=${{ github.event.inputs.max_requests || '20000' }}
 
+      - name: Build unit math (theorycraft inputs · keyless)
+        run: npm run build:math
+
+      - name: Build ability formulas (Stage 3 · exact per-cast damage)
+        # The hand-verified seed runs keyless, but it's already committed, so
+        # there's nothing to regenerate without the key — only the offline Claude
+        # pass adds units. Skipped when ANTHROPIC_API_KEY is absent so a keyless
+        # run can't overwrite Claude-enriched formulas with the seed alone.
+        if: ${{ env.ANTHROPIC_API_KEY != '' }}
+        run: npm run build:formulas
+
+      - name: Discover high-synergy boards (theorycraft · keyless)
+        # Runs AFTER formulas so board discovery uses the corrected ability damage.
+        run: npm run build:theorycraft
+
       - name: Commit if changed
         run: |
-          FILES="src/data/stats.ts src/data/augment-stats.ts src/data/champion-stats.ts"
+          FILES="src/data/stats.ts src/data/augment-stats.ts src/data/champion-stats.ts src/data/unit-math.ts src/data/ability-formulas.ts src/data/theorycraft.ts"
           if [[ -n "$(git status --porcelain $FILES)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"

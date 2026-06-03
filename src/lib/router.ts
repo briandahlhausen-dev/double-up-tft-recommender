@@ -8,13 +8,17 @@ import { useEffect, useState } from 'react';
 export type Route =
   | { name: 'home'; board?: string } // board = encoded partner board from a share link
   | { name: 'champions' }
-  | { name: 'champion'; id: string };
+  | { name: 'champion'; id: string }
+  | { name: 'lab' };
 
 export function parseHash(hash: string): Route {
   const path = hash.replace(/^#/, '').replace(/^\/+|\/+$/g, '');
   const parts = path.split('/').filter(Boolean);
   if (parts[0] === 'champions') {
     return parts[1] ? { name: 'champion', id: decodeURIComponent(parts[1]) } : { name: 'champions' };
+  }
+  if (parts[0] === 'lab') {
+    return { name: 'lab' };
   }
   if (parts[0] === 'board' && parts[1]) {
     return { name: 'home', board: decodeURIComponent(parts[1]) };

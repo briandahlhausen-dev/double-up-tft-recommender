@@ -1,9 +1,11 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-import type { AugmentStat, AugmentTier, Comp, Playstyle, Tempo } from '../types';
+import type { AugmentStat, AugmentTier, Carry, Comp, Playstyle, Tempo } from '../types';
 import { cx } from '../lib/cx';
 import { tierForAvgPlace } from '../lib/tier';
+import { ASSUMPTIONS, evaluateCompCarry } from '../lib/combat-model';
+import type { CarryEvaluation } from '../lib/combat-model';
 import { POSITIONING } from '../data/positioning';
 import { augmentsForComp } from '../data/augment-stats';
 import { HexBoard } from './HexBoard';
@@ -55,6 +57,11 @@ function CompGuideModal({ comp, onClose }: { comp: Comp; onClose: () => void }) 
   const slots = POSITIONING[comp.id] ?? [];
   const augs = augmentsForComp(comp.id);
   const tier = tierForAvgPlace(comp.avgPlace);
+  // The deterministic combat model: one transparent evaluation per carry.
+  const carryMath = useMemo(
+    () => comp.carries.map((cr) => ({ carry: cr, evald: evaluateCompCarry(comp, cr) })),
+    [comp],
+  );
 
   return createPortal(
     <div
@@ -165,6 +172,32 @@ function CompGuideModal({ comp, onClose }: { comp: Comp; onClose: () => void }) 
               </div>
             ))}
           </div>
+        </Section>
+
+        {/* Combat math — the deterministic theorycraft model */}
+        <Section title="The math behind the carries" hint="deterministic model · approximate">
+          <div className="space-y-2">
+            {carryMath.map(({ carry, evald }) =>
+              evald ? (
+                <CarryMath key={carry.name} carry={carry} data={evald} />
+              ) : (
+                <div key={carry.name} className="rounded-xl border border-white/5 bg-white/[0.02] p-2.5 text-sm text-slate-400">
+                  <span className="font-semibold text-slate-300">{carry.name}</span> isn’t in the extracted math data yet.
+                </div>
+              ),
+            )}
+          </div>
+          <details className="group mt-2">
+            <summary className="cursor-pointer list-none text-[11px] text-slate-500 transition hover:text-slate-300">
+              <span className="group-open:hidden">▸ How these numbers are computed (and what they ignore)</span>
+              <span className="hidden group-open:inline">▾ How these numbers are computed (and what they ignore)</span>
+            </summary>
+            <ul className="mt-2 space-y-1.5 border-l border-white/10 pl-3 text-[11px] leading-snug text-slate-400">
+              {ASSUMPTIONS.map((a) => (
+                <li key={a}>{a}</li>
+              ))}
+            </ul>
+          </details>
         </Section>
 
         {/* Game plan */}
@@ -294,6 +327,105 @@ function Stat({ label, value }: { label: string; value: string }) {
       <div className="font-display text-sm font-bold text-white">{value}</div>
       <div className="text-[10px] uppercase tracking-wide text-slate-400">{label}</div>
     </div>
+  );
+}
+
+const round0 = (n: number): string => Math.round(n).toLocaleString();
+
+// One carry, run through the deterministic combat model: headline DPS / EHP /
+// cadence, the effective stat line, the auto + ability split, and an auditable
+// list of exactly which item & trait effects were folded in (and which weren't).
+function CarryMath({ carry, data }: { carry: Carry; data: CarryEvaluation }) {
+  const e = data.evaluation;
+  const applied = e.modifiers.filter((m) => m.target !== 'unmodeled');
+  const ignored = e.modifiers.filter((m) => m.target === 'unmodeled');
+
+  return (
+    <div className="rounded-xl border border-white/5 bg-white/[0.02] p-2.5">
+      <div className="flex items-center gap-2">
+        <DamageTag type={carry.damageType} />
+        <span className="text-sm font-semibold text-white">{e.name}</span>
+        <span className="chip py-0 text-[10px]">{e.star}★</span>
+        <span className="ml-auto text-[10px] uppercase tracking-wide text-slate-500">{e.ability.scaling} scaling</span>
+      </div>
+
+      <div className="mt-2 grid grid-cols-3 gap-2">
+        <MathStat label="Total DPS" value={round0(e.totalDps)} accent="text-amber-300" />
+        <MathStat label="Effective HP" value={round0(e.ehp.mixed)} accent="text-emerald-300" />
+        <MathStat label="Casts / 10s" value={e.cast.castsPer10s.toFixed(1)} accent="text-sky-300" />
+      </div>
+
+      <div className="mt-2 flex flex-wrap gap-1 text-[11px]">
+        <StatChip k="AD" v={round0(e.effective.ad)} />
+        <StatChip k="AS" v={e.effective.attackSpeed.toFixed(2)} />
+        <StatChip k="AP" v={round0(e.effective.ap)} />
+        <StatChip k="HP" v={round0(e.effective.hp)} />
+        <StatChip k="AR" v={round0(e.effective.armor)} />
+        <StatChip k="MR" v={round0(e.effective.magicResist)} />
+      </div>
+
+      <div className="mt-2 space-y-1 text-[11px] leading-snug text-slate-400">
+        <div>
+          <span className="text-slate-300">Auto</span> {round0(e.autoDps)} DPS
+          <span className="text-slate-600"> = </span>
+          {round0(e.effective.ad)} AD × {e.effective.attackSpeed.toFixed(2)} AS × {e.critFactor.toFixed(2)} crit
+        </div>
+        <div>
+          <span className="text-slate-300">Ability</span> “{e.ability.name}” {round0(e.ability.dps)} DPS — {e.ability.interpretation}
+        </div>
+      </div>
+
+      {data.unmatchedItems.length > 0 && (
+        <div className="mt-1.5 text-[10px] text-slate-500">Items not in math data: {data.unmatchedItems.join(', ')}</div>
+      )}
+
+      {(applied.length > 0 || ignored.length > 0) && (
+        <details className="group mt-2">
+          <summary className="cursor-pointer list-none text-[11px] text-nebula/80 transition hover:text-nebula">
+            <span className="group-open:hidden">
+              ▸ {applied.length} stat mods applied{ignored.length ? ` · ${ignored.length} not modeled` : ''}
+            </span>
+            <span className="hidden group-open:inline">▾ item &amp; trait modifiers</span>
+          </summary>
+          <div className="mt-1.5 flex flex-wrap gap-1">
+            {applied.map((m, i) => (
+              <span
+                key={`a-${m.source}-${m.key}-${i}`}
+                className="rounded-md border border-emerald-400/20 bg-emerald-400/5 px-1.5 py-0.5 text-[10px] text-emerald-200/90"
+              >
+                <span className="text-emerald-300/70">{m.source}</span> {m.applied}
+              </span>
+            ))}
+            {ignored.map((m, i) => (
+              <span
+                key={`i-${m.source}-${m.key}-${i}`}
+                className="rounded-md border border-white/10 bg-white/[0.02] px-1.5 py-0.5 text-[10px] text-slate-500"
+                title={`${m.key} = ${m.value} — conditional / stacking / teamwide / non-stat`}
+              >
+                <span className="text-slate-600">{m.source}</span> {m.key}
+              </span>
+            ))}
+          </div>
+        </details>
+      )}
+    </div>
+  );
+}
+
+function MathStat({ label, value, accent }: { label: string; value: string; accent: string }) {
+  return (
+    <div className="rounded-lg border border-white/5 bg-cosmos-950/40 px-2 py-1.5 text-center">
+      <div className={cx('font-display text-base font-bold', accent)}>{value}</div>
+      <div className="text-[10px] uppercase tracking-wide text-slate-400">{label}</div>
+    </div>
+  );
+}
+
+function StatChip({ k, v }: { k: string; v: string }) {
+  return (
+    <span className="rounded-md border border-white/10 bg-white/[0.03] px-1.5 py-0.5 text-slate-300">
+      <span className="text-slate-500">{k}</span> {v}
+    </span>
   );
 }
 

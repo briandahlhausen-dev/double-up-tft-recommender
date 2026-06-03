@@ -11,13 +11,17 @@
     "import": "tsx scripts/import-stats.ts",
     "refresh": "tsx scripts/refresh-stats.ts",
     "refresh:champions": "tsx scripts/refresh-champions.ts",
-    "champions": "tsx scripts/build-champions.ts"
+    "champions": "tsx scripts/build-champions.ts",
+    "build:math": "tsx scripts/build-unit-math.ts",
+    "build:formulas": "tsx scripts/build-ability-formulas.ts",
+    "build:theorycraft": "tsx scripts/build-theorycraft.ts"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.100.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",

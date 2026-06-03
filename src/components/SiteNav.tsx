@@ -35,6 +35,9 @@ export function SiteNav({ route }: { route: Route }) {
         <NavTab href="#/champions" active={onChampions}>
           Champions
         </NavTab>
+        <NavTab href="#/lab" active={route.name === 'lab'}>
+          Lab
+        </NavTab>
       </div>
     </nav>
   );

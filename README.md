@@ -210,6 +210,36 @@ The champion browser uses the same catalog + overlay split as comps:
   emblems filtered out), and best comps come from the same classifier the recommender
   uses. The scheduled Action refreshes this overlay alongside `stats.ts`.
 
+### Theorycraft & the Lab (offline math — mostly keyless)
+The Lab's unit DPS/EHP model and the comp-discovery engine run on numbers
+extracted from CommunityDragon — no Riot key, no runtime API. Three offline
+steps, all committed into `src/data/` so the app stays 100% static:
+
+```bash
+npm run build:math        # src/data/unit-math.ts — base stats, ability variables,
+                          # item/trait math + raw ability descriptions (keyless)
+npm run build:formulas    # src/data/ability-formulas.ts — exact per-cast damage
+npm run build:theorycraft # src/data/theorycraft.ts — discovered high-synergy boards
+```
+
+**Stage 3 (`build:formulas`).** The name-only ability heuristic can't tell a
+"big nuke every 5th cast" (Sona) from a single hit, or a 6-strike active (Fiora)
+from its 2-attack passive cadence. So an offline pass reads each ability's
+**description** and pins an exact per-cast formula — an arithmetic expression
+over the ability's own variables — evaluated per star into plain numbers the
+runtime reads (it never parses the string). A hand-verified seed (Sona, Fiora)
+runs with **no key**. To cover the rest, set `ANTHROPIC_API_KEY` and the
+generator asks Claude for the *structure* only — code does the arithmetic:
+
+```powershell
+$env:ANTHROPIC_API_KEY="sk-ant-…"   # offline / CI only — NEVER shipped to the client
+npm run build:formulas
+```
+
+The key lives **only** in CI (a repo secret) or your shell; it is never read at
+runtime and never bundled. The scheduled Action runs this step automatically
+when the secret is present, and keeps the committed seed formulas when it isn't.
+
 ---
 
 ## Data source & disclaimer

@@ -3,6 +3,7 @@ import { SiteNav } from './components/SiteNav';
 import { Recommender } from './pages/Recommender';
 import { ChampionsOverview } from './pages/ChampionsOverview';
 import { ChampionDetail } from './pages/ChampionDetail';
+import { Lab } from './pages/Lab';
 
 export default function App() {
   const route = useHashRoute();
@@ -17,6 +18,7 @@ export default function App() {
         {route.name === 'home' && <Recommender initialBoard={route.board} />}
         {route.name === 'champions' && <ChampionsOverview />}
         {route.name === 'champion' && <ChampionDetail id={route.id} />}
+        {route.name === 'lab' && <Lab />}
       </main>
     </div>
   );

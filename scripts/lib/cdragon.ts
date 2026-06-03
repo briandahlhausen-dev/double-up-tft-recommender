@@ -4,7 +4,14 @@
 // names, costs, traits, items, and image URLs from the same source of truth.
 // ---------------------------------------------------------------------------
 import { normalizeName } from '../classify';
-import type { AugmentTier } from '../../src/types';
+import type {
+  AugmentTier,
+  UnitMath,
+  ItemMath,
+  TraitMath,
+  TraitTierMath,
+  AbilityScaling,
+} from '../../src/types';
 
 const CDRAGON_TFT = 'https://raw.communitydragon.org/latest/cdragon/tft/en_us.json';
 const GAME_CDN = 'https://raw.communitydragon.org/latest/game/';
@@ -133,6 +140,108 @@ export async function fetchAugmentMeta(): Promise<Map<string, CdragonAugment>> {
     });
   }
   return map;
+}
+
+// ---- Theorycraft math extraction ----------------------------------------
+// The same cdragon file carries the deep numbers behind every unit: base
+// stats, ability scaling variables, completed-item stat effects, and trait
+// breakpoint variables. We pull them faithfully (no interpretation here — the
+// combat model and the offline AI layer do that downstream). `npm run
+// build:math` writes the result to src/data/unit-math.ts.
+
+const r3 = (n: number) => Math.round(n * 1000) / 1000;
+
+/** Damage scaling read straight from the desc icons; 'none' = flat/utility. */
+export function abilityScalingFromDesc(desc: string | undefined | null): AbilityScaling {
+  if (!desc) return 'none';
+  const ap = /scaleAP/i.test(desc);
+  const ad = /scaleAD/i.test(desc);
+  if (ap && ad) return 'mixed';
+  if (ap) return 'AP';
+  if (ad) return 'AD';
+  return 'none';
+}
+
+export function extractUnitMath(set: any): UnitMath[] {
+  return (set.champions as any[])
+    .filter(isPlayable)
+    .filter((c) => c.stats && c.ability && Array.isArray(c.ability.variables) && c.ability.variables.length)
+    .map((c): UnitMath => ({
+      apiName: c.apiName,
+      name: c.name,
+      cost: c.cost,
+      traits: (c.traits as string[]).filter((t) => t && t !== 'Choose Trait'),
+      stats: {
+        hp: Math.round(c.stats.hp),
+        armor: Math.round(c.stats.armor),
+        magicResist: Math.round(c.stats.magicResist),
+        damage: r3(c.stats.damage),
+        attackSpeed: r3(c.stats.attackSpeed),
+        critChance: r3(c.stats.critChance),
+        critMultiplier: r3(c.stats.critMultiplier),
+        mana: Math.round(c.stats.mana),
+        initialMana: Math.round(c.stats.initialMana),
+        range: Math.round(c.stats.range),
+      },
+      ability: {
+        name: c.ability.name ?? '',
+        scaling: abilityScalingFromDesc(c.ability.desc),
+        // Persist the raw tooltip verbatim — it's the only record of how the
+        // variables combine, which the Stage 3 formula layer reads offline.
+        desc: typeof c.ability.desc === 'string' ? c.ability.desc : '',
+        variables: (c.ability.variables as any[])
+          .filter((v) => v && typeof v.name === 'string' && Array.isArray(v.value))
+          .map((v) => ({
+            name: v.name as string,
+            value: (v.value as any[]).map((x) => (typeof x === 'number' && Number.isFinite(x) ? r3(x) : 0)),
+          })),
+      },
+    }));
+}
+
+export function extractItemMath(data: any): ItemMath[] {
+  const out: ItemMath[] = [];
+  for (const i of data.items as any[]) {
+    if (!i.apiName || !i.name) continue;
+    const composition: string[] = Array.isArray(i.composition) ? i.composition : [];
+    if (!isCompletedItem(i.apiName, composition)) continue;
+    const effects: Record<string, number> = {};
+    if (i.effects && typeof i.effects === 'object') {
+      for (const [k, v] of Object.entries(i.effects)) {
+        if (typeof v === 'number' && Number.isFinite(v)) effects[k] = r3(v);
+      }
+    }
+    out.push({ apiName: i.apiName, name: i.name, effects });
+  }
+  return out;
+}
+
+export function extractTraitMath(set: any): TraitMath[] {
+  const out: TraitMath[] = [];
+  for (const t of set.traits as any[]) {
+    if (!t.apiName || !t.name || !/^TFT17_/.test(t.apiName) || !Array.isArray(t.effects)) continue;
+    const tiers: TraitTierMath[] = (t.effects as any[]).map((e) => {
+      const variables: Record<string, number> = {};
+      if (e.variables && typeof e.variables === 'object') {
+        for (const [k, v] of Object.entries(e.variables)) {
+          if (typeof v === 'number' && Number.isFinite(v)) variables[k] = r3(v);
+        }
+      }
+      return { minUnits: Number(e.minUnits ?? 0), maxUnits: Number(e.maxUnits ?? 0), variables };
+    });
+    out.push({ apiName: t.apiName, name: t.name, tiers });
+  }
+  return out;
+}
+
+/** Fetch cdragon once and extract all three math layers. */
+export async function fetchUnitMath(): Promise<{ units: UnitMath[]; items: ItemMath[]; traits: TraitMath[] }> {
+  const res = await fetch(CDRAGON_TFT);
+  if (!res.ok) throw new Error(`CommunityDragon fetch failed: ${res.status}`);
+  const data = (await res.json()) as any;
+  const set = (data.setData as any[]).find((s) => s.mutator === SET_MUTATOR);
+  if (!set) throw new Error(`set "${SET_MUTATOR}" not found in CommunityDragon data`);
+  return { units: extractUnitMath(set), items: extractItemMath(data), traits: extractTraitMath(set) };
 }
 
 export { normalizeName };
