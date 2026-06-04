@@ -1,0 +1,71 @@
+name: Deploy to GitHub Pages
+
+# Builds the static app and publishes dist/ to GitHub Pages. The site is 100%
+# static (Vite output, relative asset paths, hash routing), so there's nothing to
+# run server-side — Pages just serves the artifact.
+#
+# One-time setup: repo → Settings → Pages → Build and deployment → Source =
+# "GitHub Actions". After that every push to main redeploys automatically.
+#
+# Triggers:
+#   • push to main      — your commits (and mine) ship immediately.
+#   • workflow_dispatch — deploy on demand from the Actions tab.
+#   • workflow_run      — after the data-refresh job commits fresh stats. (A push
+#     made by the default GITHUB_TOKEN does NOT raise a `push` event, so without
+#     this hook a scheduled data refresh would never redeploy.)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['Refresh comp + champion data']
+    types: [completed]
+
+# Least-privilege token scoped for Pages deployment.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deploy; never cancel an in-flight one (a half-finished
+# Pages deploy can leave the site inconsistent) — queue instead.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # On a workflow_run trigger, only build if the upstream refresh succeeded.
+    # push / workflow_dispatch always build.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build (tsc + vite)
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

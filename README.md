@@ -61,13 +61,22 @@ The app is 100% static — deploy the `dist/` folder anywhere.
 - Import the repo; Vercel auto-detects Vite.
 - **Build command:** `npm run build` · **Output directory:** `dist`
 
-### GitHub Pages
+### GitHub Pages — automated (recommended)
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds and publishes
+the site on every push to `main` using GitHub's native Pages deployment. **One-time
+setup:** repo → **Settings → Pages → Build and deployment → Source = "GitHub Actions"**.
+After that it's hands-off — pushes ship automatically, and a scheduled data refresh
+(which commits via the Actions bot) redeploys through the workflow's `workflow_run`
+hook. The site lands at `https://<user>.github.io/<repo>/`.
+
+### GitHub Pages — manual (alternative)
 ```bash
 npm run build
 npx gh-pages -d dist        # publishes dist/ to the gh-pages branch
 ```
-`base: './'` already handles the project-subpath URLs that Pages serves from, so no extra
-config is needed.
+`base: './'` (see `vite.config.ts`) keeps asset paths relative, and the app is
+hash-routed, so the project-subpath URLs Pages serves from work with no extra config
+or 404 fallback.
 
 ---
 
