@@ -13,77 +13,77 @@ import type { ChampionStats } from '../types';
 
 export const CHAMPION_STATS: Record<string, ChampionStats> = {
   "aatrox": {
-    "avgPlace": 2.47,
-    "top4": 53.2,
-    "first": 23.2,
-    "pickRate": 33.1,
-    "sampleSize": 474,
+    "avgPlace": 2.43,
+    "top4": 55.7,
+    "first": 24.4,
+    "pickRate": 30.4,
+    "sampleSize": 316,
     "bestItems": [
       {
         "name": "Thief's Gloves",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 1.7
+        "pct": 2.5
       },
       {
-        "name": "Steadfast Heart",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_nightharvester.tft_set13.png",
-        "pct": 0.8
+        "name": "Protector's Vow",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
+        "pct": 1.9
       },
       {
-        "name": "Spirit Visage",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
-        "pct": 0.8
+        "name": "Bramble Vest",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bramblevest.tft_set13.png",
+        "pct": 0.9
+      },
+      {
+        "name": "Sunfire Cape",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
+        "pct": 0.9
+      },
+      {
+        "name": "Sterak's Gage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_steraksgage.tft_set13.png",
+        "pct": 0.9
       },
       {
         "name": "Titan's Resolve",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_titansresolve.tft_set13.png",
-        "pct": 0.6
+        "pct": 0.9
       },
       {
-        "name": "Warmog's Armor",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 0.6
+        "name": "Bloodthirster",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
+        "pct": 0.9
       },
       {
-        "name": "Gargoyle Stoneplate",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 0.4
-      },
-      {
-        "name": "Archangel's Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_archangelsstaff.tft_set13.png",
-        "pct": 0.4
-      },
-      {
-        "name": "Evenshroud",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spectralgauntlet.tft_set13.png",
-        "pct": 0.4
+        "name": "Spirit Visage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+        "pct": 0.9
       }
     ],
     "bestComps": [
       {
         "id": "vanguard-vex",
         "name": "Vanguard — Vex & Nunu",
-        "n": 208
+        "n": 139
       },
       {
         "id": "space-groove-snipers",
         "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 73
+        "n": 54
       },
       {
         "id": "replicator-nova-mf",
         "name": "Replicator / N.O.V.A. — Miss Fortune",
-        "n": 34
+        "n": 30
       }
     ]
   },
   "gragas": {
-    "avgPlace": 2.54,
-    "top4": 48.7,
+    "avgPlace": 2.58,
+    "top4": 45.8,
     "first": 18.7,
-    "pickRate": 10.5,
-    "sampleSize": 150,
+    "pickRate": 10.3,
+    "sampleSize": 107,
     "bestItems": [
       {
         "name": "Jeweled Gauntlet",
@@ -96,466 +96,268 @@ export const CHAMPION_STATS: Record<string, ChampionStats> = {
         "pct": 9.3
       },
       {
-        "name": "Thief's Gloves",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 4
+        "name": "Sunfire Cape",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
+        "pct": 5.6
       },
       {
         "name": "Crownguard",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
-        "pct": 4
+        "pct": 5.6
       },
       {
-        "name": "Evenshroud",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spectralgauntlet.tft_set13.png",
-        "pct": 3.3
+        "name": "Adaptive Helm",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
+        "pct": 4.7
+      },
+      {
+        "name": "Steadfast Heart",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_nightharvester.tft_set13.png",
+        "pct": 4.7
       },
       {
         "name": "Spirit Visage",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
-        "pct": 2.7
+        "pct": 3.7
       },
       {
-        "name": "Warmog's Armor",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 2
-      },
-      {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 2
+        "name": "Evenshroud",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spectralgauntlet.tft_set13.png",
+        "pct": 3.7
       }
     ],
     "bestComps": [
       {
         "id": "marauder-yi-kindred",
         "name": "Marauder — Master Yi & Kindred",
-        "n": 101
+        "n": 72
       },
       {
         "id": "brawler-reroll-gragas",
         "name": "Brawler Reroll — Gragas & Master Yi",
-        "n": 34
+        "n": 27
       },
       {
         "id": "nova-brawler-viktor",
         "name": "N.O.V.A. / Brawler — Viktor + Ornn",
-        "n": 8
+        "n": 4
       }
     ]
   },
   "missfortune": {
-    "avgPlace": 2.66,
-    "top4": 45.7,
-    "first": 14.3,
-    "pickRate": 4.9,
-    "sampleSize": 70,
+    "avgPlace": 2.8,
+    "top4": 41,
+    "first": 13.1,
+    "pickRate": 5.9,
+    "sampleSize": 61,
     "bestItems": [
-      {
-        "name": "Deathblade",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
-        "pct": 67.1
-      },
       {
         "name": "Guinsoo's Rageblade",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
-        "pct": 52.9
+        "pct": 62.3
       },
       {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 45.7
+        "name": "Deathblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
+        "pct": 49.2
       },
       {
         "name": "Infinity Edge",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
-        "pct": 31.4
+        "pct": 42.6
       },
       {
-        "name": "Striker's Flail",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 10
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 34.4
       },
       {
         "name": "Spear of Shojin",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
-        "pct": 8.6
+        "pct": 8.2
+      },
+      {
+        "name": "Striker's Flail",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
+        "pct": 6.6
       },
       {
         "name": "Kraken's Fury",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_krakenslayer.png",
-        "pct": 7.1
+        "pct": 4.9
       },
       {
         "name": "Last Whisper",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.tft_set13.png",
-        "pct": 4.3
+        "pct": 4.9
       }
     ],
     "bestComps": [
       {
         "id": "replicator-nova-mf",
         "name": "Replicator / N.O.V.A. — Miss Fortune",
-        "n": 40
+        "n": 35
       },
       {
         "id": "marauder-yi-kindred",
         "name": "Marauder — Master Yi & Kindred",
-        "n": 16
+        "n": 18
       },
       {
         "id": "nova-brawler-viktor",
         "name": "N.O.V.A. / Brawler — Viktor + Ornn",
-        "n": 9
+        "n": 4
       }
     ]
   },
   "maokai": {
-    "avgPlace": 2.5,
-    "top4": 52.8,
-    "first": 20.1,
-    "pickRate": 28.4,
-    "sampleSize": 407,
+    "avgPlace": 2.56,
+    "top4": 50,
+    "first": 19.6,
+    "pickRate": 26.5,
+    "sampleSize": 276,
     "bestItems": [
       {
         "name": "Warmog's Armor",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 14
+        "pct": 14.5
       },
       {
         "name": "Spirit Visage",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
-        "pct": 11.1
+        "pct": 10.5
       },
       {
         "name": "Protector's Vow",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 10.6
-      },
-      {
-        "name": "Crownguard",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
-        "pct": 9.8
-      },
-      {
-        "name": "Thief's Gloves",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
         "pct": 9.1
       },
       {
         "name": "Gargoyle Stoneplate",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
         "pct": 9.1
+      },
+      {
+        "name": "Crownguard",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
+        "pct": 8.7
+      },
+      {
+        "name": "Dragon's Claw",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_dragonsclaw.tft_set13.png",
+        "pct": 8.7
+      },
+      {
+        "name": "Bramble Vest",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bramblevest.tft_set13.png",
+        "pct": 8
       },
       {
         "name": "Sunfire Cape",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
         "pct": 7.6
-      },
-      {
-        "name": "Adaptive Helm",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
-        "pct": 6.9
       }
     ],
     "bestComps": [
       {
         "id": "marauder-yi-kindred",
         "name": "Marauder — Master Yi & Kindred",
-        "n": 127
-      },
-      {
-        "id": "space-groove-snipers",
-        "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 78
-      },
-      {
-        "id": "replicator-nova-mf",
-        "name": "Replicator / N.O.V.A. — Miss Fortune",
-        "n": 36
-      }
-    ]
-  },
-  "ornn": {
-    "avgPlace": 2.38,
-    "top4": 61.1,
-    "first": 17.9,
-    "pickRate": 6.6,
-    "sampleSize": 95,
-    "bestItems": [
-      {
-        "name": "Warmog's Armor",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 35.8
-      },
-      {
-        "name": "Gargoyle Stoneplate",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 30.5
-      },
-      {
-        "name": "Spirit Visage",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
-        "pct": 24.2
-      },
-      {
-        "name": "Steadfast Heart",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_nightharvester.tft_set13.png",
-        "pct": 23.2
-      },
-      {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 18.9
-      },
-      {
-        "name": "Sunfire Cape",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
-        "pct": 16.8
-      },
-      {
-        "name": "Dragon's Claw",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_dragonsclaw.tft_set13.png",
-        "pct": 14.7
-      },
-      {
-        "name": "Ionic Spark",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_ionicspark.tft_set13.png",
-        "pct": 10.5
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "replicator-nova-mf",
-        "name": "Replicator / N.O.V.A. — Miss Fortune",
-        "n": 30
-      },
-      {
-        "id": "space-groove-snipers",
-        "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 14
-      },
-      {
-        "id": "marauder-yi-kindred",
-        "name": "Marauder — Master Yi & Kindred",
-        "n": 9
-      }
-    ]
-  },
-  "rhaast": {
-    "avgPlace": 2.33,
-    "top4": 58.8,
-    "first": 27.7,
-    "pickRate": 38.3,
-    "sampleSize": 548,
-    "bestItems": [
-      {
-        "name": "Thief's Gloves",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 3.8
-      },
-      {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 3.5
-      },
-      {
-        "name": "Gargoyle Stoneplate",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 3.5
-      },
-      {
-        "name": "Spirit Visage",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
-        "pct": 2.7
-      },
-      {
-        "name": "Warmog's Armor",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 2.7
-      },
-      {
-        "name": "Adaptive Helm",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
-        "pct": 2.6
-      },
-      {
-        "name": "Steadfast Heart",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_nightharvester.tft_set13.png",
-        "pct": 2.2
-      },
-      {
-        "name": "Crownguard",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
-        "pct": 1.6
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "vanguard-vex",
-        "name": "Vanguard — Vex & Nunu",
-        "n": 188
-      },
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
         "n": 92
       },
       {
         "id": "space-groove-snipers",
         "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 78
+        "n": 54
+      },
+      {
+        "id": "replicator-nova-mf",
+        "name": "Replicator / N.O.V.A. — Miss Fortune",
+        "n": 32
       }
     ]
   },
-  "chogath": {
-    "avgPlace": 2.47,
-    "top4": 51.9,
-    "first": 24.7,
-    "pickRate": 16.1,
-    "sampleSize": 231,
+  "ornn": {
+    "avgPlace": 2.46,
+    "top4": 57.4,
+    "first": 20.4,
+    "pickRate": 10.4,
+    "sampleSize": 108,
     "bestItems": [
       {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 32
-      },
-      {
-        "name": "Spirit Visage",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
-        "pct": 28.1
+        "name": "Gargoyle Stoneplate",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
+        "pct": 37
       },
       {
         "name": "Warmog's Armor",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 23.4
+        "pct": 37
       },
       {
-        "name": "Gargoyle Stoneplate",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 17.3
-      },
-      {
-        "name": "Crownguard",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
-        "pct": 6.1
-      },
-      {
-        "name": "Adaptive Helm",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
-        "pct": 5.6
+        "name": "Spirit Visage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+        "pct": 22.2
       },
       {
         "name": "Sunfire Cape",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
-        "pct": 5.6
+        "pct": 16.7
+      },
+      {
+        "name": "Protector's Vow",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
+        "pct": 13.9
+      },
+      {
+        "name": "Dragon's Claw",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_dragonsclaw.tft_set13.png",
+        "pct": 13
       },
       {
         "name": "Steadfast Heart",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_nightharvester.tft_set13.png",
-        "pct": 5.2
+        "pct": 11.1
+      },
+      {
+        "name": "Adaptive Helm",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
+        "pct": 10.2
       }
     ],
     "bestComps": [
       {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 200
+        "id": "replicator-nova-mf",
+        "name": "Replicator / N.O.V.A. — Miss Fortune",
+        "n": 26
       },
       {
-        "id": "brawler-reroll-gragas",
-        "name": "Brawler Reroll — Gragas & Master Yi",
-        "n": 12
+        "id": "space-groove-snipers",
+        "name": "Space Groove Snipers — Xayah & Samira",
+        "n": 15
       },
       {
         "id": "marauder-yi-kindred",
         "name": "Marauder — Master Yi & Kindred",
-        "n": 5
+        "n": 12
       }
     ]
   },
-  "lissandra": {
-    "avgPlace": 2.34,
-    "top4": 55.4,
-    "first": 29.7,
-    "pickRate": 14.1,
-    "sampleSize": 202,
-    "bestItems": [
-      {
-        "name": "Nashor's Tooth",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.tft_set13.png",
-        "pct": 66.8
-      },
-      {
-        "name": "Jeweled Gauntlet",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 46.5
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 4.5
-      },
-      {
-        "name": "Spear of Shojin",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
-        "pct": 4
-      },
-      {
-        "name": "Blue Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
-        "pct": 3.5
-      },
-      {
-        "name": "Rabadon's Deathcap",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
-        "pct": 3
-      },
-      {
-        "name": "Void Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
-        "pct": 3
-      },
-      {
-        "name": "Red Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
-        "pct": 2
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 166
-      },
-      {
-        "id": "nova-brawler-viktor",
-        "name": "N.O.V.A. / Brawler — Viktor + Ornn",
-        "n": 13
-      },
-      {
-        "id": "brawler-reroll-gragas",
-        "name": "Brawler Reroll — Gragas & Master Yi",
-        "n": 5
-      }
-    ]
-  },
-  "mordekaiser": {
-    "avgPlace": 2.49,
-    "top4": 50,
-    "first": 25.4,
-    "pickRate": 36.6,
-    "sampleSize": 524,
+  "rhaast": {
+    "avgPlace": 2.33,
+    "top4": 57.7,
+    "first": 29.1,
+    "pickRate": 37.7,
+    "sampleSize": 392,
     "bestItems": [
       {
         "name": "Thief's Gloves",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 4.8
+        "pct": 6.1
       },
       {
-        "name": "Sunfire Cape",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
-        "pct": 3.4
+        "name": "Gargoyle Stoneplate",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
+        "pct": 3.6
       },
       {
         "name": "Protector's Vow",
@@ -563,1104 +365,1043 @@ export const CHAMPION_STATS: Record<string, ChampionStats> = {
         "pct": 3.1
       },
       {
-        "name": "Ionic Spark",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_ionicspark.tft_set13.png",
-        "pct": 2.7
-      },
-      {
         "name": "Warmog's Armor",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 2.1
+        "pct": 3.1
       },
       {
-        "name": "Dragon's Claw",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_dragonsclaw.tft_set13.png",
-        "pct": 1.9
-      },
-      {
-        "name": "Crownguard",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
-        "pct": 1.9
-      },
-      {
-        "name": "Gargoyle Stoneplate",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 1.9
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 425
-      },
-      {
-        "id": "space-groove-snipers",
-        "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 33
-      },
-      {
-        "id": "nova-brawler-viktor",
-        "name": "N.O.V.A. / Brawler — Viktor + Ornn",
-        "n": 16
-      }
-    ]
-  },
-  "pantheon": {
-    "avgPlace": 2.4,
-    "top4": 55.9,
-    "first": 24.6,
-    "pickRate": 19,
-    "sampleSize": 272,
-    "bestItems": [
-      {
-        "name": "Sunfire Cape",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
-        "pct": 11
-      },
-      {
-        "name": "Warmog's Armor",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 10.3
+        "name": "Adaptive Helm",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
+        "pct": 2.6
       },
       {
         "name": "Steadfast Heart",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_nightharvester.tft_set13.png",
-        "pct": 8.1
+        "pct": 2.3
       },
       {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 7.7
+        "name": "Spirit Visage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+        "pct": 1.8
       },
       {
-        "name": "Ionic Spark",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_ionicspark.tft_set13.png",
-        "pct": 7.4
-      },
-      {
-        "name": "Adaptive Helm",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
-        "pct": 7
-      },
-      {
-        "name": "Crownguard",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
-        "pct": 6.6
-      },
-      {
-        "name": "Gargoyle Stoneplate",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 5.9
+        "name": "Sunfire Cape",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
+        "pct": 1.8
       }
     ],
     "bestComps": [
       {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 102
+        "id": "vanguard-vex",
+        "name": "Vanguard — Vex & Nunu",
+        "n": 121
       },
       {
-        "id": "brawler-reroll-gragas",
-        "name": "Brawler Reroll — Gragas & Master Yi",
-        "n": 16
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 78
       },
       {
         "id": "space-groove-snipers",
         "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 11
+        "n": 55
       }
     ]
   },
-  "kaisa": {
-    "avgPlace": 2.46,
-    "top4": 51.9,
-    "first": 24.8,
-    "pickRate": 14.9,
-    "sampleSize": 214,
+  "chogath": {
+    "avgPlace": 2.38,
+    "top4": 55.3,
+    "first": 29.8,
+    "pickRate": 13.6,
+    "sampleSize": 141,
     "bestItems": [
       {
-        "name": "Infinity Edge",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
-        "pct": 26.6
+        "name": "Spirit Visage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+        "pct": 24.1
       },
       {
-        "name": "Deathblade",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
-        "pct": 13.1
+        "name": "Protector's Vow",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
+        "pct": 23.4
       },
       {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 10.7
+        "name": "Warmog's Armor",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
+        "pct": 21.3
       },
       {
-        "name": "Spear of Shojin",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
-        "pct": 9.3
+        "name": "Gargoyle Stoneplate",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
+        "pct": 19.1
       },
       {
-        "name": "Blue Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
-        "pct": 9.3
+        "name": "Sunfire Cape",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
+        "pct": 8.5
       },
       {
-        "name": "Striker's Flail",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 8.9
+        "name": "Crownguard",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
+        "pct": 6.4
       },
       {
-        "name": "Last Whisper",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.tft_set13.png",
-        "pct": 7.5
+        "name": "Adaptive Helm",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
+        "pct": 5
       },
       {
-        "name": "Kraken's Fury",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_krakenslayer.png",
-        "pct": 3.7
+        "name": "Steadfast Heart",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_nightharvester.tft_set13.png",
+        "pct": 3.5
       }
     ],
     "bestComps": [
       {
         "id": "darkstar-karma",
         "name": "Dark Star — Karma & Kai'Sa",
-        "n": 202
+        "n": 115
+      },
+      {
+        "id": "brawler-reroll-gragas",
+        "name": "Brawler Reroll — Gragas & Master Yi",
+        "n": 10
       },
       {
         "id": "marauder-yi-kindred",
         "name": "Marauder — Master Yi & Kindred",
-        "n": 2
-      },
-      {
-        "id": "space-groove-snipers",
-        "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 2
+        "n": 3
       }
     ]
   },
-  "karma": {
-    "avgPlace": 2.46,
-    "top4": 51.9,
-    "first": 25.9,
-    "pickRate": 33.1,
-    "sampleSize": 474,
+  "lissandra": {
+    "avgPlace": 2.31,
+    "top4": 56.5,
+    "first": 30.6,
+    "pickRate": 11.9,
+    "sampleSize": 124,
     "bestItems": [
-      {
-        "name": "Void Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
-        "pct": 23.6
-      },
-      {
-        "name": "Morellonomicon",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
-        "pct": 13.3
-      },
       {
         "name": "Jeweled Gauntlet",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 12.4
+        "pct": 37.1
+      },
+      {
+        "name": "Nashor's Tooth",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.tft_set13.png",
+        "pct": 33.1
       },
       {
         "name": "Spear of Shojin",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
-        "pct": 11.6
+        "pct": 5.6
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 4.8
       },
       {
         "name": "Rabadon's Deathcap",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
-        "pct": 7.2
+        "pct": 4
       },
       {
-        "name": "Red Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
-        "pct": 5.9
+        "name": "Void Staff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
+        "pct": 3.2
       },
       {
         "name": "Blue Buff",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
-        "pct": 5.9
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 4.9
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 465
-      },
-      {
-        "id": "brawler-reroll-gragas",
-        "name": "Brawler Reroll — Gragas & Master Yi",
-        "n": 7
-      },
-      {
-        "id": "space-groove-snipers",
-        "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 1
-      }
-    ]
-  },
-  "nunu": {
-    "avgPlace": 2.47,
-    "top4": 52.7,
-    "first": 24.9,
-    "pickRate": 42.9,
-    "sampleSize": 615,
-    "bestItems": [
-      {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 88.3
-      },
-      {
-        "name": "Adaptive Helm",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
-        "pct": 27.2
-      },
-      {
-        "name": "Warmog's Armor",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 18
-      },
-      {
-        "name": "Gargoyle Stoneplate",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 17.6
-      },
-      {
-        "name": "Spirit Visage",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
-        "pct": 12
-      },
-      {
-        "name": "Sunfire Cape",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
-        "pct": 10.4
-      },
-      {
-        "name": "Crownguard",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
-        "pct": 7.8
-      },
-      {
-        "name": "Dragon's Claw",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_dragonsclaw.tft_set13.png",
-        "pct": 6.2
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 243
-      },
-      {
-        "id": "vanguard-vex",
-        "name": "Vanguard — Vex & Nunu",
-        "n": 203
-      },
-      {
-        "id": "space-groove-snipers",
-        "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 104
-      }
-    ]
-  },
-  "jhin": {
-    "avgPlace": 2.34,
-    "top4": 56.2,
-    "first": 27.4,
-    "pickRate": 25.5,
-    "sampleSize": 365,
-    "bestItems": [
-      {
-        "name": "Infinity Edge",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
-        "pct": 49.3
-      },
-      {
-        "name": "Deathblade",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
-        "pct": 32.1
-      },
-      {
-        "name": "Last Whisper",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.tft_set13.png",
-        "pct": 26.6
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 26
-      },
-      {
-        "name": "Striker's Flail",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 17
+        "pct": 2.4
       },
       {
         "name": "Red Buff",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
-        "pct": 6.8
-      },
-      {
-        "name": "Guinsoo's Rageblade",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
-        "pct": 4.7
-      },
-      {
-        "name": "Thief's Gloves",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 3.8
+        "pct": 2.4
       }
     ],
     "bestComps": [
       {
         "id": "darkstar-karma",
         "name": "Dark Star — Karma & Kai'Sa",
-        "n": 207
+        "n": 97
       },
       {
-        "id": "space-groove-snipers",
-        "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 83
+        "id": "nova-brawler-viktor",
+        "name": "N.O.V.A. / Brawler — Viktor + Ornn",
+        "n": 9
       },
       {
-        "id": "vanguard-vex",
-        "name": "Vanguard — Vex & Nunu",
-        "n": 31
+        "id": "brawler-reroll-gragas",
+        "name": "Brawler Reroll — Gragas & Master Yi",
+        "n": 2
       }
     ]
   },
-  "ivernminion": {
-    "avgPlace": 2.45,
-    "top4": 52.6,
-    "first": 24.7,
-    "pickRate": 35.3,
-    "sampleSize": 506,
+  "mordekaiser": {
+    "avgPlace": 2.46,
+    "top4": 51.6,
+    "first": 27.7,
+    "pickRate": 35.4,
+    "sampleSize": 368,
     "bestItems": [
       {
         "name": "Thief's Gloves",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 2.6
+        "pct": 4.1
+      },
+      {
+        "name": "Protector's Vow",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
+        "pct": 3
+      },
+      {
+        "name": "Warmog's Armor",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
+        "pct": 2.7
+      },
+      {
+        "name": "Dragon's Claw",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_dragonsclaw.tft_set13.png",
+        "pct": 2.2
+      },
+      {
+        "name": "Sunfire Cape",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
+        "pct": 2.2
+      },
+      {
+        "name": "Ionic Spark",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_ionicspark.tft_set13.png",
+        "pct": 2.2
+      },
+      {
+        "name": "Spirit Visage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+        "pct": 2.2
       },
       {
         "name": "Edge of Night",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
-        "pct": 2.6
-      },
-      {
-        "name": "Jeweled Gauntlet",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 2.2
-      },
-      {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 2
-      },
-      {
-        "name": "Gargoyle Stoneplate",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 1.8
-      },
-      {
-        "name": "Hand Of Justice",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.tft_set13.png",
-        "pct": 1.8
-      },
-      {
-        "name": "Warmog's Armor",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
         "pct": 1.6
-      },
-      {
-        "name": "Sunfire Cape",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
-        "pct": 1.4
       }
     ],
     "bestComps": [
       {
         "id": "darkstar-karma",
         "name": "Dark Star — Karma & Kai'Sa",
-        "n": 209
-      },
-      {
-        "id": "meeple-reroll",
-        "name": "Meeple Reroll — Fizz / Corki",
-        "n": 209
-      },
-      {
-        "id": "nova-brawler-viktor",
-        "name": "N.O.V.A. / Brawler — Viktor + Ornn",
-        "n": 15
-      }
-    ]
-  },
-  "illaoi": {
-    "avgPlace": 2.5,
-    "top4": 51,
-    "first": 25,
-    "pickRate": 21.5,
-    "sampleSize": 308,
-    "bestItems": [
-      {
-        "name": "Gargoyle Stoneplate",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 23.1
-      },
-      {
-        "name": "Sunfire Cape",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
-        "pct": 14
-      },
-      {
-        "name": "Warmog's Armor",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 12.3
-      },
-      {
-        "name": "Spirit Visage",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
-        "pct": 12.3
-      },
-      {
-        "name": "Dragon's Claw",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_dragonsclaw.tft_set13.png",
-        "pct": 8.4
-      },
-      {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 8.1
-      },
-      {
-        "name": "Crownguard",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
-        "pct": 7.1
-      },
-      {
-        "name": "Adaptive Helm",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
-        "pct": 7.1
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 214
-      },
-      {
-        "id": "nova-brawler-viktor",
-        "name": "N.O.V.A. / Brawler — Viktor + Ornn",
-        "n": 15
-      },
-      {
-        "id": "vanguard-vex",
-        "name": "Vanguard — Vex & Nunu",
-        "n": 10
-      }
-    ]
-  },
-  "bard": {
-    "avgPlace": 2.3,
-    "top4": 59.3,
-    "first": 30.1,
-    "pickRate": 24.4,
-    "sampleSize": 349,
-    "bestItems": [
-      {
-        "name": "Jeweled Gauntlet",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 28.9
-      },
-      {
-        "name": "Rabadon's Deathcap",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
-        "pct": 23.5
-      },
-      {
-        "name": "Void Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
-        "pct": 14.6
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 13.5
-      },
-      {
-        "name": "Morellonomicon",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
-        "pct": 13.2
-      },
-      {
-        "name": "Spear of Shojin",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
-        "pct": 12.3
-      },
-      {
-        "name": "Striker's Flail",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 12
-      },
-      {
-        "name": "Blue Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
-        "pct": 7.7
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 191
-      },
-      {
-        "id": "meeple-reroll",
-        "name": "Meeple Reroll — Fizz / Corki",
-        "n": 103
-      },
-      {
-        "id": "vanguard-vex",
-        "name": "Vanguard — Vex & Nunu",
-        "n": 9
-      }
-    ]
-  },
-  "blitzcrank": {
-    "avgPlace": 2.36,
-    "top4": 57.5,
-    "first": 28.1,
-    "pickRate": 39.3,
-    "sampleSize": 563,
-    "bestItems": [
-      {
-        "name": "Thief's Gloves",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 25
-      },
-      {
-        "name": "Jeweled Gauntlet",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 13.1
-      },
-      {
-        "name": "Hand Of Justice",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.tft_set13.png",
-        "pct": 9.2
-      },
-      {
-        "name": "Rabadon's Deathcap",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
-        "pct": 8
-      },
-      {
-        "name": "Adaptive Helm",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
-        "pct": 6.7
-      },
-      {
-        "name": "Crownguard",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
-        "pct": 6.6
-      },
-      {
-        "name": "Striker's Flail",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 6.2
-      },
-      {
-        "name": "Bloodthirster",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
-        "pct": 5.9
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "vanguard-vex",
-        "name": "Vanguard — Vex & Nunu",
-        "n": 229
-      },
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 224
+        "n": 298
       },
       {
         "id": "space-groove-snipers",
         "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 41
-      }
-    ]
-  },
-  "sona": {
-    "avgPlace": 2.44,
-    "top4": 54.2,
-    "first": 27.3,
-    "pickRate": 18.4,
-    "sampleSize": 264,
-    "bestItems": [
-      {
-        "name": "Void Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
-        "pct": 22.3
-      },
-      {
-        "name": "Morellonomicon",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
-        "pct": 18.6
-      },
-      {
-        "name": "Jeweled Gauntlet",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 14
-      },
-      {
-        "name": "Spear of Shojin",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
-        "pct": 11
-      },
-      {
-        "name": "Blue Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
-        "pct": 10.6
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 9.5
-      },
-      {
-        "name": "Rabadon's Deathcap",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
-        "pct": 9.5
-      },
-      {
-        "name": "Adaptive Helm",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
-        "pct": 7.2
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 169
-      },
-      {
-        "id": "vanguard-vex",
-        "name": "Vanguard — Vex & Nunu",
-        "n": 29
-      },
-      {
-        "id": "brawler-reroll-gragas",
-        "name": "Brawler Reroll — Gragas & Master Yi",
         "n": 16
-      }
-    ]
-  },
-  "vex": {
-    "avgPlace": 2.28,
-    "top4": 60.7,
-    "first": 29.9,
-    "pickRate": 23.6,
-    "sampleSize": 338,
-    "bestItems": [
-      {
-        "name": "Guinsoo's Rageblade",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
-        "pct": 94.4
-      },
-      {
-        "name": "Rabadon's Deathcap",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
-        "pct": 33.7
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 33.4
-      },
-      {
-        "name": "Red Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
-        "pct": 30.8
-      },
-      {
-        "name": "Jeweled Gauntlet",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 20.1
-      },
-      {
-        "name": "Hextech Gunblade",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_hextechgunblade.tft_set13.png",
-        "pct": 10.4
-      },
-      {
-        "name": "Void Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
-        "pct": 7.1
-      },
-      {
-        "name": "Morellonomicon",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
-        "pct": 6.5
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "vanguard-vex",
-        "name": "Vanguard — Vex & Nunu",
-        "n": 259
-      },
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 72
-      },
-      {
-        "id": "space-groove-snipers",
-        "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 4
-      }
-    ]
-  },
-  "summon": {
-    "avgPlace": 2.38,
-    "top4": 56.2,
-    "first": 27.9,
-    "pickRate": 19.8,
-    "sampleSize": 283,
-    "bestItems": [],
-    "bestComps": [
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 210
       },
       {
         "id": "nova-brawler-viktor",
         "name": "N.O.V.A. / Brawler — Viktor + Ornn",
-        "n": 15
-      },
-      {
-        "id": "brawler-reroll-gragas",
-        "name": "Brawler Reroll — Gragas & Master Yi",
-        "n": 5
+        "n": 11
       }
     ]
   },
-  "poppy": {
-    "avgPlace": 2.61,
-    "top4": 43.3,
-    "first": 18.9,
-    "pickRate": 12.6,
+  "pantheon": {
+    "avgPlace": 2.37,
+    "top4": 58.3,
+    "first": 26.7,
+    "pickRate": 17.3,
     "sampleSize": 180,
     "bestItems": [
       {
         "name": "Sunfire Cape",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
-        "pct": 4.4
-      },
-      {
-        "name": "Infinity Edge",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
-        "pct": 3.9
-      },
-      {
-        "name": "Blue Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
-        "pct": 3.3
+        "pct": 7.8
       },
       {
         "name": "Protector's Vow",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 2.8
-      },
-      {
-        "name": "Steadfast Heart",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_nightharvester.tft_set13.png",
-        "pct": 2.2
+        "pct": 7.8
       },
       {
         "name": "Warmog's Armor",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 2.2
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 2.2
-      },
-      {
-        "name": "Thief's Gloves",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 2.2
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "meeple-reroll",
-        "name": "Meeple Reroll — Fizz / Corki",
-        "n": 150
-      },
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 5
-      },
-      {
-        "id": "marauder-yi-kindred",
-        "name": "Marauder — Master Yi & Kindred",
-        "n": 2
-      }
-    ]
-  },
-  "milio": {
-    "avgPlace": 2.48,
-    "top4": 52.7,
-    "first": 22,
-    "pickRate": 22.9,
-    "sampleSize": 328,
-    "bestItems": [
-      {
-        "name": "Morellonomicon",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
-        "pct": 19.2
-      },
-      {
-        "name": "Spear of Shojin",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
-        "pct": 14
-      },
-      {
-        "name": "Rabadon's Deathcap",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
-        "pct": 8.2
-      },
-      {
-        "name": "Nashor's Tooth",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.tft_set13.png",
-        "pct": 7.6
-      },
-      {
-        "name": "Red Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
-        "pct": 7.6
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 6.4
-      },
-      {
-        "name": "Void Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
-        "pct": 6.1
-      },
-      {
-        "name": "Striker's Flail",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 6.1
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "meeple-reroll",
-        "name": "Meeple Reroll — Fizz / Corki",
-        "n": 210
-      },
-      {
-        "id": "space-groove-snipers",
-        "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 7
-      },
-      {
-        "id": "fateweaver-rogue-reroll",
-        "name": "Fateweaver / Rogue Reroll — Caitlyn",
-        "n": 6
-      }
-    ]
-  },
-  "fizz": {
-    "avgPlace": 2.5,
-    "top4": 50.9,
-    "first": 21.9,
-    "pickRate": 15.6,
-    "sampleSize": 224,
-    "bestItems": [
-      {
-        "name": "Thief's Gloves",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 8
-      },
-      {
-        "name": "Ionic Spark",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_ionicspark.tft_set13.png",
-        "pct": 1.8
-      },
-      {
-        "name": "Jeweled Gauntlet",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 1.3
-      },
-      {
-        "name": "Archangel's Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_archangelsstaff.tft_set13.png",
-        "pct": 1.3
-      },
-      {
-        "name": "Morellonomicon",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
-        "pct": 1.3
-      },
-      {
-        "name": "Warmog's Armor",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 1.3
-      },
-      {
-        "name": "Crownguard",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
-        "pct": 1.3
-      },
-      {
-        "name": "Sterak's Gage",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_steraksgage.tft_set13.png",
-        "pct": 1.3
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "meeple-reroll",
-        "name": "Meeple Reroll — Fizz / Corki",
-        "n": 222
-      },
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 2
-      }
-    ]
-  },
-  "rammus": {
-    "avgPlace": 2.5,
-    "top4": 50.5,
-    "first": 22.8,
-    "pickRate": 19.6,
-    "sampleSize": 281,
-    "bestItems": [
-      {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 52.7
-      },
-      {
-        "name": "Gargoyle Stoneplate",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 40.9
-      },
-      {
-        "name": "Crownguard",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
-        "pct": 40.9
-      },
-      {
-        "name": "Bramble Vest",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bramblevest.tft_set13.png",
-        "pct": 23.1
-      },
-      {
-        "name": "Spirit Visage",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
-        "pct": 18.9
-      },
-      {
-        "name": "Sunfire Cape",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
-        "pct": 15.3
-      },
-      {
-        "name": "Warmog's Armor",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 15.3
+        "pct": 5.6
       },
       {
         "name": "Adaptive Helm",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
-        "pct": 15.3
+        "pct": 5
+      },
+      {
+        "name": "Ionic Spark",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_ionicspark.tft_set13.png",
+        "pct": 5
+      },
+      {
+        "name": "Crownguard",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
+        "pct": 4.4
+      },
+      {
+        "name": "Steadfast Heart",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_nightharvester.tft_set13.png",
+        "pct": 4.4
+      },
+      {
+        "name": "Thief's Gloves",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
+        "pct": 3.9
       }
     ],
     "bestComps": [
       {
-        "id": "meeple-reroll",
-        "name": "Meeple Reroll — Fizz / Corki",
-        "n": 224
-      },
-      {
         "id": "darkstar-karma",
         "name": "Dark Star — Karma & Kai'Sa",
-        "n": 12
+        "n": 56
+      },
+      {
+        "id": "brawler-reroll-gragas",
+        "name": "Brawler Reroll — Gragas & Master Yi",
+        "n": 15
       },
       {
         "id": "space-groove-snipers",
         "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 8
+        "n": 9
       }
     ]
   },
-  "corki": {
-    "avgPlace": 2.49,
-    "top4": 51.7,
-    "first": 22.4,
-    "pickRate": 18.4,
-    "sampleSize": 263,
+  "kaisa": {
+    "avgPlace": 2.38,
+    "top4": 53.5,
+    "first": 29.5,
+    "pickRate": 12.4,
+    "sampleSize": 129,
     "bestItems": [
+      {
+        "name": "Infinity Edge",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
+        "pct": 28.7
+      },
       {
         "name": "Deathblade",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
-        "pct": 97
-      },
-      {
-        "name": "Last Whisper",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.tft_set13.png",
-        "pct": 74.9
-      },
-      {
-        "name": "Striker's Flail",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 45.2
+        "pct": 11.6
       },
       {
         "name": "Giant Slayer",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 13.3
+        "pct": 10.9
+      },
+      {
+        "name": "Striker's Flail",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
+        "pct": 8.5
       },
       {
         "name": "Blue Buff",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
-        "pct": 6.1
+        "pct": 8.5
       },
       {
-        "name": "Infinity Edge",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
-        "pct": 4.2
-      },
-      {
-        "name": "Red Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
-        "pct": 3
+        "name": "Last Whisper",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.tft_set13.png",
+        "pct": 7.8
       },
       {
         "name": "Spear of Shojin",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
+        "pct": 7.8
+      },
+      {
+        "name": "Quicksilver",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_quicksilver.tft_set13.png",
+        "pct": 3.9
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 117
+      },
+      {
+        "id": "meeple-reroll",
+        "name": "Meeple Reroll — Fizz / Corki",
+        "n": 1
+      },
+      {
+        "id": "brawler-reroll-gragas",
+        "name": "Brawler Reroll — Gragas & Master Yi",
+        "n": 1
+      }
+    ]
+  },
+  "karma": {
+    "avgPlace": 2.44,
+    "top4": 52.4,
+    "first": 28.3,
+    "pickRate": 32.3,
+    "sampleSize": 336,
+    "bestItems": [
+      {
+        "name": "Void Staff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
+        "pct": 19
+      },
+      {
+        "name": "Morellonomicon",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
+        "pct": 11.9
+      },
+      {
+        "name": "Jeweled Gauntlet",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
+        "pct": 9.5
+      },
+      {
+        "name": "Spear of Shojin",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
+        "pct": 7.7
+      },
+      {
+        "name": "Blue Buff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
+        "pct": 7.1
+      },
+      {
+        "name": "Red Buff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
+        "pct": 6.3
+      },
+      {
+        "name": "Rabadon's Deathcap",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
+        "pct": 5.4
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 5.1
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 331
+      },
+      {
+        "id": "brawler-reroll-gragas",
+        "name": "Brawler Reroll — Gragas & Master Yi",
+        "n": 4
+      },
+      {
+        "id": "meeple-reroll",
+        "name": "Meeple Reroll — Fizz / Corki",
+        "n": 1
+      }
+    ]
+  },
+  "nunu": {
+    "avgPlace": 2.46,
+    "top4": 52.4,
+    "first": 25.8,
+    "pickRate": 45.9,
+    "sampleSize": 477,
+    "bestItems": [
+      {
+        "name": "Protector's Vow",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
+        "pct": 58.1
+      },
+      {
+        "name": "Adaptive Helm",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
+        "pct": 26
+      },
+      {
+        "name": "Warmog's Armor",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
+        "pct": 20.3
+      },
+      {
+        "name": "Gargoyle Stoneplate",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
+        "pct": 17.8
+      },
+      {
+        "name": "Sunfire Cape",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
+        "pct": 10.7
+      },
+      {
+        "name": "Spirit Visage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+        "pct": 9.6
+      },
+      {
+        "name": "Crownguard",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
+        "pct": 8.8
+      },
+      {
+        "name": "Bramble Vest",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bramblevest.tft_set13.png",
+        "pct": 8.2
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 206
+      },
+      {
+        "id": "vanguard-vex",
+        "name": "Vanguard — Vex & Nunu",
+        "n": 134
+      },
+      {
+        "id": "space-groove-snipers",
+        "name": "Space Groove Snipers — Xayah & Samira",
+        "n": 72
+      }
+    ]
+  },
+  "jhin": {
+    "avgPlace": 2.26,
+    "top4": 60.2,
+    "first": 28.1,
+    "pickRate": 22.2,
+    "sampleSize": 231,
+    "bestItems": [
+      {
+        "name": "Infinity Edge",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
+        "pct": 48.1
+      },
+      {
+        "name": "Deathblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
+        "pct": 33.8
+      },
+      {
+        "name": "Last Whisper",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.tft_set13.png",
+        "pct": 30.3
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 19.9
+      },
+      {
+        "name": "Striker's Flail",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
+        "pct": 16.9
+      },
+      {
+        "name": "Red Buff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
+        "pct": 8.2
+      },
+      {
+        "name": "Guinsoo's Rageblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
+        "pct": 4.8
+      },
+      {
+        "name": "Hextech Gunblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_hextechgunblade.tft_set13.png",
+        "pct": 4.8
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 127
+      },
+      {
+        "id": "space-groove-snipers",
+        "name": "Space Groove Snipers — Xayah & Samira",
+        "n": 57
+      },
+      {
+        "id": "vanguard-vex",
+        "name": "Vanguard — Vex & Nunu",
+        "n": 16
+      }
+    ]
+  },
+  "ivernminion": {
+    "avgPlace": 2.48,
+    "top4": 50.4,
+    "first": 23.7,
+    "pickRate": 38.2,
+    "sampleSize": 397,
+    "bestItems": [
+      {
+        "name": "Edge of Night",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
+        "pct": 2.3
+      },
+      {
+        "name": "Thief's Gloves",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
+        "pct": 2
+      },
+      {
+        "name": "Jeweled Gauntlet",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
+        "pct": 2
+      },
+      {
+        "name": "Hand Of Justice",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.tft_set13.png",
+        "pct": 1.8
+      },
+      {
+        "name": "Protector's Vow",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
+        "pct": 1.3
+      },
+      {
+        "name": "Warmog's Armor",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
+        "pct": 1.3
+      },
+      {
+        "name": "Gargoyle Stoneplate",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
+        "pct": 1
+      },
+      {
+        "name": "Sunfire Cape",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
+        "pct": 1
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 181
+      },
+      {
+        "id": "meeple-reroll",
+        "name": "Meeple Reroll — Fizz / Corki",
+        "n": 153
+      },
+      {
+        "id": "brawler-reroll-gragas",
+        "name": "Brawler Reroll — Gragas & Master Yi",
+        "n": 9
+      }
+    ]
+  },
+  "illaoi": {
+    "avgPlace": 2.59,
+    "top4": 47.2,
+    "first": 24.2,
+    "pickRate": 25.5,
+    "sampleSize": 265,
+    "bestItems": [
+      {
+        "name": "Gargoyle Stoneplate",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
+        "pct": 17.7
+      },
+      {
+        "name": "Warmog's Armor",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
+        "pct": 10.6
+      },
+      {
+        "name": "Sunfire Cape",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
+        "pct": 9.4
+      },
+      {
+        "name": "Protector's Vow",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
+        "pct": 9.4
+      },
+      {
+        "name": "Spirit Visage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+        "pct": 9.4
+      },
+      {
+        "name": "Dragon's Claw",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_dragonsclaw.tft_set13.png",
+        "pct": 7.9
+      },
+      {
+        "name": "Crownguard",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
+        "pct": 6
+      },
+      {
+        "name": "Ionic Spark",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_ionicspark.tft_set13.png",
+        "pct": 6
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 192
+      },
+      {
+        "id": "vanguard-vex",
+        "name": "Vanguard — Vex & Nunu",
+        "n": 11
+      },
+      {
+        "id": "nova-brawler-viktor",
+        "name": "N.O.V.A. / Brawler — Viktor + Ornn",
+        "n": 9
+      }
+    ]
+  },
+  "bard": {
+    "avgPlace": 2.35,
+    "top4": 57.1,
+    "first": 27.9,
+    "pickRate": 27.6,
+    "sampleSize": 287,
+    "bestItems": [
+      {
+        "name": "Jeweled Gauntlet",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
+        "pct": 34.5
+      },
+      {
+        "name": "Rabadon's Deathcap",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
+        "pct": 26.5
+      },
+      {
+        "name": "Void Staff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
+        "pct": 16.7
+      },
+      {
+        "name": "Morellonomicon",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
+        "pct": 16.7
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 15.3
+      },
+      {
+        "name": "Striker's Flail",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
+        "pct": 11.8
+      },
+      {
+        "name": "Spear of Shojin",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
+        "pct": 10.5
+      },
+      {
+        "name": "Blue Buff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
+        "pct": 7.7
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 168
+      },
+      {
+        "id": "meeple-reroll",
+        "name": "Meeple Reroll — Fizz / Corki",
+        "n": 76
+      },
+      {
+        "id": "vanguard-vex",
+        "name": "Vanguard — Vex & Nunu",
+        "n": 7
+      }
+    ]
+  },
+  "blitzcrank": {
+    "avgPlace": 2.35,
+    "top4": 57.4,
+    "first": 28.9,
+    "pickRate": 41.5,
+    "sampleSize": 432,
+    "bestItems": [
+      {
+        "name": "Thief's Gloves",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
+        "pct": 28.2
+      },
+      {
+        "name": "Jeweled Gauntlet",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
+        "pct": 15.7
+      },
+      {
+        "name": "Hand Of Justice",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.tft_set13.png",
+        "pct": 10.4
+      },
+      {
+        "name": "Rabadon's Deathcap",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
+        "pct": 8.8
+      },
+      {
+        "name": "Crownguard",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
+        "pct": 7.4
+      },
+      {
+        "name": "Adaptive Helm",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
+        "pct": 7.2
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 5.8
+      },
+      {
+        "name": "Bloodthirster",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
+        "pct": 5.8
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 174
+      },
+      {
+        "id": "vanguard-vex",
+        "name": "Vanguard — Vex & Nunu",
+        "n": 147
+      },
+      {
+        "id": "space-groove-snipers",
+        "name": "Space Groove Snipers — Xayah & Samira",
+        "n": 32
+      }
+    ]
+  },
+  "sona": {
+    "avgPlace": 2.46,
+    "top4": 52.7,
+    "first": 26.6,
+    "pickRate": 21.3,
+    "sampleSize": 222,
+    "bestItems": [
+      {
+        "name": "Void Staff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
+        "pct": 27.5
+      },
+      {
+        "name": "Morellonomicon",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
+        "pct": 19.4
+      },
+      {
+        "name": "Blue Buff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
+        "pct": 16.2
+      },
+      {
+        "name": "Jeweled Gauntlet",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
+        "pct": 14
+      },
+      {
+        "name": "Spear of Shojin",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
+        "pct": 9.5
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 9.5
+      },
+      {
+        "name": "Rabadon's Deathcap",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
+        "pct": 7.7
+      },
+      {
+        "name": "Red Buff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
+        "pct": 6.8
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 152
+      },
+      {
+        "id": "vanguard-vex",
+        "name": "Vanguard — Vex & Nunu",
+        "n": 15
+      },
+      {
+        "id": "brawler-reroll-gragas",
+        "name": "Brawler Reroll — Gragas & Master Yi",
+        "n": 11
+      }
+    ]
+  },
+  "vex": {
+    "avgPlace": 2.28,
+    "top4": 60.8,
+    "first": 30.4,
+    "pickRate": 21.8,
+    "sampleSize": 227,
+    "bestItems": [
+      {
+        "name": "Guinsoo's Rageblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
+        "pct": 87.7
+      },
+      {
+        "name": "Rabadon's Deathcap",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
+        "pct": 33.5
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 32.2
+      },
+      {
+        "name": "Red Buff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
+        "pct": 28.6
+      },
+      {
+        "name": "Jeweled Gauntlet",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
+        "pct": 21.6
+      },
+      {
+        "name": "Hextech Gunblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_hextechgunblade.tft_set13.png",
+        "pct": 10.1
+      },
+      {
+        "name": "Void Staff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
+        "pct": 9.7
+      },
+      {
+        "name": "Morellonomicon",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
+        "pct": 7.5
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "vanguard-vex",
+        "name": "Vanguard — Vex & Nunu",
+        "n": 166
+      },
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 58
+      },
+      {
+        "id": "nova-brawler-viktor",
+        "name": "N.O.V.A. / Brawler — Viktor + Ornn",
+        "n": 1
+      }
+    ]
+  },
+  "summon": {
+    "avgPlace": 2.48,
+    "top4": 51.1,
+    "first": 27,
+    "pickRate": 22.8,
+    "sampleSize": 237,
+    "bestItems": [],
+    "bestComps": [
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 183
+      },
+      {
+        "id": "nova-brawler-viktor",
+        "name": "N.O.V.A. / Brawler — Viktor + Ornn",
+        "n": 10
+      },
+      {
+        "id": "vanguard-vex",
+        "name": "Vanguard — Vex & Nunu",
+        "n": 3
+      }
+    ]
+  },
+  "poppy": {
+    "avgPlace": 2.6,
+    "top4": 43.9,
+    "first": 19.7,
+    "pickRate": 12.7,
+    "sampleSize": 132,
+    "bestItems": [
+      {
+        "name": "Sunfire Cape",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
+        "pct": 2.3
+      },
+      {
+        "name": "Adaptive Helm",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
+        "pct": 2.3
+      },
+      {
+        "name": "Thief's Gloves",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
+        "pct": 2.3
+      },
+      {
+        "name": "Spear of Shojin",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
+        "pct": 1.5
+      },
+      {
+        "name": "Infinity Edge",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
+        "pct": 1.5
+      },
+      {
+        "name": "Deathblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
+        "pct": 1.5
+      },
+      {
+        "name": "Morellonomicon",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
+        "pct": 1.5
+      },
+      {
+        "name": "Protector's Vow",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
         "pct": 1.5
       }
     ],
@@ -1668,7 +1409,261 @@ export const CHAMPION_STATS: Record<string, ChampionStats> = {
       {
         "id": "meeple-reroll",
         "name": "Meeple Reroll — Fizz / Corki",
-        "n": 228
+        "n": 109
+      },
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 3
+      },
+      {
+        "id": "fateweaver-rogue-reroll",
+        "name": "Fateweaver / Rogue Reroll — Caitlyn",
+        "n": 3
+      }
+    ]
+  },
+  "milio": {
+    "avgPlace": 2.5,
+    "top4": 51.2,
+    "first": 20.9,
+    "pickRate": 20.7,
+    "sampleSize": 215,
+    "bestItems": [
+      {
+        "name": "Morellonomicon",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
+        "pct": 18.6
+      },
+      {
+        "name": "Spear of Shojin",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
+        "pct": 9.3
+      },
+      {
+        "name": "Red Buff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
+        "pct": 8.8
+      },
+      {
+        "name": "Rabadon's Deathcap",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
+        "pct": 7.9
+      },
+      {
+        "name": "Nashor's Tooth",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.tft_set13.png",
+        "pct": 7.9
+      },
+      {
+        "name": "Blue Buff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
+        "pct": 7
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 6
+      },
+      {
+        "name": "Void Staff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
+        "pct": 6
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "meeple-reroll",
+        "name": "Meeple Reroll — Fizz / Corki",
+        "n": 151
+      },
+      {
+        "id": "space-groove-snipers",
+        "name": "Space Groove Snipers — Xayah & Samira",
+        "n": 4
+      },
+      {
+        "id": "fateweaver-rogue-reroll",
+        "name": "Fateweaver / Rogue Reroll — Caitlyn",
+        "n": 3
+      }
+    ]
+  },
+  "fizz": {
+    "avgPlace": 2.49,
+    "top4": 49.7,
+    "first": 21.1,
+    "pickRate": 15.5,
+    "sampleSize": 161,
+    "bestItems": [
+      {
+        "name": "Thief's Gloves",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
+        "pct": 10.6
+      },
+      {
+        "name": "Jeweled Gauntlet",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
+        "pct": 2.5
+      },
+      {
+        "name": "Deathblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
+        "pct": 2.5
+      },
+      {
+        "name": "Void Staff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
+        "pct": 1.9
+      },
+      {
+        "name": "Ionic Spark",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_ionicspark.tft_set13.png",
+        "pct": 1.9
+      },
+      {
+        "name": "Dragon's Claw",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_dragonsclaw.tft_set13.png",
+        "pct": 1.9
+      },
+      {
+        "name": "Hextech Gunblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_hextechgunblade.tft_set13.png",
+        "pct": 1.2
+      },
+      {
+        "name": "Morellonomicon",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
+        "pct": 1.2
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "meeple-reroll",
+        "name": "Meeple Reroll — Fizz / Corki",
+        "n": 161
+      }
+    ]
+  },
+  "rammus": {
+    "avgPlace": 2.49,
+    "top4": 50.5,
+    "first": 21.9,
+    "pickRate": 20.2,
+    "sampleSize": 210,
+    "bestItems": [
+      {
+        "name": "Protector's Vow",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
+        "pct": 49
+      },
+      {
+        "name": "Gargoyle Stoneplate",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
+        "pct": 39
+      },
+      {
+        "name": "Crownguard",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
+        "pct": 34.3
+      },
+      {
+        "name": "Bramble Vest",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bramblevest.tft_set13.png",
+        "pct": 22.4
+      },
+      {
+        "name": "Spirit Visage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+        "pct": 18.1
+      },
+      {
+        "name": "Sunfire Cape",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
+        "pct": 17.6
+      },
+      {
+        "name": "Warmog's Armor",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
+        "pct": 16.2
+      },
+      {
+        "name": "Adaptive Helm",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
+        "pct": 14.3
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "meeple-reroll",
+        "name": "Meeple Reroll — Fizz / Corki",
+        "n": 159
+      },
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 9
+      },
+      {
+        "id": "space-groove-snipers",
+        "name": "Space Groove Snipers — Xayah & Samira",
+        "n": 5
+      }
+    ]
+  },
+  "corki": {
+    "avgPlace": 2.53,
+    "top4": 48.2,
+    "first": 20.9,
+    "pickRate": 18.4,
+    "sampleSize": 191,
+    "bestItems": [
+      {
+        "name": "Deathblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
+        "pct": 81.2
+      },
+      {
+        "name": "Last Whisper",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.tft_set13.png",
+        "pct": 73.3
+      },
+      {
+        "name": "Striker's Flail",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
+        "pct": 47.1
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 12.6
+      },
+      {
+        "name": "Infinity Edge",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
+        "pct": 8.4
+      },
+      {
+        "name": "Blue Buff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
+        "pct": 5.8
+      },
+      {
+        "name": "Spear of Shojin",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
+        "pct": 2.1
+      },
+      {
+        "name": "Red Buff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
+        "pct": 2.1
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "meeple-reroll",
+        "name": "Meeple Reroll — Fizz / Corki",
+        "n": 166
       },
       {
         "id": "fateweaver-rogue-reroll",
@@ -1683,63 +1678,63 @@ export const CHAMPION_STATS: Record<string, ChampionStats> = {
     ]
   },
   "galio": {
-    "avgPlace": 2.47,
+    "avgPlace": 2.46,
     "top4": 50.9,
-    "first": 24.5,
-    "pickRate": 30.4,
-    "sampleSize": 436,
+    "first": 24.7,
+    "pickRate": 26.1,
+    "sampleSize": 271,
     "bestItems": [
       {
         "name": "Gargoyle Stoneplate",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 20.2
+        "pct": 17.3
       },
       {
         "name": "Sunfire Cape",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
-        "pct": 12.6
-      },
-      {
-        "name": "Spirit Visage",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
-        "pct": 11.5
-      },
-      {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 10.1
-      },
-      {
-        "name": "Warmog's Armor",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 8.7
+        "pct": 11.4
       },
       {
         "name": "Adaptive Helm",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
-        "pct": 8.5
+        "pct": 9.6
+      },
+      {
+        "name": "Protector's Vow",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
+        "pct": 9.6
+      },
+      {
+        "name": "Spirit Visage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+        "pct": 9.6
+      },
+      {
+        "name": "Sterak's Gage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_steraksgage.tft_set13.png",
+        "pct": 8.1
+      },
+      {
+        "name": "Warmog's Armor",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
+        "pct": 8.1
       },
       {
         "name": "Thief's Gloves",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 8.3
-      },
-      {
-        "name": "Ionic Spark",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_ionicspark.tft_set13.png",
-        "pct": 6.4
+        "pct": 7.4
       }
     ],
     "bestComps": [
       {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 216
-      },
-      {
         "id": "meeple-reroll",
         "name": "Meeple Reroll — Fizz / Corki",
-        "n": 184
+        "n": 134
+      },
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 111
       },
       {
         "id": "nova-brawler-viktor",
@@ -1749,459 +1744,459 @@ export const CHAMPION_STATS: Record<string, ChampionStats> = {
     ]
   },
   "riven": {
-    "avgPlace": 2.46,
-    "top4": 53.9,
-    "first": 22.7,
-    "pickRate": 20.6,
-    "sampleSize": 295,
+    "avgPlace": 2.45,
+    "top4": 52.6,
+    "first": 22.2,
+    "pickRate": 22.5,
+    "sampleSize": 234,
     "bestItems": [
       {
         "name": "Sterak's Gage",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_steraksgage.tft_set13.png",
-        "pct": 54.2
+        "pct": 50
       },
       {
         "name": "Bloodthirster",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
-        "pct": 44.4
-      },
-      {
-        "name": "Titan's Resolve",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_titansresolve.tft_set13.png",
-        "pct": 13.6
+        "pct": 42.3
       },
       {
         "name": "Giant Slayer",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 12.5
-      },
-      {
-        "name": "Edge of Night",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
-        "pct": 12.2
-      },
-      {
-        "name": "Infinity Edge",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
-        "pct": 10.2
+        "pct": 13.7
       },
       {
         "name": "Hand Of Justice",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.tft_set13.png",
-        "pct": 9.5
+        "pct": 12.4
+      },
+      {
+        "name": "Titan's Resolve",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_titansresolve.tft_set13.png",
+        "pct": 12
+      },
+      {
+        "name": "Edge of Night",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
+        "pct": 11.5
       },
       {
         "name": "Quicksilver",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_quicksilver.tft_set13.png",
-        "pct": 9.2
+        "pct": 11.1
+      },
+      {
+        "name": "Infinity Edge",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
+        "pct": 9.8
       }
     ],
     "bestComps": [
       {
         "id": "meeple-reroll",
         "name": "Meeple Reroll — Fizz / Corki",
-        "n": 212
+        "n": 159
       },
       {
         "id": "darkstar-karma",
         "name": "Dark Star — Karma & Kai'Sa",
-        "n": 21
+        "n": 12
       },
       {
         "id": "space-groove-snipers",
         "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 15
+        "n": 6
       }
     ]
   },
   "akali": {
-    "avgPlace": 2.48,
-    "top4": 51.9,
-    "first": 24.8,
-    "pickRate": 22.2,
-    "sampleSize": 318,
+    "avgPlace": 2.39,
+    "top4": 56.1,
+    "first": 26.5,
+    "pickRate": 18.8,
+    "sampleSize": 196,
     "bestItems": [
       {
         "name": "Thief's Gloves",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
+        "pct": 3.1
+      },
+      {
+        "name": "Edge of Night",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
+        "pct": 2.6
+      },
+      {
+        "name": "Striker's Flail",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
+        "pct": 2.6
+      },
+      {
+        "name": "Crownguard",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
+        "pct": 1.5
+      },
+      {
+        "name": "Bloodthirster",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
+        "pct": 1
+      },
+      {
+        "name": "Hand Of Justice",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.tft_set13.png",
+        "pct": 1
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 0.5
+      },
+      {
+        "name": "Kraken's Fury",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_krakenslayer.png",
+        "pct": 0.5
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "vanguard-vex",
+        "name": "Vanguard — Vex & Nunu",
+        "n": 145
+      },
+      {
+        "id": "marauder-yi-kindred",
+        "name": "Marauder — Master Yi & Kindred",
+        "n": 34
+      },
+      {
+        "id": "replicator-nova-mf",
+        "name": "Replicator / N.O.V.A. — Miss Fortune",
+        "n": 2
+      }
+    ]
+  },
+  "tahmkench": {
+    "avgPlace": 2.46,
+    "top4": 51.1,
+    "first": 23.7,
+    "pickRate": 26,
+    "sampleSize": 270,
+    "bestItems": [
+      {
+        "name": "Sunfire Cape",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
+        "pct": 23.7
+      },
+      {
+        "name": "Spirit Visage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+        "pct": 23.3
+      },
+      {
+        "name": "Warmog's Armor",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
+        "pct": 21.1
+      },
+      {
+        "name": "Evenshroud",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spectralgauntlet.tft_set13.png",
+        "pct": 17
+      },
+      {
+        "name": "Protector's Vow",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
+        "pct": 14.8
+      },
+      {
+        "name": "Gargoyle Stoneplate",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
+        "pct": 13.3
+      },
+      {
+        "name": "Bramble Vest",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bramblevest.tft_set13.png",
+        "pct": 13
+      },
+      {
+        "name": "Crownguard",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
+        "pct": 10.4
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "marauder-yi-kindred",
+        "name": "Marauder — Master Yi & Kindred",
+        "n": 77
+      },
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 60
+      },
+      {
+        "id": "space-groove-snipers",
+        "name": "Space Groove Snipers — Xayah & Samira",
+        "n": 54
+      }
+    ]
+  },
+  "fiora": {
+    "avgPlace": 2.21,
+    "top4": 61.1,
+    "first": 32.1,
+    "pickRate": 24.2,
+    "sampleSize": 252,
+    "bestItems": [
+      {
+        "name": "Thief's Gloves",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
+        "pct": 22.6
+      },
+      {
+        "name": "Edge of Night",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
+        "pct": 22.2
+      },
+      {
+        "name": "Sterak's Gage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_steraksgage.tft_set13.png",
+        "pct": 20.2
+      },
+      {
+        "name": "Bloodthirster",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
+        "pct": 16.7
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 13.5
+      },
+      {
+        "name": "Hand Of Justice",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.tft_set13.png",
+        "pct": 12.3
+      },
+      {
+        "name": "Quicksilver",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_quicksilver.tft_set13.png",
+        "pct": 10.3
+      },
+      {
+        "name": "Deathblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
+        "pct": 6.7
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "vanguard-vex",
+        "name": "Vanguard — Vex & Nunu",
+        "n": 151
+      },
+      {
+        "id": "marauder-yi-kindred",
+        "name": "Marauder — Master Yi & Kindred",
+        "n": 67
+      },
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 16
+      }
+    ]
+  },
+  "shen": {
+    "avgPlace": 2.25,
+    "top4": 62,
+    "first": 28.2,
+    "pickRate": 30.4,
+    "sampleSize": 316,
+    "bestItems": [
+      {
+        "name": "Thief's Gloves",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
+        "pct": 18.7
+      },
+      {
+        "name": "Adaptive Helm",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
+        "pct": 4.7
+      },
+      {
+        "name": "Rabadon's Deathcap",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
         "pct": 3.5
       },
       {
         "name": "Edge of Night",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
-        "pct": 3.1
-      },
-      {
-        "name": "Hand Of Justice",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.tft_set13.png",
-        "pct": 2.5
-      },
-      {
-        "name": "Bloodthirster",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
-        "pct": 2.2
-      },
-      {
-        "name": "Striker's Flail",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 1.6
-      },
-      {
-        "name": "Last Whisper",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.tft_set13.png",
-        "pct": 1.3
-      },
-      {
-        "name": "Quicksilver",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_quicksilver.tft_set13.png",
-        "pct": 1.3
-      },
-      {
-        "name": "Infinity Edge",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
-        "pct": 0.9
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "vanguard-vex",
-        "name": "Vanguard — Vex & Nunu",
-        "n": 221
-      },
-      {
-        "id": "marauder-yi-kindred",
-        "name": "Marauder — Master Yi & Kindred",
-        "n": 62
-      },
-      {
-        "id": "brawler-reroll-gragas",
-        "name": "Brawler Reroll — Gragas & Master Yi",
-        "n": 5
-      }
-    ]
-  },
-  "tahmkench": {
-    "avgPlace": 2.49,
-    "top4": 50.7,
-    "first": 22.3,
-    "pickRate": 26.3,
-    "sampleSize": 377,
-    "bestItems": [
-      {
-        "name": "Sunfire Cape",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
-        "pct": 29.4
-      },
-      {
-        "name": "Warmog's Armor",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 24.1
-      },
-      {
-        "name": "Spirit Visage",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
-        "pct": 23.9
-      },
-      {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 17.2
-      },
-      {
-        "name": "Evenshroud",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spectralgauntlet.tft_set13.png",
-        "pct": 17.2
-      },
-      {
-        "name": "Gargoyle Stoneplate",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 16.7
+        "pct": 3.2
       },
       {
         "name": "Bramble Vest",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bramblevest.tft_set13.png",
-        "pct": 10.9
-      },
-      {
-        "name": "Dragon's Claw",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_dragonsclaw.tft_set13.png",
-        "pct": 10.6
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "marauder-yi-kindred",
-        "name": "Marauder — Master Yi & Kindred",
-        "n": 108
-      },
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 104
-      },
-      {
-        "id": "space-groove-snipers",
-        "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 72
-      }
-    ]
-  },
-  "fiora": {
-    "avgPlace": 2.37,
-    "top4": 55.1,
-    "first": 29,
-    "pickRate": 26.5,
-    "sampleSize": 379,
-    "bestItems": [
-      {
-        "name": "Sterak's Gage",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_steraksgage.tft_set13.png",
-        "pct": 20.6
-      },
-      {
-        "name": "Thief's Gloves",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 20.3
-      },
-      {
-        "name": "Edge of Night",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
-        "pct": 19.3
-      },
-      {
-        "name": "Bloodthirster",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
-        "pct": 15.6
+        "pct": 2.8
       },
       {
         "name": "Hand Of Justice",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.tft_set13.png",
-        "pct": 13.7
+        "pct": 2.8
       },
       {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 12.9
-      },
-      {
-        "name": "Quicksilver",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_quicksilver.tft_set13.png",
-        "pct": 11.3
-      },
-      {
-        "name": "Titan's Resolve",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_titansresolve.tft_set13.png",
-        "pct": 7.1
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "vanguard-vex",
-        "name": "Vanguard — Vex & Nunu",
-        "n": 230
-      },
-      {
-        "id": "marauder-yi-kindred",
-        "name": "Marauder — Master Yi & Kindred",
-        "n": 93
-      },
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 23
-      }
-    ]
-  },
-  "shen": {
-    "avgPlace": 2.29,
-    "top4": 60,
-    "first": 30.7,
-    "pickRate": 29.1,
-    "sampleSize": 417,
-    "bestItems": [
-      {
-        "name": "Thief's Gloves",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 16.8
-      },
-      {
-        "name": "Edge of Night",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
-        "pct": 4.1
-      },
-      {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 4.1
-      },
-      {
-        "name": "Adaptive Helm",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
-        "pct": 3.6
-      },
-      {
-        "name": "Crownguard",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
-        "pct": 2.9
+        "name": "Sunfire Cape",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
+        "pct": 2.8
       },
       {
         "name": "Warmog's Armor",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 2.9
-      },
-      {
-        "name": "Dragon's Claw",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_dragonsclaw.tft_set13.png",
-        "pct": 2.6
-      },
-      {
-        "name": "Steadfast Heart",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_nightharvester.tft_set13.png",
-        "pct": 2.6
+        "pct": 2.5
       }
     ],
     "bestComps": [
       {
         "id": "vanguard-vex",
         "name": "Vanguard — Vex & Nunu",
-        "n": 234
+        "n": 150
       },
       {
         "id": "meeple-reroll",
         "name": "Meeple Reroll — Fizz / Corki",
-        "n": 79
+        "n": 64
       },
       {
-        "id": "space-groove-snipers",
-        "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 24
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 18
       }
     ]
   },
   "graves": {
-    "avgPlace": 2.43,
-    "top4": 53.3,
-    "first": 27.8,
-    "pickRate": 18.9,
-    "sampleSize": 270,
+    "avgPlace": 2.26,
+    "top4": 60.5,
+    "first": 31.4,
+    "pickRate": 17.8,
+    "sampleSize": 185,
     "bestItems": [
-      {
-        "name": "Quicksilver",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_quicksilver.tft_set13.png",
-        "pct": 43.3
-      },
       {
         "name": "Giant Slayer",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 40
+        "pct": 43.2
+      },
+      {
+        "name": "Quicksilver",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_quicksilver.tft_set13.png",
+        "pct": 41.6
       },
       {
         "name": "Deathblade",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
-        "pct": 34.8
-      },
-      {
-        "name": "Sterak's Gage",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_steraksgage.tft_set13.png",
-        "pct": 17.4
+        "pct": 36.2
       },
       {
         "name": "Striker's Flail",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 15.6
+        "pct": 13.5
       },
       {
         "name": "Infinity Edge",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
-        "pct": 13.3
+        "pct": 13.5
       },
       {
-        "name": "Edge of Night",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
-        "pct": 10.4
+        "name": "Sterak's Gage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_steraksgage.tft_set13.png",
+        "pct": 13.5
       },
       {
         "name": "Spear of Shojin",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
-        "pct": 8.9
+        "pct": 11.4
+      },
+      {
+        "name": "Edge of Night",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
+        "pct": 10.8
       }
     ],
     "bestComps": [
       {
         "id": "vanguard-vex",
         "name": "Vanguard — Vex & Nunu",
-        "n": 219
+        "n": 150
       },
       {
         "id": "darkstar-karma",
         "name": "Dark Star — Karma & Kai'Sa",
-        "n": 20
+        "n": 12
       },
       {
         "id": "marauder-yi-kindred",
         "name": "Marauder — Master Yi & Kindred",
-        "n": 6
+        "n": 7
       }
     ]
   },
   "twistedfate": {
     "avgPlace": 2.39,
-    "top4": 57.8,
-    "first": 23.5,
-    "pickRate": 7.1,
-    "sampleSize": 102,
+    "top4": 59.3,
+    "first": 24.1,
+    "pickRate": 5.2,
+    "sampleSize": 54,
     "bestItems": [
       {
         "name": "Nashor's Tooth",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.tft_set13.png",
-        "pct": 17.6
-      },
-      {
-        "name": "Rabadon's Deathcap",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
-        "pct": 6.9
+        "pct": 13
       },
       {
         "name": "Jeweled Gauntlet",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 4.9
+        "pct": 7.4
       },
       {
-        "name": "Thief's Gloves",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 2.9
+        "name": "Rabadon's Deathcap",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
+        "pct": 7.4
+      },
+      {
+        "name": "Red Buff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
+        "pct": 3.7
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 1.9
       },
       {
         "name": "Infinity Edge",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
-        "pct": 2
+        "pct": 1.9
+      },
+      {
+        "name": "Hand Of Justice",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.tft_set13.png",
+        "pct": 1.9
       },
       {
         "name": "Morellonomicon",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
-        "pct": 2
-      },
-      {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 2
-      },
-      {
-        "name": "Blue Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
-        "pct": 2
+        "pct": 1.9
       }
     ],
     "bestComps": [
       {
-        "id": "space-groove-snipers",
-        "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 9
-      },
-      {
         "id": "fateweaver-rogue-reroll",
         "name": "Fateweaver / Rogue Reroll — Caitlyn",
-        "n": 7
+        "n": 5
+      },
+      {
+        "id": "space-groove-snipers",
+        "name": "Space Groove Snipers — Xayah & Samira",
+        "n": 4
       },
       {
         "id": "replicator-nova-mf",
@@ -2211,124 +2206,124 @@ export const CHAMPION_STATS: Record<string, ChampionStats> = {
     ]
   },
   "jax": {
-    "avgPlace": 2.51,
-    "top4": 53.4,
-    "first": 20.8,
-    "pickRate": 16.5,
-    "sampleSize": 236,
+    "avgPlace": 2.57,
+    "top4": 52,
+    "first": 18,
+    "pickRate": 14.4,
+    "sampleSize": 150,
     "bestItems": [
       {
         "name": "Gargoyle Stoneplate",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 22.5
+        "pct": 16
       },
       {
         "name": "Titan's Resolve",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_titansresolve.tft_set13.png",
-        "pct": 15.7
+        "pct": 14
       },
       {
         "name": "Bloodthirster",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
-        "pct": 14.8
+        "pct": 12
       },
       {
         "name": "Edge of Night",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
-        "pct": 10.6
-      },
-      {
-        "name": "Crownguard",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
-        "pct": 7.2
-      },
-      {
-        "name": "Spirit Visage",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
-        "pct": 7.2
-      },
-      {
-        "name": "Warmog's Armor",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 6.8
+        "pct": 8
       },
       {
         "name": "Protector's Vow",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 6.4
+        "pct": 6
+      },
+      {
+        "name": "Spirit Visage",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+        "pct": 5.3
+      },
+      {
+        "name": "Thief's Gloves",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
+        "pct": 4.7
+      },
+      {
+        "name": "Crownguard",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
+        "pct": 3.3
       }
     ],
     "bestComps": [
       {
         "id": "space-groove-snipers",
         "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 104
+        "n": 75
       },
       {
         "id": "marauder-yi-kindred",
         "name": "Marauder — Master Yi & Kindred",
-        "n": 14
+        "n": 8
       },
       {
-        "id": "fateweaver-rogue-reroll",
-        "name": "Fateweaver / Rogue Reroll — Caitlyn",
-        "n": 7
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 5
       }
     ]
   },
   "lulu": {
-    "avgPlace": 2.41,
-    "top4": 57.4,
-    "first": 23.1,
-    "pickRate": 7.5,
-    "sampleSize": 108,
+    "avgPlace": 2.49,
+    "top4": 55.9,
+    "first": 25.4,
+    "pickRate": 5.7,
+    "sampleSize": 59,
     "bestItems": [
-      {
-        "name": "Nashor's Tooth",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.tft_set13.png",
-        "pct": 113
-      },
       {
         "name": "Jeweled Gauntlet",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 75
+        "pct": 71.2
+      },
+      {
+        "name": "Nashor's Tooth",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.tft_set13.png",
+        "pct": 59.3
       },
       {
         "name": "Spear of Shojin",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
-        "pct": 12
+        "pct": 15.3
       },
       {
         "name": "Void Staff",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
-        "pct": 10.2
-      },
-      {
-        "name": "Archangel's Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_archangelsstaff.tft_set13.png",
-        "pct": 6.5
+        "pct": 8.5
       },
       {
         "name": "Blue Buff",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
-        "pct": 5.6
+        "pct": 6.8
       },
       {
-        "name": "Red Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
-        "pct": 4.6
+        "name": "Striker's Flail",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
+        "pct": 6.8
       },
       {
         "name": "Rabadon's Deathcap",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
-        "pct": 4.6
+        "pct": 5.1
+      },
+      {
+        "name": "Morellonomicon",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
+        "pct": 3.4
       }
     ],
     "bestComps": [
       {
         "id": "space-groove-snipers",
         "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 13
+        "n": 7
       },
       {
         "id": "replicator-nova-mf",
@@ -2336,465 +2331,333 @@ export const CHAMPION_STATS: Record<string, ChampionStats> = {
         "n": 4
       },
       {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
+        "id": "fateweaver-rogue-reroll",
+        "name": "Fateweaver / Rogue Reroll — Caitlyn",
         "n": 2
       }
     ]
   },
-  "pyke": {
-    "avgPlace": 2.81,
-    "top4": 38.6,
-    "first": 17.5,
-    "pickRate": 4,
-    "sampleSize": 57,
-    "bestItems": [
-      {
-        "name": "Infinity Edge",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
-        "pct": 38.6
-      },
-      {
-        "name": "Edge of Night",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
-        "pct": 19.3
-      },
-      {
-        "name": "Hand Of Justice",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.tft_set13.png",
-        "pct": 15.8
-      },
-      {
-        "name": "Bloodthirster",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
-        "pct": 12.3
-      },
-      {
-        "name": "Deathblade",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
-        "pct": 7
-      },
-      {
-        "name": "Thief's Gloves",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 5.3
-      },
-      {
-        "name": "Sterak's Gage",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_steraksgage.tft_set13.png",
-        "pct": 3.5
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 3.5
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "brawler-reroll-gragas",
-        "name": "Brawler Reroll — Gragas & Master Yi",
-        "n": 22
-      },
-      {
-        "id": "nova-brawler-viktor",
-        "name": "N.O.V.A. / Brawler — Viktor + Ornn",
-        "n": 16
-      },
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 15
-      }
-    ]
-  },
   "morgana": {
-    "avgPlace": 2.49,
-    "top4": 52.2,
-    "first": 21.4,
-    "pickRate": 14,
-    "sampleSize": 201,
+    "avgPlace": 2.39,
+    "top4": 53.1,
+    "first": 26.2,
+    "pickRate": 13.9,
+    "sampleSize": 145,
     "bestItems": [
-      {
-        "name": "Thief's Gloves",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 11.4
-      },
       {
         "name": "Sunfire Cape",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
-        "pct": 9.5
-      },
-      {
-        "name": "Crownguard",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
-        "pct": 7
-      },
-      {
-        "name": "Warmog's Armor",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
-        "pct": 7
+        "pct": 9.7
       },
       {
         "name": "Gargoyle Stoneplate",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 6.5
+        "pct": 7.6
       },
       {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 6.5
+        "name": "Crownguard",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
+        "pct": 6.9
+      },
+      {
+        "name": "Thief's Gloves",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
+        "pct": 6.9
       },
       {
         "name": "Spirit Visage",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
+        "pct": 6.2
+      },
+      {
+        "name": "Steadfast Heart",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_nightharvester.tft_set13.png",
+        "pct": 6.2
+      },
+      {
+        "name": "Protector's Vow",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
         "pct": 5.5
       },
       {
         "name": "Adaptive Helm",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
-        "pct": 5
+        "pct": 5.5
       }
     ],
     "bestComps": [
       {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 61
-      },
-      {
         "id": "vanguard-vex",
         "name": "Vanguard — Vex & Nunu",
-        "n": 49
+        "n": 36
+      },
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 35
       },
       {
         "id": "marauder-yi-kindred",
         "name": "Marauder — Master Yi & Kindred",
-        "n": 26
+        "n": 17
       }
     ]
   },
   "belveth": {
-    "avgPlace": 2.58,
-    "top4": 48.1,
-    "first": 20.3,
-    "pickRate": 11,
-    "sampleSize": 158,
+    "avgPlace": 2.54,
+    "top4": 49.6,
+    "first": 20.4,
+    "pickRate": 10.9,
+    "sampleSize": 113,
     "bestItems": [
       {
         "name": "Kraken's Fury",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_krakenslayer.png",
-        "pct": 8.2
+        "pct": 7.1
       },
       {
         "name": "Giant Slayer",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 8.2
+        "pct": 6.2
       },
       {
         "name": "Quicksilver",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_quicksilver.tft_set13.png",
-        "pct": 5.7
+        "pct": 6.2
       },
       {
-        "name": "Guinsoo's Rageblade",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
-        "pct": 5.1
-      },
-      {
-        "name": "Thief's Gloves",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 5.1
-      },
-      {
-        "name": "Titan's Resolve",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_titansresolve.tft_set13.png",
-        "pct": 2.5
+        "name": "Deathblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
+        "pct": 5.3
       },
       {
         "name": "Edge of Night",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
-        "pct": 2.5
+        "pct": 3.5
+      },
+      {
+        "name": "Thief's Gloves",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
+        "pct": 3.5
+      },
+      {
+        "name": "Guinsoo's Rageblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
+        "pct": 2.7
       },
       {
         "name": "Last Whisper",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.tft_set13.png",
-        "pct": 1.9
+        "pct": 2.7
       }
     ],
     "bestComps": [
       {
         "id": "marauder-yi-kindred",
         "name": "Marauder — Master Yi & Kindred",
-        "n": 123
+        "n": 90
       },
       {
         "id": "replicator-nova-mf",
         "name": "Replicator / N.O.V.A. — Miss Fortune",
-        "n": 17
+        "n": 16
       },
       {
-        "id": "brawler-reroll-gragas",
-        "name": "Brawler Reroll — Gragas & Master Yi",
-        "n": 3
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 1
       }
     ]
   },
   "aurelionsol": {
-    "avgPlace": 2.6,
-    "top4": 47.1,
-    "first": 22.3,
-    "pickRate": 8.4,
-    "sampleSize": 121,
+    "avgPlace": 2.69,
+    "top4": 40.7,
+    "first": 26.7,
+    "pickRate": 8.3,
+    "sampleSize": 86,
     "bestItems": [
       {
         "name": "Jeweled Gauntlet",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 77.7
+        "pct": 70.9
       },
       {
         "name": "Rabadon's Deathcap",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
-        "pct": 53.7
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 35.5
+        "pct": 54.7
       },
       {
         "name": "Striker's Flail",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 33.1
+        "pct": 33.7
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 19.8
+      },
+      {
+        "name": "Void Staff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
+        "pct": 9.3
       },
       {
         "name": "Archangel's Staff",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_archangelsstaff.tft_set13.png",
-        "pct": 10.7
+        "pct": 7
       },
       {
-        "name": "Void Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
-        "pct": 9.9
+        "name": "Adaptive Helm",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
+        "pct": 1.2
       },
       {
-        "name": "Nashor's Tooth",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.tft_set13.png",
-        "pct": 3.3
-      },
-      {
-        "name": "Hextech Gunblade",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_hextechgunblade.tft_set13.png",
-        "pct": 3.3
+        "name": "Morellonomicon",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
+        "pct": 1.2
       }
     ],
     "bestComps": [
       {
         "id": "darkstar-karma",
         "name": "Dark Star — Karma & Kai'Sa",
-        "n": 113
+        "n": 72
       },
       {
-        "id": "replicator-nova-mf",
-        "name": "Replicator / N.O.V.A. — Miss Fortune",
-        "n": 1
-      },
-      {
-        "id": "meeple-reroll",
-        "name": "Meeple Reroll — Fizz / Corki",
-        "n": 1
-      }
-    ]
-  },
-  "ezreal": {
-    "avgPlace": 2.36,
-    "top4": 53,
-    "first": 33.3,
-    "pickRate": 4.6,
-    "sampleSize": 66,
-    "bestItems": [
-      {
-        "name": "Infinity Edge",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
-        "pct": 12.1
-      },
-      {
-        "name": "Spear of Shojin",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
-        "pct": 12.1
-      },
-      {
-        "name": "Deathblade",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
-        "pct": 6.1
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 3
-      },
-      {
-        "name": "Striker's Flail",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 1.5
-      },
-      {
-        "name": "Void Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
-        "pct": 1.5
-      },
-      {
-        "name": "Last Whisper",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.tft_set13.png",
-        "pct": 1.5
-      },
-      {
-        "name": "Jeweled Gauntlet",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 1.5
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 54
-      },
-      {
-        "id": "space-groove-snipers",
-        "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 4
-      },
-      {
-        "id": "brawler-reroll-gragas",
-        "name": "Brawler Reroll — Gragas & Master Yi",
+        "id": "vanguard-vex",
+        "name": "Vanguard — Vex & Nunu",
         "n": 2
+      },
+      {
+        "id": "nova-brawler-viktor",
+        "name": "N.O.V.A. / Brawler — Viktor + Ornn",
+        "n": 1
       }
     ]
   },
   "leona": {
-    "avgPlace": 2.53,
-    "top4": 50,
-    "first": 28,
-    "pickRate": 8.2,
-    "sampleSize": 118,
+    "avgPlace": 2.67,
+    "top4": 46.9,
+    "first": 19.4,
+    "pickRate": 9.4,
+    "sampleSize": 98,
     "bestItems": [
       {
         "name": "Gargoyle Stoneplate",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 37.3
+        "pct": 22.4
       },
       {
         "name": "Warmog's Armor",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
+        "pct": 17.3
+      },
+      {
+        "name": "Protector's Vow",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
         "pct": 15.3
       },
       {
         "name": "Spirit Visage",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spiritvisagerr.png",
-        "pct": 15.3
+        "pct": 10.2
       },
       {
-        "name": "Sunfire Cape",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
-        "pct": 12.7
+        "name": "Dragon's Claw",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_dragonsclaw.tft_set13.png",
+        "pct": 10.2
       },
       {
-        "name": "Protector's Vow",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_frozenheart.tft_set13.png",
-        "pct": 11.9
-      },
-      {
-        "name": "Bloodthirster",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
-        "pct": 9.3
+        "name": "Crownguard",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
+        "pct": 10.2
       },
       {
         "name": "Titan's Resolve",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_titansresolve.tft_set13.png",
-        "pct": 8.5
+        "pct": 9.2
       },
       {
-        "name": "Bramble Vest",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bramblevest.tft_set13.png",
-        "pct": 8.5
+        "name": "Sunfire Cape",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
+        "pct": 9.2
       }
     ],
     "bestComps": [
       {
         "id": "darkstar-karma",
         "name": "Dark Star — Karma & Kai'Sa",
-        "n": 64
+        "n": 51
       },
       {
         "id": "vanguard-vex",
         "name": "Vanguard — Vex & Nunu",
-        "n": 5
+        "n": 6
       },
       {
-        "id": "marauder-yi-kindred",
-        "name": "Marauder — Master Yi & Kindred",
+        "id": "replicator-nova-mf",
+        "name": "Replicator / N.O.V.A. — Miss Fortune",
         "n": 4
       }
     ]
   },
   "leblanc": {
-    "avgPlace": 2.62,
-    "top4": 46.2,
-    "first": 22,
-    "pickRate": 6.4,
-    "sampleSize": 91,
+    "avgPlace": 2.83,
+    "top4": 35.7,
+    "first": 17.1,
+    "pickRate": 6.7,
+    "sampleSize": 70,
     "bestItems": [
       {
         "name": "Guinsoo's Rageblade",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
-        "pct": 63.7
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 30.8
-      },
-      {
-        "name": "Jeweled Gauntlet",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 25.3
+        "pct": 52.9
       },
       {
         "name": "Rabadon's Deathcap",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
-        "pct": 20.9
+        "pct": 28.6
+      },
+      {
+        "name": "Jeweled Gauntlet",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
+        "pct": 27.1
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 25.7
       },
       {
         "name": "Hextech Gunblade",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_hextechgunblade.tft_set13.png",
-        "pct": 9.9
-      },
-      {
-        "name": "Striker's Flail",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 8.8
-      },
-      {
-        "name": "Void Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
-        "pct": 8.8
+        "pct": 15.7
       },
       {
         "name": "Red Buff",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
-        "pct": 7.7
+        "pct": 10
+      },
+      {
+        "name": "Void Staff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
+        "pct": 8.6
+      },
+      {
+        "name": "Thief's Gloves",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
+        "pct": 5.7
       }
     ],
     "bestComps": [
       {
         "id": "darkstar-karma",
         "name": "Dark Star — Karma & Kai'Sa",
-        "n": 50
+        "n": 33
       },
       {
-        "id": "meeple-reroll",
-        "name": "Meeple Reroll — Fizz / Corki",
+        "id": "brawler-reroll-gragas",
+        "name": "Brawler Reroll — Gragas & Master Yi",
         "n": 3
       },
       {
@@ -2805,36 +2668,36 @@ export const CHAMPION_STATS: Record<string, ChampionStats> = {
     ]
   },
   "urgot": {
-    "avgPlace": 2.57,
-    "top4": 48.4,
-    "first": 19.5,
-    "pickRate": 13.3,
-    "sampleSize": 190,
+    "avgPlace": 2.63,
+    "top4": 45.3,
+    "first": 20,
+    "pickRate": 14.4,
+    "sampleSize": 150,
     "bestItems": [
       {
         "name": "Thief's Gloves",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 10.5
+        "pct": 13.3
       },
       {
         "name": "Giant Slayer",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 9.5
+        "pct": 10
       },
       {
         "name": "Sterak's Gage",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_steraksgage.tft_set13.png",
-        "pct": 8.9
-      },
-      {
-        "name": "Deathblade",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
-        "pct": 8.9
+        "pct": 9.3
       },
       {
         "name": "Quicksilver",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_quicksilver.tft_set13.png",
-        "pct": 5.3
+        "pct": 6.7
+      },
+      {
+        "name": "Deathblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
+        "pct": 6.7
       },
       {
         "name": "Hand Of Justice",
@@ -2847,272 +2710,272 @@ export const CHAMPION_STATS: Record<string, ChampionStats> = {
         "pct": 4.7
       },
       {
-        "name": "Steadfast Heart",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_nightharvester.tft_set13.png",
-        "pct": 4.2
+        "name": "Edge of Night",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
+        "pct": 4
       }
     ],
     "bestComps": [
       {
         "id": "marauder-yi-kindred",
         "name": "Marauder — Master Yi & Kindred",
-        "n": 115
+        "n": 89
       },
       {
         "id": "replicator-nova-mf",
         "name": "Replicator / N.O.V.A. — Miss Fortune",
-        "n": 31
+        "n": 27
       },
       {
         "id": "brawler-reroll-gragas",
         "name": "Brawler Reroll — Gragas & Master Yi",
-        "n": 21
+        "n": 17
       }
     ]
   },
   "kindred": {
-    "avgPlace": 2.4,
-    "top4": 55.2,
-    "first": 22.1,
-    "pickRate": 11.4,
-    "sampleSize": 163,
+    "avgPlace": 2.47,
+    "top4": 50.4,
+    "first": 20.9,
+    "pickRate": 11.1,
+    "sampleSize": 115,
     "bestItems": [
       {
         "name": "Guinsoo's Rageblade",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
-        "pct": 46
+        "pct": 41.7
+      },
+      {
+        "name": "Giant Slayer",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
+        "pct": 27.8
       },
       {
         "name": "Kraken's Fury",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_krakenslayer.png",
-        "pct": 30.7
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 27.6
+        "pct": 27
       },
       {
         "name": "Last Whisper",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.tft_set13.png",
-        "pct": 23.9
+        "pct": 22.6
       },
       {
         "name": "Red Buff",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
-        "pct": 13.5
+        "pct": 13.9
       },
       {
         "name": "Deathblade",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
-        "pct": 11.7
+        "pct": 11.3
       },
       {
         "name": "Striker's Flail",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 6.1
+        "pct": 7
       },
       {
         "name": "Infinity Edge",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
-        "pct": 6.1
+        "pct": 4.3
       }
     ],
     "bestComps": [
       {
         "id": "marauder-yi-kindred",
         "name": "Marauder — Master Yi & Kindred",
-        "n": 148
-      },
-      {
-        "id": "brawler-reroll-gragas",
-        "name": "Brawler Reroll — Gragas & Master Yi",
-        "n": 5
+        "n": 106
       },
       {
         "id": "vanguard-vex",
         "name": "Vanguard — Vex & Nunu",
-        "n": 5
+        "n": 3
+      },
+      {
+        "id": "brawler-reroll-gragas",
+        "name": "Brawler Reroll — Gragas & Master Yi",
+        "n": 2
       }
     ]
   },
   "masteryi": {
-    "avgPlace": 2.56,
-    "top4": 49.7,
-    "first": 19.2,
-    "pickRate": 10.5,
-    "sampleSize": 151,
+    "avgPlace": 2.6,
+    "top4": 44.7,
+    "first": 19.4,
+    "pickRate": 9.9,
+    "sampleSize": 103,
     "bestItems": [
       {
         "name": "Edge of Night",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
-        "pct": 73.5
+        "pct": 77.7
       },
       {
         "name": "Giant Slayer",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 54.3
+        "pct": 46.6
       },
       {
         "name": "Quicksilver",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_quicksilver.tft_set13.png",
-        "pct": 34.4
+        "pct": 38.8
       },
       {
         "name": "Deathblade",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
-        "pct": 4
+        "pct": 6.8
       },
       {
         "name": "Titan's Resolve",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_titansresolve.tft_set13.png",
-        "pct": 3.3
+        "pct": 3.9
       },
       {
         "name": "Hand Of Justice",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.tft_set13.png",
-        "pct": 2.6
-      },
-      {
-        "name": "Guinsoo's Rageblade",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
-        "pct": 2
+        "pct": 1.9
       },
       {
         "name": "Sterak's Gage",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_steraksgage.tft_set13.png",
-        "pct": 2
+        "pct": 1.9
+      },
+      {
+        "name": "Bloodthirster",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
+        "pct": 1.9
       }
     ],
     "bestComps": [
       {
         "id": "marauder-yi-kindred",
         "name": "Marauder — Master Yi & Kindred",
-        "n": 108
+        "n": 77
       },
       {
         "id": "brawler-reroll-gragas",
         "name": "Brawler Reroll — Gragas & Master Yi",
-        "n": 28
+        "n": 18
       },
       {
-        "id": "nova-brawler-viktor",
-        "name": "N.O.V.A. / Brawler — Viktor + Ornn",
-        "n": 3
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 2
       }
     ]
   },
   "diana": {
-    "avgPlace": 2.83,
-    "top4": 39.5,
-    "first": 10.5,
-    "pickRate": 5.3,
-    "sampleSize": 76,
+    "avgPlace": 2.91,
+    "top4": 40.4,
+    "first": 4.3,
+    "pickRate": 4.5,
+    "sampleSize": 47,
     "bestItems": [
       {
         "name": "Titan's Resolve",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_titansresolve.tft_set13.png",
-        "pct": 51.3
+        "pct": 48.9
       },
       {
         "name": "Guinsoo's Rageblade",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
-        "pct": 40.8
+        "pct": 46.8
       },
       {
         "name": "Bloodthirster",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
-        "pct": 36.8
+        "pct": 44.7
       },
       {
         "name": "Thief's Gloves",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 14.5
-      },
-      {
-        "name": "Edge of Night",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
-        "pct": 5.3
+        "pct": 12.8
       },
       {
         "name": "Jeweled Gauntlet",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 5.3
+        "pct": 10.6
       },
       {
-        "name": "Quicksilver",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_quicksilver.tft_set13.png",
-        "pct": 3.9
+        "name": "Hand Of Justice",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_unstableconcoction.tft_set13.png",
+        "pct": 8.5
       },
       {
         "name": "Giant Slayer",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 3.9
+        "pct": 6.4
+      },
+      {
+        "name": "Nashor's Tooth",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.tft_set13.png",
+        "pct": 4.3
       }
     ],
     "bestComps": [
       {
         "id": "replicator-nova-mf",
         "name": "Replicator / N.O.V.A. — Miss Fortune",
-        "n": 23
+        "n": 18
       },
       {
         "id": "marauder-yi-kindred",
         "name": "Marauder — Master Yi & Kindred",
-        "n": 21
+        "n": 7
       },
       {
         "id": "darkstar-karma",
         "name": "Dark Star — Karma & Kai'Sa",
-        "n": 5
+        "n": 2
       }
     ]
   },
   "xayah": {
-    "avgPlace": 2.45,
-    "top4": 56.1,
-    "first": 19.7,
-    "pickRate": 9.2,
-    "sampleSize": 132,
+    "avgPlace": 2.61,
+    "top4": 50.5,
+    "first": 17.2,
+    "pickRate": 9.5,
+    "sampleSize": 99,
     "bestItems": [
       {
         "name": "Kraken's Fury",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_krakenslayer.png",
-        "pct": 113.6
+        "pct": 72.7
       },
       {
         "name": "Red Buff",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
-        "pct": 59.1
+        "pct": 56.6
       },
       {
         "name": "Guinsoo's Rageblade",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
-        "pct": 15.9
+        "pct": 15.2
       },
       {
         "name": "Deathblade",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
-        "pct": 9.8
-      },
-      {
-        "name": "Last Whisper",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.tft_set13.png",
-        "pct": 8.3
+        "pct": 11.1
       },
       {
         "name": "Giant Slayer",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 6.8
+        "pct": 8.1
       },
       {
-        "name": "Infinity Edge",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
+        "name": "Last Whisper",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.tft_set13.png",
         "pct": 3
       },
       {
         "name": "Striker's Flail",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
+        "pct": 3
+      },
+      {
+        "name": "Infinity Edge",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
         "pct": 3
       }
     ],
@@ -3120,7 +2983,7 @@ export const CHAMPION_STATS: Record<string, ChampionStats> = {
       {
         "id": "space-groove-snipers",
         "name": "Space Groove Snipers — Xayah & Samira",
-        "n": 113
+        "n": 84
       },
       {
         "id": "darkstar-karma",
@@ -3128,70 +2991,70 @@ export const CHAMPION_STATS: Record<string, ChampionStats> = {
         "n": 14
       },
       {
-        "id": "vanguard-vex",
-        "name": "Vanguard — Vex & Nunu",
-        "n": 2
+        "id": "marauder-yi-kindred",
+        "name": "Marauder — Master Yi & Kindred",
+        "n": 1
       }
     ]
   },
   "gwen": {
-    "avgPlace": 2.45,
-    "top4": 57.1,
-    "first": 21.4,
-    "pickRate": 2.9,
-    "sampleSize": 42,
+    "avgPlace": 2.35,
+    "top4": 62.1,
+    "first": 22.7,
+    "pickRate": 6.3,
+    "sampleSize": 66,
     "bestItems": [
       {
         "name": "Thief's Gloves",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
-        "pct": 16.7
+        "pct": 10.6
       },
       {
         "name": "Jeweled Gauntlet",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 9.5
+        "pct": 9.1
       },
       {
-        "name": "Bloodthirster",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
-        "pct": 7.1
+        "name": "Rabadon's Deathcap",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
+        "pct": 7.6
       },
       {
-        "name": "Spear of Shojin",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
-        "pct": 4.8
-      },
-      {
-        "name": "Gargoyle Stoneplate",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_gargoylestoneplate.tft_set13.png",
-        "pct": 4.8
+        "name": "Hextech Gunblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_hextechgunblade.tft_set13.png",
+        "pct": 6.1
       },
       {
         "name": "Edge of Night",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guardianangel.tft_set13.png",
-        "pct": 4.8
+        "pct": 4.5
       },
       {
-        "name": "Titan's Resolve",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_titansresolve.tft_set13.png",
-        "pct": 2.4
+        "name": "Sunfire Cape",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_redbuff.tft_set13.png",
+        "pct": 3
       },
       {
-        "name": "Striker's Flail",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 2.4
+        "name": "Nashor's Tooth",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.tft_set13.png",
+        "pct": 3
+      },
+      {
+        "name": "Ionic Spark",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_ionicspark.tft_set13.png",
+        "pct": 3
       }
     ],
     "bestComps": [
       {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 7
-      },
-      {
         "id": "brawler-reroll-gragas",
         "name": "Brawler Reroll — Gragas & Master Yi",
-        "n": 2
+        "n": 6
+      },
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 5
       },
       {
         "id": "fateweaver-rogue-reroll",
@@ -3200,196 +3063,191 @@ export const CHAMPION_STATS: Record<string, ChampionStats> = {
       }
     ]
   },
-  "jinx": {
-    "avgPlace": 2.83,
-    "top4": 40.7,
-    "first": 15.3,
-    "pickRate": 4.1,
-    "sampleSize": 59,
+  "samira": {
+    "avgPlace": 2.63,
+    "top4": 56.3,
+    "first": 12.5,
+    "pickRate": 4.6,
+    "sampleSize": 48,
     "bestItems": [
       {
         "name": "Deathblade",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_deathblade.tft_set13.png",
-        "pct": 23.7
+        "pct": 39.6
       },
       {
-        "name": "Guinsoo's Rageblade",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
-        "pct": 22
-      },
-      {
-        "name": "Kraken's Fury",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_krakenslayer.png",
-        "pct": 20.3
-      },
-      {
-        "name": "Red Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rapidfirecannon.tft_set13.png",
-        "pct": 18.6
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 16.9
-      },
-      {
-        "name": "Infinity Edge",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
-        "pct": 11.9
+        "name": "Spear of Shojin",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
+        "pct": 39.6
       },
       {
         "name": "Last Whisper",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_lastwhisper.tft_set13.png",
-        "pct": 8.5
+        "pct": 35.4
       },
       {
-        "name": "Blue Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
-        "pct": 3.4
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "marauder-yi-kindred",
-        "name": "Marauder — Master Yi & Kindred",
-        "n": 19
-      },
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 5
-      },
-      {
-        "id": "replicator-nova-mf",
-        "name": "Replicator / N.O.V.A. — Miss Fortune",
-        "n": 2
-      }
-    ]
-  },
-  "aurora": {
-    "avgPlace": 2.69,
-    "top4": 48.9,
-    "first": 15.6,
-    "pickRate": 3.1,
-    "sampleSize": 45,
-    "bestItems": [
-      {
-        "name": "Jeweled Gauntlet",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 37.8
-      },
-      {
-        "name": "Spear of Shojin",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
-        "pct": 33.3
-      },
-      {
-        "name": "Void Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
-        "pct": 26.7
-      },
-      {
-        "name": "Morellonomicon",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
-        "pct": 24.4
-      },
-      {
-        "name": "Nashor's Tooth",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.tft_set13.png",
-        "pct": 22.2
-      },
-      {
-        "name": "Rabadon's Deathcap",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
-        "pct": 15.6
-      },
-      {
-        "name": "Archangel's Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_archangelsstaff.tft_set13.png",
-        "pct": 8.9
+        "name": "Infinity Edge",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
+        "pct": 31.3
       },
       {
         "name": "Giant Slayer",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 6.7
-      }
-    ],
-    "bestComps": [
-      {
-        "id": "brawler-reroll-gragas",
-        "name": "Brawler Reroll — Gragas & Master Yi",
-        "n": 3
-      },
-      {
-        "id": "marauder-yi-kindred",
-        "name": "Marauder — Master Yi & Kindred",
-        "n": 3
-      },
-      {
-        "id": "darkstar-karma",
-        "name": "Dark Star — Karma & Kai'Sa",
-        "n": 3
-      }
-    ]
-  },
-  "nami": {
-    "avgPlace": 2.34,
-    "top4": 55.7,
-    "first": 27.9,
-    "pickRate": 4.3,
-    "sampleSize": 61,
-    "bestItems": [
-      {
-        "name": "Jeweled Gauntlet",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
-        "pct": 67.2
-      },
-      {
-        "name": "Nashor's Tooth",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.tft_set13.png",
-        "pct": 67.2
-      },
-      {
-        "name": "Spear of Shojin",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
-        "pct": 26.2
-      },
-      {
-        "name": "Void Staff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
-        "pct": 23
-      },
-      {
-        "name": "Morellonomicon",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
-        "pct": 14.8
-      },
-      {
-        "name": "Blue Buff",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
-        "pct": 8.2
-      },
-      {
-        "name": "Giant Slayer",
-        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_madredsbloodrazor.tft_set13.png",
-        "pct": 6.6
+        "pct": 20.8
       },
       {
         "name": "Striker's Flail",
         "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_powergauntlet.tft_set13.png",
-        "pct": 4.9
+        "pct": 12.5
+      },
+      {
+        "name": "Guinsoo's Rageblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
+        "pct": 4.2
+      },
+      {
+        "name": "Blue Buff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
+        "pct": 2.1
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "space-groove-snipers",
+        "name": "Space Groove Snipers — Xayah & Samira",
+        "n": 22
+      },
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 2
+      }
+    ]
+  },
+  "nasus": {
+    "avgPlace": 2.69,
+    "top4": 45.8,
+    "first": 18.8,
+    "pickRate": 4.6,
+    "sampleSize": 48,
+    "bestItems": [
+      {
+        "name": "Bloodthirster",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bloodthirster.tft_set13.png",
+        "pct": 10.4
+      },
+      {
+        "name": "Thief's Gloves",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_thiefsgloves.tft_set13.png",
+        "pct": 8.3
+      },
+      {
+        "name": "Guinsoo's Rageblade",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_guinsoosrageblade.tft_set13.png",
+        "pct": 6.3
+      },
+      {
+        "name": "Infinity Edge",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_infinityedge.tft_set13.png",
+        "pct": 4.2
+      },
+      {
+        "name": "Crownguard",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_crownguard.tft_set13.png",
+        "pct": 4.2
+      },
+      {
+        "name": "Titan's Resolve",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_titansresolve.tft_set13.png",
+        "pct": 4.2
+      },
+      {
+        "name": "Evenshroud",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spectralgauntlet.tft_set13.png",
+        "pct": 2.1
+      },
+      {
+        "name": "Warmog's Armor",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_warmogsarmor.tft_set13.png",
+        "pct": 2.1
       }
     ],
     "bestComps": [
       {
         "id": "darkstar-karma",
         "name": "Dark Star — Karma & Kai'Sa",
-        "n": 13
+        "n": 6
+      },
+      {
+        "id": "space-groove-snipers",
+        "name": "Space Groove Snipers — Xayah & Samira",
+        "n": 6
+      },
+      {
+        "id": "vanguard-vex",
+        "name": "Vanguard — Vex & Nunu",
+        "n": 5
+      }
+    ]
+  },
+  "nami": {
+    "avgPlace": 2.42,
+    "top4": 55.4,
+    "first": 22.9,
+    "pickRate": 8,
+    "sampleSize": 83,
+    "bestItems": [
+      {
+        "name": "Jeweled Gauntlet",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_jeweledgauntlet.tft_set13.png",
+        "pct": 71.1
+      },
+      {
+        "name": "Nashor's Tooth",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_leviathan.tft_set13.png",
+        "pct": 48.2
+      },
+      {
+        "name": "Spear of Shojin",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_spearofshojin.tft_set13.png",
+        "pct": 25.3
+      },
+      {
+        "name": "Void Staff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_voidstaff.png",
+        "pct": 15.7
+      },
+      {
+        "name": "Morellonomicon",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_morellonomicon.tft_set13.png",
+        "pct": 9.6
+      },
+      {
+        "name": "Blue Buff",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_bluebuff.tft_set13.png",
+        "pct": 9.6
+      },
+      {
+        "name": "Rabadon's Deathcap",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_rabadonsdeathcap.tft_set13.png",
+        "pct": 6
+      },
+      {
+        "name": "Adaptive Helm",
+        "icon": "https://raw.communitydragon.org/latest/game/assets/maps/tft/icons/items/hexcore/tft_item_adaptivehelm.tft_set13.png",
+        "pct": 4.8
+      }
+    ],
+    "bestComps": [
+      {
+        "id": "darkstar-karma",
+        "name": "Dark Star — Karma & Kai'Sa",
+        "n": 8
       },
       {
         "id": "nova-brawler-viktor",
         "name": "N.O.V.A. / Brawler — Viktor + Ornn",
-        "n": 8
+        "n": 6
       },
       {
         "id": "space-groove-snipers",
@@ -3400,6 +3258,6 @@ export const CHAMPION_STATS: Record<string, ChampionStats> = {
   }
 };
 
-export const CHAMPION_STATS_UPDATED_AT: string | null = "2026-05-31T15:51:42.407Z";
+export const CHAMPION_STATS_UPDATED_AT: string | null = "2026-06-04T21:36:16.017Z";
 
 export const CHAMPION_STATS_SOURCE: string | null = "riot-api:na1";

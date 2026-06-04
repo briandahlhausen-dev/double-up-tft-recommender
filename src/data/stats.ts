@@ -22,56 +22,49 @@ export interface CompStats {
 
 export const COMP_STATS: Record<string, CompStats> = {
   "darkstar-karma": {
-    "avgPlace": 2.44,
-    "top4": 51.7,
-    "first": 28.7,
+    "avgPlace": 2.42,
+    "top4": 52.4,
+    "first": 30.2,
     "contested": "severe",
-    "sampleSize": 373
+    "sampleSize": 315
   },
   "meeple-reroll": {
-    "avgPlace": 2.52,
-    "top4": 47.7,
-    "first": 23.3,
+    "avgPlace": 2.51,
+    "top4": 47.4,
+    "first": 22.4,
     "contested": "severe",
-    "sampleSize": 176
+    "sampleSize": 152
   },
   "vanguard-vex": {
-    "avgPlace": 2.34,
-    "top4": 54.5,
-    "first": 31.5,
+    "avgPlace": 2.31,
+    "top4": 57.4,
+    "first": 31.6,
     "contested": "severe",
-    "sampleSize": 178
+    "sampleSize": 155
   },
   "marauder-yi-kindred": {
-    "avgPlace": 2.41,
-    "top4": 54.1,
-    "first": 26.1,
+    "avgPlace": 2.49,
+    "top4": 48.4,
+    "first": 22.1,
     "contested": "high",
-    "sampleSize": 111
+    "sampleSize": 95
   },
   "space-groove-snipers": {
-    "avgPlace": 2.38,
-    "top4": 61,
-    "first": 20.7,
+    "avgPlace": 2.6,
+    "top4": 49.4,
+    "first": 16.9,
     "contested": "high",
-    "sampleSize": 82
+    "sampleSize": 77
   },
   "replicator-nova-mf": {
-    "avgPlace": 2.76,
-    "top4": 44,
-    "first": 16,
-    "contested": "low",
-    "sampleSize": 25
-  },
-  "brawler-reroll-gragas": {
-    "avgPlace": 3.03,
-    "top4": 24.1,
-    "first": 3.4,
-    "contested": "low",
-    "sampleSize": 29
+    "avgPlace": 3,
+    "top4": 34.4,
+    "first": 9.4,
+    "contested": "moderate",
+    "sampleSize": 32
   }
 };
 
-export const STATS_UPDATED_AT: string | null = "2026-05-30T16:09:40.591Z";
+export const STATS_UPDATED_AT: string | null = "2026-06-04T21:27:22.052Z";
 
 export const STATS_SOURCE: string | null = "riot-api:na1";
