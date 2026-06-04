@@ -37,15 +37,17 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    # Both are OPTIONAL — set EITHER as a repo secret to let the Stage 3 step
-    # regenerate exact ability formulas via the offline Claude pass. The generator
-    # prefers the subscription token (free) when present and only falls back to the
-    # metered API key. Each resolves to '' when unset; with both empty the Stage 3
-    # step is skipped (see its `if`). Neither is ever read client-side — the app
-    # stays 100% static.
-    #   • CLAUDE_CODE_OAUTH_TOKEN — Claude subscription token (`claude setup-token`).
-    #   • ANTHROPIC_API_KEY       — metered Anthropic API key.
+    # All three credentials are OPTIONAL and INDEPENDENT — each stage runs only if
+    # its own secret is present, so the pipeline degrades gracefully. Set none and
+    # the job is a no-op (keeps committed data); set only the Claude token and it
+    # refreshes just the ability formulas; set only the Riot key and it refreshes
+    # just the crawled stats. None is ever read client-side — the app stays static.
+    #   • RIOT_API_KEY            — Riot production key (the Double Up crawl steps).
+    #   • CLAUDE_CODE_OAUTH_TOKEN — Claude subscription token (`claude setup-token`,
+    #                               free) for the Stage 3 formula pass.
+    #   • ANTHROPIC_API_KEY       — metered Anthropic API key (Stage 3 fallback).
     env:
+      RIOT_API_KEY: ${{ secrets.RIOT_API_KEY }}
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
     steps:
@@ -59,8 +61,9 @@ jobs:
       - run: npm ci
 
       - name: Refresh comp stats
-        env:
-          RIOT_API_KEY: ${{ secrets.RIOT_API_KEY }}
+        # Skipped (keeps committed stats) when no Riot key is set, so the formula
+        # stage below can still run on just the Claude token.
+        if: ${{ env.RIOT_API_KEY != '' }}
         run: |
           npm run refresh -- \
             --platform=${{ github.event.inputs.platform || 'na1' }} \
@@ -69,8 +72,7 @@ jobs:
             --max-requests=${{ github.event.inputs.max_requests || '20000' }}
 
       - name: Refresh champion stats
-        env:
-          RIOT_API_KEY: ${{ secrets.RIOT_API_KEY }}
+        if: ${{ env.RIOT_API_KEY != '' }}
         run: |
           npm run refresh:champions -- \
             --platform=${{ github.event.inputs.platform || 'na1' }} \
