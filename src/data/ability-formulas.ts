@@ -28,7 +28,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
     "apiName": "TFT17_Aatrox",
     "ability": "Stellar Slash",
     "expression": "DamageAD + DamagePercentArmor",
-    "scaling": "AD",
+    "scaling": "mixed",
     "perCastBase": [
       201,
       81.8,
@@ -38,7 +38,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       603,
       603
     ],
-    "rationale": "Single cast deals physical damage scaling with AD plus a percent-of-armor component, per the @ModifiedDamage@ (scaleAD scaleArmor) tag.",
+    "rationale": "The single cast deals @ModifiedDamage@ physical damage with both %i:scaleAD% and %i:scaleArmor% markers, so the damage is the sum of the AD-scaling flat component (DamageAD) and the armor-scaling component (DamagePercentArmor); the NOVA Strike is gated behind a capstone augment flag and is excluded from the base formula.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -93,7 +93,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       5.5,
       5.5
     ],
-    "rationale": "Each cast deals Damage to each enemy hit plus SplitDamage split among them; summed per cast it's Damage + SplitDamage.",
+    "rationale": "Each cast delivers Damage magic damage to every enemy inside the rift and SplitDamage as a shared pool split among all enemies hit; the HexPercent true-damage return is a reflection of external incoming damage (no fixed value in these variables) and is not a direct damage output of the ability itself.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -155,44 +155,44 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
   "TFT17_Briar": {
     "apiName": "TFT17_Briar",
     "ability": "Fish Frenzy",
-    "expression": "ADDamage + ADDamage * PercentBonusDamage / 2",
-    "scaling": "AD",
+    "expression": "ADDamage + APDamage",
+    "scaling": "mixed",
     "perCastBase": [
-      4.125,
-      150,
-      225,
-      356.25,
-      606.25,
-      4.125,
-      4.125
+      3.3,
+      130,
+      195,
+      310,
+      530,
+      3.3,
+      3.3
     ],
-    "rationale": "Each cast deals ADDamage physical damage, increased by PercentBonusDamage*100% if target is a tank, averaged assuming half of targets are tanks gives ADDamage*(1 + PercentBonusDamage/2).",
+    "rationale": "ModifiedDamage is composed of ADDamage (AD-scaling physical) and APDamage (AP-scaling component); the tank bonus is conditional and omitted from the base per-cast average.",
     "source": "claude",
     "model": "claude-cli"
   },
   "TFT17_Caitlyn": {
     "apiName": "TFT17_Caitlyn",
     "ability": "Aim For The Head",
-    "expression": "Damage",
-    "scaling": "AD",
+    "expression": "(ProcChance / 100) * (Damage + BonusDamage)",
+    "scaling": "mixed",
     "perCastBase": [
-      145,
-      170,
-      255,
-      510,
-      875,
-      455,
-      455
+      24.75,
+      28.5,
+      42.75,
+      83.25,
+      142.8,
+      77.25,
+      77.25
     ],
-    "rationale": "Passive Headshot deals ModifiedHeadshotDamage (Damage) physical damage scaling with AD per proc; per-cast base is just Damage.",
+    "rationale": "Each attack has a ProcChance% chance to fire a Headshot dealing Damage + BonusDamage physical damage (ModifiedHeadshotDamage = Damage + BonusDamage); dividing by 100 averages the proc over the attack cycle, and both %i:scaleAD% and %i:scaleAP% markers appear next to the damage value.",
     "source": "claude",
     "model": "claude-cli"
   },
   "TFT17_Chogath": {
     "apiName": "TFT17_Chogath",
     "ability": "Accretion",
-    "expression": "BonusDamage + PercentMaximumHealthDamage",
-    "scaling": "AP",
+    "expression": "PercentMaximumHealthDamage + BonusDamage",
+    "scaling": "mixed",
     "perCastBase": [
       140.08,
       210.08,
@@ -202,7 +202,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       450.08,
       450.08
     ],
-    "rationale": "TotalDamage combines flat BonusDamage with PercentMaximumHealthDamage of target's max HP, scaling with AP per the scaleHealth/scaleAP markers.",
+    "rationale": "TotalDamage combines a percent-max-health component (scaleHealth) and a flat bonus component (scaleAP), both dealt as magic damage on each cast with no per-cast averaging needed.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -227,25 +227,25 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
   "TFT17_Diana": {
     "apiName": "TFT17_Diana",
     "ability": "Pale Cascade",
-    "expression": "BaseDamage",
+    "expression": "3 * BaseDamage",
     "scaling": "AP",
     "perCastBase": [
-      50,
-      60,
-      90,
-      145,
-      250,
-      240,
-      330
+      150,
+      180,
+      270,
+      435,
+      750,
+      720,
+      990
     ],
-    "rationale": "Active summons orbs that deal ModifiedDamage (BaseDamage) magic damage per cast, scaling with AP.",
+    "rationale": "The active cast summons 3 orbs each dealing ModifiedDamage (BaseDamage) magic damage to enemies they pass through; the passive BonusDamageToAttacks is a continuous per-attack bonus unrelated to the cast event itself.",
     "source": "claude",
     "model": "claude-cli"
   },
   "TFT17_Ezreal": {
     "apiName": "TFT17_Ezreal",
     "ability": "Temporal Shot",
-    "expression": "ADDamage + APDamage + DroneDamage/8",
+    "expression": "ADDamage + APDamage + DroneDamage / TakedownsToDrone",
     "scaling": "mixed",
     "perCastBase": [
       0,
@@ -256,7 +256,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       0,
       0
     ],
-    "rationale": "Each cast deals ADDamage+APDamage physical damage, plus a drone dealing DroneDamage every 8 takedowns, averaged as DroneDamage/8 per cast.",
+    "rationale": "Each cast deals the AD+AP blast (ADDamage + APDamage); drones are gained once per TakedownsToDrone takedowns and each fires DroneDamage on every cast, so the marginal drone contribution is averaged over the gain cycle as DroneDamage / TakedownsToDrone.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -281,7 +281,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
   "TFT17_Fizz": {
     "apiName": "TFT17_Fizz",
     "ability": "Meep Bait",
-    "expression": "DashDamage + (BiteDamageAP + MeepsPerAstro * BiteDamageMeep) / 3",
+    "expression": "DashDamage + (BiteDamageAP + BiteDamageMeep * MeepsPerAstro) / 3",
     "scaling": "AP",
     "perCastBase": [
       136.667,
@@ -292,25 +292,25 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       603.333,
       603.333
     ],
-    "rationale": "Each cast dashes for DashDamage; every third cast adds a Mega Meep dealing BiteDamageAP plus MeepsPerAstro extra meeps each adding BiteDamageMeep, averaged over the 3-cast cycle.",
+    "rationale": "Every cast deals DashDamage magic damage; every third cast additionally triggers Mega Meep for BiteDamageAP plus MeepsPerAstro×BiteDamageMeep Astronaut bonus damage, so the per-cast average adds the full third-cast damage packet divided by 3; SecondaryDamage is a fractional splash multiplier for adjacent targets and has no additive primary-target contribution.",
     "source": "claude",
     "model": "claude-cli"
   },
   "TFT17_Gnar": {
     "apiName": "TFT17_Gnar",
     "ability": "Slingshot Maneuver",
-    "expression": "DamageAD + DamageAP",
+    "expression": "(DamageAD + DamageAP) * (2 - DamageReductionPerHit)",
     "scaling": "mixed",
     "perCastBase": [
-      230,
-      245,
-      370,
-      605,
-      935,
-      695,
-      695
+      287.5,
+      306.25,
+      462.5,
+      756.25,
+      1168.75,
+      868.75,
+      868.75
     ],
-    "rationale": "The boomerang cast deals @ModifiedDamage@ physical damage scaling with both AD and AP, so per-cast base sums DamageAD and DamageAP (first-hit value; subsequent pierce hits via DamageReductionPerHit depend on enemy count, and the Meep DPS is a separate continuous effect, not part of the cast).",
+    "rationale": "The boomerang hits once going out (full damage) and once on return (reduced by DamageReductionPerHit per hit, so multiplied by 1 - DamageReductionPerHit), giving total per-cast damage of (DamageAD + DamageAP) * (1 + (1 - DamageReductionPerHit)); the damage tooltip carries both %i:scaleAD% and %i:scaleAP% markers indicating mixed scaling.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -328,7 +328,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       0,
       0
     ],
-    "rationale": "Single cast deals Damage magic damage to target and adjacent enemies, scaling with AP per the %i:scaleAP% marker.",
+    "rationale": "Chemical Rage deals magic damage equal to the Damage variable in a single cast to the target and adjacent enemies; no multi-hit or periodic damage component exists.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -364,7 +364,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       1260,
       1260
     ],
-    "rationale": "One cast snips the target for Damage and hits cone enemies for AreaDamage; the ResetDamage second snip is conditional on a kill.",
+    "rationale": "Each cast deals Damage to the primary target and AreaDamage to enemies in the cone; the reset is conditional on a kill (unknown probability) so only the guaranteed base components are summed.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -382,14 +382,14 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       960,
       960
     ],
-    "rationale": "Drains HealthDrain true damage from NumEnemies enemies over the duration, then slams for Damage magic damage to nearby enemies.",
+    "rationale": "Each cast drains HealthDrain true-damage from each of the NumEnemies nearest enemies (total HealthDrain×NumEnemies) and then slams for Damage magic damage to nearby enemies; both damage components carry %i:scaleAP% markers.",
     "source": "claude",
     "model": "claude-cli"
   },
   "TFT17_IvernMinion": {
     "apiName": "TFT17_IvernMinion",
     "ability": "Meep Impact",
-    "expression": "Damage * (1 + PercentEffects)",
+    "expression": "Damage + PercentEffects * Damage",
     "scaling": "AP",
     "perCastBase": [
       300,
@@ -400,7 +400,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       675,
       675
     ],
-    "rationale": "Cast deals Damage to the primary target via slam, and the meepwave deals PercentEffects of that damage to others in the target's row.",
+    "rationale": "The slam deals Damage to the primary target, and the meepwaves deal PercentEffects * Damage to units in the target's row (inclusive of the target); summing both gives total magic damage per cast.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -479,18 +479,18 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
   "TFT17_Kindred": {
     "apiName": "TFT17_Kindred",
     "ability": "Cosmic Pursuit",
-    "expression": "NumTargets * ADDamage + (SpellDamage + ADDamage + APDamage) / MaxMarks",
+    "expression": "NumTargets * SpellDamage + (ADDamage + APDamage) / MaxMarks",
     "scaling": "mixed",
     "perCastBase": [
       0,
-      411.667,
-      626.667,
-      5033.333,
-      5895,
+      266.667,
+      408.333,
+      3333.333,
+      4425,
       0,
       0
     ],
-    "rationale": "Active fires NumTargets arrows each dealing ADDamage (AD-scaling); each cast adds 1 mark, so on average every MaxMarks casts the passive procs once dealing the combined SpellDamage + AD + AP components.",
+    "rationale": "The active fires one arrow per target at NumTargets targets (each dealing ModifiedDamage ≈ SpellDamage, AD-scaling); the passive procs TotalDamage (ADDamage + APDamage, mixed AD+AP) once per MaxMarks marks, so one cast's amortized passive contribution is (ADDamage + APDamage) / MaxMarks.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -526,7 +526,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       0,
       0
     ],
-    "rationale": "A single cast bashes the current target once for the Damage value as magic damage; the %i:scaleArmor%%i:scaleMR% markers indicate defensive scaling on the caster, not AP/AD damage scaling.",
+    "rationale": "The ability deals a single bash hit of magic damage per cast equal to the base Damage value; the %i:scaleArmor%%i:scaleMR% markers indicate it scales with the caster's Armor and MR (via DefenseToDamageRatio), not AP or AD, so scaling is deferred to the downstream engine.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -544,25 +544,25 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       960,
       960
     ],
-    "rationale": "One cast deals initial magic damage to the first target hit plus secondary explosion damage, both scaling with AP.",
+    "rationale": "Each cast deals primary magic damage to the first target hit plus secondary explosion damage to nearby targets, both scaling with AP.",
     "source": "claude",
     "model": "claude-cli"
   },
   "TFT17_Lulu": {
     "apiName": "TFT17_Lulu",
     "ability": "It's Raining Stars",
-    "expression": "Damage",
+    "expression": "Damage * NumEnemies",
     "scaling": "AP",
     "perCastBase": [
-      2,
-      150,
-      225,
-      360,
-      495,
-      2,
-      2
+      6,
+      450,
+      675,
+      1080,
+      1485,
+      6,
+      6
     ],
-    "rationale": "One cast deals Damage magic damage to NumEnemies nearby enemies; per-cast damage to one target is just Damage.",
+    "rationale": "Each cast deals Damage magic damage to NumEnemies nearby enemies, so total cast damage is the per-enemy damage multiplied by the number of enemies hit.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -580,7 +580,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       0,
       0
     ],
-    "rationale": "Active deals DamageTotal magic damage (scaling AP) to each enemy hit in the X-shape, with no multi-hit or cycle modifier on the base damage.",
+    "rationale": "A single cast deals DamageTotal (base: Damage) magic damage once to each enemy hit in the X-shape; the Nova capstone is a separate conditional effect not part of the normal cast damage.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -606,7 +606,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
   "TFT17_Milio": {
     "apiName": "TFT17_Milio",
     "ability": "Mega Time Kick",
-    "expression": "Damage + 2 * BounceDamage",
+    "expression": "Damage + BounceDamage * 2",
     "scaling": "AP",
     "perCastBase": [
       360,
@@ -617,7 +617,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       1560,
       1360
     ],
-    "rationale": "Initial kick deals Damage, then a 100% bounce plus halving-probability subsequent bounces form a geometric series summing to 2 expected bounces of BounceDamage.",
+    "rationale": "The initial hit deals Damage; the first bounce is guaranteed (100%), each subsequent bounce halves in probability (geometric series: 1 + 0.5 + 0.25 + … = 2), so expected bounce damage is BounceDamage × 2.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -654,7 +654,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       0,
       0
     ],
-    "rationale": "Over the 3-second duration, deals APDamage magic damage to the closest NumEnemies enemies.",
+    "rationale": "The description says the cast deals @ModifiedDamage@ (driven by APDamage) to each of the closest @NumEnemies@ enemies over the 3-second HealthGainDuration transform, so total cast damage is APDamage × NumEnemies spread across that duration.",
     "source": "claude",
     "dotDuration": 3,
     "model": "claude-cli"
@@ -673,7 +673,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       7600,
       7600
     ],
-    "rationale": "One cast deals the main bubble Damage plus NumProjectiles globs each dealing FirstBounceDamage, both marked with scaleAP.",
+    "rationale": "Each cast deals one bubble hit (Damage, split among nearby enemies) plus NumProjectiles glob projectiles each dealing FirstBounceDamage magic damage, both marked %i:scaleAP%.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -710,7 +710,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       0,
       0
     ],
-    "rationale": "One cast deals InitialDamage in a 2-hex area then FollowupDamage as the astrolabe pushes across the board; both are magic damage scaling with AP.",
+    "rationale": "Each cast deals the crash-down hit (InitialDamage) plus the rolling push hit (FollowupDamage), both marked %i:scaleAP%, summed once per cast.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -728,7 +728,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       600,
       600
     ],
-    "rationale": "Active deals Damage magic damage in a cone once per cast, scaling with AP per the %i:scaleAP% marker next to ModifiedDamage.",
+    "rationale": "The active deals a single cone fire breath hit for ModifiedDamage magic damage, marked %i:scaleAP%; no repeat hits, DoT, or true damage components.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -783,7 +783,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       812,
       812
     ],
-    "rationale": "Single cast strikes enemies in a three hex line dealing ModifiedDamage scaling with AP and Armor; passive damage requires being attacked and is excluded as it isn't part of the cast.",
+    "rationale": "The cast deals one instance of magic damage to enemies in a three-hex line, combining the AP-scaling component (DamageAP) and the Armor-scaling component (DamageArmor); the passive (ModifiedPassiveDamage) fires every 20 incoming attacks, not per cast, so it is excluded.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -801,7 +801,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       0,
       0
     ],
-    "rationale": "Single knock-up cast deals ModifiedDamage which scales with AP, represented by the Damage variable per star.",
+    "rationale": "The description deals a single instance of @ModifiedDamage@ magic damage (marked %i:scaleAP%) per cast; Damage holds the base values per star level.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -819,14 +819,14 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       0.2,
       0.2
     ],
-    "rationale": "Single cast slashes forward dealing Damage physical damage to enemies hit, scaling with AD per the %i:scaleAD% marker.",
+    "rationale": "The ability deals a single physical damage hit via one forward slash (ModifiedDamage, marked %i:scaleAD%), with no multi-hit or periodic damage component.",
     "source": "claude",
     "model": "claude-cli"
   },
   "TFT17_Riven": {
     "apiName": "TFT17_Riven",
     "ability": "Time Warp",
-    "expression": "(2*Damage + (Damage + WaveDamage)) / 3",
+    "expression": "Damage + WaveDamage / 3",
     "scaling": "mixed",
     "perCastBase": [
       280,
@@ -837,7 +837,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       0,
       0
     ],
-    "rationale": "Active slashes for Damage each cast; every third cast additionally launches a wave dealing WaveDamage, averaged over the 3-cast cycle, and the ability adapts to AD or AP whichever is higher.",
+    "rationale": "Every cast deals Damage to adjacent enemies; every third cast also fires a wave for WaveDamage, averaged over the 3-cast cycle as WaveDamage/3; passive auto-attack damage is not cast damage and is excluded.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -862,18 +862,18 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
   "TFT17_Shen": {
     "apiName": "TFT17_Shen",
     "ability": "Reality Tear",
-    "expression": "BonusDamageOnAttack",
+    "expression": "BonusDamageOnAttack + DamageHP",
     "scaling": "AP",
     "perCastBase": [
-      50,
-      25,
-      40,
-      777,
-      777,
-      777,
-      777
+      50.01,
+      25.01,
+      40.01,
+      777.01,
+      777.01,
+      777.01,
+      777.01
     ],
-    "rationale": "Active opens a rift dealing the Passive's flat bonus magic damage (BonusDamageOnAttack) once to all enemies inside, which becomes true damage from the third cast onward.",
+    "rationale": "The Active deals the Passive's stacking per-attack bonus damage once to all enemies inside the rift — that bonus is composed of a flat AP-scaling base (BonusDamageOnAttack) and a max-HP% component (DamageHP, marked %i:scaleHealth%) — and becomes true damage permanently starting on the third cast.",
     "source": "claude",
     "trueDamage": true,
     "model": "claude-cli"
@@ -909,7 +909,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       870.02,
       870.02
     ],
-    "rationale": "Active deals ModifiedDamage to all enemies within two hexes, scaling with AP (DamageAP) and the caster's max Health (DamageHP).",
+    "rationale": "The active deals magic damage combining an AP-scaled flat component (DamageAP) and a max-HP percentage component (DamageHP) to all enemies within two hexes in a single cast with no multi-hit or periodic damage.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -946,7 +946,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       275,
       275
     ],
-    "rationale": "Passive attacks deal HitDamage bonus magic damage plus MagicDamage stacking magic damage over PoisonDuration (6) seconds.",
+    "rationale": "Each attack (cast of the passive) deals instant HitDamage bonus magic damage plus MagicDamage stacking poison damage spread over PoisonDuration seconds, both marked %i:scaleAP%; the active grants only attack speed with no damage component.",
     "source": "claude",
     "dotDuration": 6,
     "model": "claude-cli"
@@ -983,7 +983,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       1.8,
       1.8
     ],
-    "rationale": "Each cast resets Proximity Blast cooldowns and fires a single cone blast dealing ShotgunDamage physical (AD-scaling) damage; falloff and multi-hex hits are positional variance not averaged here.",
+    "rationale": "The passive fires one cone blast per trigger dealing ShotgunDamage physical damage (falloff per hex is a spatial attenuation across the cone, not a separate damage component to sum); the active deals no damage.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -1001,14 +1001,14 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       1065,
       1065
     ],
-    "rationale": "Main Meepteor deals Damage; Meep bonus adds MiniMeepsPerAstro mini meteors each dealing MiniDamage magic damage.",
+    "rationale": "Each cast lands one main Meepteor for Damage, plus MiniMeepsPerAstro mini Meepteors each dealing MiniDamage (Astronaut-trait bonus shown in the same cast tooltip, both tagged scaleAP).",
     "source": "claude",
     "model": "claude-cli"
   },
   "TFT17_Vex": {
     "apiName": "TFT17_Vex",
     "ability": "Lend Me a Hand, Shadow!",
-    "expression": "ShadowHandMagicDamage * NumActiveStrikes",
+    "expression": "NumActiveStrikes * ShadowHandMagicDamage",
     "scaling": "AP",
     "perCastBase": [
       600,
@@ -1019,7 +1019,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       600,
       600
     ],
-    "rationale": "Active cast launches NumActiveStrikes empowered strikes each dealing ShadowHandMagicDamage magic damage.",
+    "rationale": "The active fires NumActiveStrikes (3) empowered Shadow strikes each dealing ShadowHandMagicDamage; the passive auto-attack component uses ShadowHandDamage but is attack-triggered, not cast-triggered, so only the active strikes count as cast damage.",
     "source": "claude",
     "model": "claude-cli"
   },
@@ -1045,25 +1045,25 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
   "TFT17_Xayah": {
     "apiName": "TFT17_Xayah",
     "ability": "Stellar Ricochet",
-    "expression": "RecallFeatherTargets*ADDamage + PrimaryTargetBonusDamage*AttackNumEnemies*NumAttacks",
+    "expression": "NumAttacks * ADDamage + (NumAttacks / RecallFeatherTargets) * PrimaryTargetBonusDamage",
     "scaling": "AD",
     "perCastBase": [
-      300,
-      585,
-      924,
-      8700,
-      1425,
-      1200,
-      1200
+      260,
+      320,
+      488,
+      5800,
+      2270,
+      1820,
+      1820
     ],
-    "rationale": "Each of 3 recalled feathers deals ADDamage to closest enemies, plus primary target takes PrimaryTargetBonusDamage per feather (AttackNumEnemies bounces × NumAttacks attacks = total feathers generated).",
+    "rationale": "Each of the NumAttacks boosted attacks leaves one feather, so NumAttacks feathers are recalled at cast end — each dealing ADDamage physical damage — while the primary target receives PrimaryTargetBonusDamage extra per feather it holds, averaged as NumAttacks / RecallFeatherTargets feathers per target.",
     "source": "claude",
     "model": "claude-cli"
   },
   "TFT17_Zoe": {
     "apiName": "TFT17_Zoe",
     "ability": "Paddle Star",
-    "expression": "Damage + NumRedirects*Damage",
+    "expression": "(1 + NumRedirects) * Damage",
     "scaling": "AP",
     "perCastBase": [
       250,
@@ -1074,14 +1074,14 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
       1050,
       775
     ],
-    "rationale": "Initial hit deals Damage to first target, then redirects NumRedirects times each repeating the damage to the first target hit.",
+    "rationale": "The star makes one initial hit plus NumRedirects redirects, dealing Damage to the first target on each of the (1 + NumRedirects) passes; SecondaryDamage to pass-through targets is excluded because its count depends on board positioning and cannot be expressed with the given variables.",
     "source": "claude",
     "model": "claude-cli"
   }
 };
 
 /** When this module was last regenerated. */
-export const ABILITY_FORMULAS_UPDATED_AT = "2026-06-03T18:50:00.464Z";
+export const ABILITY_FORMULAS_UPDATED_AT = "2026-06-04T23:10:31.890Z";
 /** Provenance string. */
 export const ABILITY_FORMULAS_SOURCE = "manual+authored:claude-opus-4.7+claude-cli";
 
