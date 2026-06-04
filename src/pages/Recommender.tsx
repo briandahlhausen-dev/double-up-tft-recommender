@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { COMPS } from '../data/comps';
+import { STATS_UPDATED_AT, STATS_SOURCE } from '../data/stats';
 import { DEFAULT_PREFS } from '../types';
 import type { Comp, Prefs } from '../types';
 import { recommend, recommendForBoard } from '../lib/recommend';
@@ -243,9 +244,17 @@ export function Recommender({ initialBoard }: { initialBoard?: string }) {
 
       <SiteFooter>
         <p>
-          Win-rate data is a Diamond+ Double Up snapshot (patches 17.3–17.4) and shifts every patch. Edit{' '}
-          <code className="rounded bg-white/5 px-1 py-0.5 text-slate-300">src/data/comps.ts</code> to update it — no
-          other code changes needed.
+          {STATS_UPDATED_AT ? (
+            <>
+              Win-rate data is a live Double Up ladder crawl
+              {STATS_SOURCE ? ` (${STATS_SOURCE})` : ''}, updated{' '}
+              {new Date(STATS_UPDATED_AT).toLocaleDateString()}; comps below the sample floor fall back to the seed.{' '}
+            </>
+          ) : (
+            <>Win-rate data is the Diamond+ seed snapshot and shifts every patch. </>
+          )}
+          Edit <code className="rounded bg-white/5 px-1 py-0.5 text-slate-300">src/data/comps.ts</code> to update the
+          structure — no other code changes needed.
         </p>
       </SiteFooter>
     </CompGuideProvider>

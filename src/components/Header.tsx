@@ -1,4 +1,7 @@
+import { STATS_UPDATED_AT } from '../data/stats';
+
 export function Header() {
+  const updated = STATS_UPDATED_AT ? new Date(STATS_UPDATED_AT).toLocaleDateString() : null;
   return (
     <header className="text-center sm:text-left">
       <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -12,7 +15,7 @@ export function Header() {
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-2">
-          <span className="chip">Set 17 · patch 17.3–17.4</span>
+          <span className="chip">{updated ? `Set 17 · updated ${updated}` : 'Set 17 · seed data'}</span>
           <span className="chip">data is a snapshot</span>
         </div>
       </div>
