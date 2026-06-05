@@ -5,7 +5,9 @@ Tell it the comp your duo partner is locking in, set a few quick preferences, an
 returns data-backed recommendations for what **you** should play — picked so your units
 and items don't collide with your partner's and so your two boards complement each other.
 
-- **No backend, no accounts, no database.** All comp data lives in one typed module.
+- **Static-first.** No backend, no accounts, no database for the core app — all comp data lives in
+  one typed module. The single optional networked extra is the **Live duo link** (real-time board
+  sharing, below), and it's off unless you configure it.
 - **Explainable engine.** Every recommendation comes with specific "why this pick" reasons
   that name the partner comp, the shared units, and the item types in play.
 - **Tune it in one place.** Scoring weights live in a single exported `WEIGHTS` constant;
@@ -13,6 +15,9 @@ and items don't collide with your partner's and so your two boards complement ea
 - **Champions browser.** A second page (`#/champions`) lists every Set 17 unit with traits
   and art from CommunityDragon, plus per-champion Double Up stats — sortable, filterable, with
   click-through detail pages for best items and comps. Hash-routed, so detail URLs are shareable.
+- **Live duo link.** Generate a code, send it to your duo, and watch each other's board update in
+  real time — then **Compare** to get picks that complement theirs. Opt-in; falls back to a static
+  share link when unconfigured.
 
 ---
 
@@ -127,6 +132,24 @@ src/
   App.tsx               # router shell: picks a page from the hash
 ```
 
+### Live duo link (real-time board sharing)
+Plan together: one player hits **⚡ Start live session** on the recommender, sends the 6-char code
+(or a `#/live/<code>` link) to their duo, and both boards sync in real time — each person edits
+their own board under **Build my board**, and **Compare ↓** loads the other's board as the partner
+so the engine ranks what complements it. The session and your name persist across refreshes.
+
+It stays true to the static-first design: it talks to a **Firebase Realtime Database over its REST
+API — no SDK, no apiKey, no login** — just a database URL (public by design; rules restrict
+read/write to `/rooms`, and the collection can't be enumerated). Each client writes only its own
+member slot, so simultaneous edits merge instead of clobbering, and any network failure degrades
+quietly. Set `RTDB_URL` in [`src/lib/liveConfig.ts`](src/lib/liveConfig.ts) to enable it — leave it
+`''` and the feature is dormant and the app stays 100% static. That file's header has the ~3-minute
+Firebase setup (create a Realtime Database, paste these rules, copy the URL):
+
+```json
+{ "rules": { "rooms": { "$room": { ".read": true, ".write": true } } } }
+```
+
 ---
 
 ## Keeping data fresh
@@ -187,7 +210,10 @@ are thin. The classifier only recognizes comps you've already defined in
 Up as **distinct 1..8 player placements**; the aggregator folds each team's two
 adjacent slots into the **1..4 team scale** the seed numbers use (`avgPlace` =
 team rank, `first` = won the game, `top4` = top half / top 2 teams), so refreshed
-and seed comps stay on one scale.
+and seed comps stay on one scale. Finally, **Set 17 Double Up matches expose no augments** through
+the match API (the set runs a missions mechanic instead), so the augment overlay
+(`augment-stats.ts`) stays empty for this set — that's expected, not a failure, and the comp guide
+degrades gracefully.
 
 ### Champion data (the Champions page)
 The champion browser uses the same catalog + overlay split as comps:
@@ -278,10 +304,11 @@ point and update `src/data/comps.ts` as the meta moves. Not affiliated with Riot
 1. **Per-region / per-elo data profiles** — have the refresh job emit several overlays
    (NA Challenger, EUW Master…) and let the UI switch between them, instead of one blended
    snapshot.
-2. **Shareable result links** — encode the partner pick + prefs in the URL hash so a duo can
-   send each other a ready-made recommendation.
-3. **"Both players unknown" duo-pairing mode** — when neither comp is locked, suggest a full
+2. **"Both players unknown" duo-pairing mode** — when neither comp is locked, suggest a full
    complementary pairing (one AD + one AP, split aggressive/scaling) instead of reacting to a
    fixed partner.
 
 > Patch-data import (originally listed here) is now built — see **Keeping data fresh** above.
+>
+> Shareable board links + real-time duo sync (originally listed here) are now built — see
+> **Live duo link** above.
