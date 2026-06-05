@@ -15,7 +15,7 @@ export default function App() {
       <main className="relative z-10 mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:py-12">
         <SiteNav route={route} />
 
-        {route.name === 'home' && <Recommender initialBoard={route.board} />}
+        {route.name === 'home' && <Recommender initialBoard={route.board} initialRoom={route.room} />}
         {route.name === 'champions' && <ChampionsOverview />}
         {route.name === 'champion' && <ChampionDetail id={route.id} />}
         {route.name === 'lab' && <Lab />}

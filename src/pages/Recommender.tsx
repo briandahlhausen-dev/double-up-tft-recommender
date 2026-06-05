@@ -18,15 +18,17 @@ import { MechanicsCheatStrip } from '../components/MechanicsCheatStrip';
 import { DamageTag } from '../components/DamageTag';
 import { SiteFooter } from '../components/SiteFooter';
 import { cx } from '../lib/cx';
-import { buildCustomComp, loadBuilder, saveBuilder, decodeBuilder, MY_BOARD_KEY } from '../lib/customComp';
+import { buildCustomComp, loadBuilder, saveBuilder, decodeBuilder, encodeBuilder, MY_BOARD_KEY } from '../lib/customComp';
 import type { BuilderState } from '../lib/customComp';
+import { LiveShare } from '../components/LiveShare';
+import { liveEnabled } from '../lib/liveConfig';
 
 // Three input modes: the first two describe your PARTNER (and the engine ranks
 // comps that complement them); 'myboard' describes YOUR current units (and the
 // engine ranks comps you're closest to completing — a different question).
 type PartnerMode = 'preset' | 'build' | 'myboard';
 
-export function Recommender({ initialBoard }: { initialBoard?: string }) {
+export function Recommender({ initialBoard, initialRoom }: { initialBoard?: string; initialRoom?: string }) {
   // A share link (#/board/<code>) wins over the locally saved board on first load.
   const [build, setBuild] = useState<BuilderState>(() => {
     if (initialBoard) {
@@ -62,6 +64,8 @@ export function Recommender({ initialBoard }: { initialBoard?: string }) {
   const presetPartner = useMemo(() => COMPS.find((c) => c.id === partnerId) ?? COMPS[0], [partnerId]);
   const customComp = useMemo(() => buildCustomComp(build), [build]);
   const myComp = useMemo(() => buildCustomComp(myBoard), [myBoard]);
+  // The board the live duo-link broadcasts: your own ("Build my board").
+  const myCode = useMemo(() => encodeBuilder(myBoard), [myBoard]);
 
   // Partner modes resolve a partner Comp; 'myboard' has no partner (different axis).
   const partner: Comp | null = isMyBoard ? null : mode === 'build' ? customComp : presetPartner;
@@ -184,6 +188,20 @@ export function Recommender({ initialBoard }: { initialBoard?: string }) {
           </div>
         </div>
       </section>
+
+      {/* ---- Live duo link (real-time board sharing; only when configured) ---- */}
+      {liveEnabled() && (
+        <LiveShare
+          myCode={myCode}
+          initialRoom={initialRoom}
+          onActivate={() => setMode('myboard')}
+          onCompare={(state) => {
+            setBuild(state);
+            setMode('build');
+            scrollToResults();
+          }}
+        />
+      )}
 
       {/* ---- Results ---- */}
       <section ref={resultsRef} className="mt-8 scroll-mt-6">

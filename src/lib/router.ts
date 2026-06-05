@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 // fire 'hashchange' — we just parse and re-render.
 
 export type Route =
-  | { name: 'home'; board?: string } // board = encoded partner board from a share link
+  | { name: 'home'; board?: string; room?: string } // board = encoded partner board from a share link; room = live duo-link code
   | { name: 'champions' }
   | { name: 'champion'; id: string }
   | { name: 'lab' };
@@ -23,11 +23,17 @@ export function parseHash(hash: string): Route {
   if (parts[0] === 'board' && parts[1]) {
     return { name: 'home', board: decodeURIComponent(parts[1]) };
   }
+  if (parts[0] === 'live' && parts[1]) {
+    return { name: 'home', room: decodeURIComponent(parts[1]) };
+  }
   return { name: 'home' };
 }
 
 /** Build a shareable URL for a partner board (encoded via customComp.encodeBuilder). */
 export const boardHref = (code: string): string => `#/board/${encodeURIComponent(code)}`;
+
+/** Build a shareable URL for a live duo-link room. */
+export const liveHref = (roomId: string): string => `#/live/${encodeURIComponent(roomId)}`;
 
 export function useHashRoute(): Route {
   const [route, setRoute] = useState<Route>(() => parseHash(window.location.hash));
