@@ -49,9 +49,18 @@ const FRONT_DIVISOR = 900; // top-3 unit EHP
 // caster the live meta doesn't play as a carry) from out-ranking real auto carries.
 const ABILITY_DPS_CONFIDENCE = 0.5;
 
-/** Carry-ranking DPS: full auto DPS + discounted ability DPS (see above). */
+// Hard ceiling on how much modeled ability DPS can feed the CARRY-RANKING metric.
+// Beyond this, the per-cast estimate is almost always an artifact — a multi-hit
+// count or mixed-scaling formula over-reading a nuke (e.g. a 2-cost computing
+// 1000+ ability DPS) — and letting it through makes one or two units the carry of
+// every discovered board, collapsing the Lab's variety. Auto DPS (exact AD×AS×crit
+// arithmetic) is never capped; only the less-reliable ability half is clamped.
+// Ranking-only: the per-unit ability DPS the UI displays is left untouched.
+const ABILITY_DPS_CAP = 400;
+
+/** Carry-ranking DPS: full auto DPS + discounted, outlier-capped ability DPS. */
 function carryDpsOf(e: UnitEvaluation): number {
-  return e.autoDps + ABILITY_DPS_CONFIDENCE * e.ability.dps;
+  return e.autoDps + ABILITY_DPS_CONFIDENCE * Math.min(e.ability.dps, ABILITY_DPS_CAP);
 }
 
 // ---- best-in-slot itemization ----------------------------------------------
@@ -161,7 +170,7 @@ function tiersForUnit(u: UnitMath, active: ActiveTrait[]): { name: string; tier:
 /** Score a set of unit display names with the deterministic model. Unknown
  *  names are ignored. Trait breakpoints from the whole board are applied to
  *  each unit before measuring its DPS / EHP. */
-export function scoreBoard(unitNames: string[], star: number = DEFAULT_STAR): BoardScore {
+export function scoreBoard(unitNames: string[], star: number = DEFAULT_STAR, forceCarry?: string): BoardScore {
   const units: UnitMath[] = [];
   for (const n of unitNames) {
     const u = resolveUnit(n);
@@ -222,7 +231,7 @@ export function scoreBoard(unitNames: string[], star: number = DEFAULT_STAR): Bo
     }
   }
 
-  const carry = dpsSorted[0];
+  const carry = (forceCarry ? dpsSorted.find((d) => d.name === forceCarry) : undefined) ?? dpsSorted[0];
   return {
     units: units.map((u) => u.name),
     cost,
@@ -337,6 +346,70 @@ function searchFromSeed(seedPool: UnitMath[], boardSize: number, beamWidth: numb
   return beam.map((b) => scoreBoard(b, star));
 }
 
+/** A unit's standalone carry rank (itemized best-in-slot, no board traits). Used
+ *  to choose carry anchors and to keep an anchored board's carry from being
+ *  out-shadowed by a stronger unit. Cached per unit + star. */
+const _rankCache = new Map<string, number>();
+function standaloneCarryRank(u: UnitMath, star: number): number {
+  const key = `${u.apiName}@${star}`;
+  const hit = _rankCache.get(key);
+  if (hit !== undefined) return hit;
+  const bis = bestItemSet(u, star);
+  const e = evaluateUnit(u, { star, items: bis.items.map(resolveItem).filter(Boolean) as ItemMath[] });
+  const rank = carryDpsOf(e);
+  _rankCache.set(key, rank);
+  return rank;
+}
+
+/** Grow the best synergy board built AROUND a fixed carry: the anchor is seeded
+ *  on the board, and any unit that would out-carry it (higher standalone rank) is
+ *  excluded so the anchor stays the carry. This yields a strong, trait-coherent
+ *  board for EACH viable carry — the variety the discovery needs when one or two
+ *  units (here Jhin/Fiora) would otherwise be the carry of every board. */
+function searchFromCarry(
+  anchor: UnitMath,
+  rankOf: Map<string, number>,
+  boardSize: number,
+  beamWidth: number,
+  star: number,
+): BoardScore[] {
+  const cap = rankOf.get(anchor.name) ?? Infinity;
+  let beam: string[][] = [[anchor.name]];
+
+  for (let depth = 1; depth < boardSize; depth++) {
+    const scored: { units: string[]; score: number }[] = [];
+    const localSeen = new Set<string>();
+
+    for (const partial of beam) {
+      const onBoardTraits = new Set<string>();
+      for (const n of partial) {
+        const u = resolveUnit(n);
+        if (u) for (const t of u.traits) onBoardTraits.add(t);
+      }
+      // Only units that share a trait with the board AND don't out-carry the anchor.
+      const candidates = ALL_UNITS.filter(
+        (u) => u.traits.some((t) => onBoardTraits.has(t)) && (rankOf.get(u.name) ?? 0) <= cap,
+      );
+      for (const u of candidates) {
+        if (partial.includes(u.name)) continue;
+        const units = [...partial, u.name];
+        const key = boardKey(units);
+        if (localSeen.has(key)) continue;
+        localSeen.add(key);
+        scored.push({ units, score: scoreBoard(units, star).score });
+      }
+    }
+
+    if (!scored.length) break;
+    scored.sort((a, b) => b.score - a.score);
+    beam = scored.slice(0, beamWidth).map((s) => s.units);
+  }
+
+  // Feature the anchor as the carry even if a board-trait tier nudges another
+  // unit's on-board DPS just above it.
+  return beam.map((b) => scoreBoard(b, star, anchor.name));
+}
+
 /** Count units shared between two boards (board sizes are equal in practice). */
 function overlapCount(a: string[], b: string[]): number {
   const set = new Set(a);
@@ -349,44 +422,63 @@ function overlapCount(a: string[], b: string[]): number {
  *  from every trait's beam search, then greedily accepts the highest-scoring
  *  boards that aren't near-duplicates of an already-accepted one — so the
  *  surfaced list shows DISTINCT ideas, not N variations of the same vertical. */
+// How many of the top carries get a dedicated anchored board — generous enough
+// to fill the surfaced list with distinct carries (the Lab filters on these).
+const CARRY_ANCHORS = 32;
+
 export function discoverBoards(opts: DiscoverOptions = {}): BoardScore[] {
   const boardSize = opts.boardSize ?? DEFAULT_BOARD_SIZE;
-  // Wider beam keeps more distinct boards alive per seed, so the diversity +
-  // per-carry filters downstream have varied raw material (a narrow beam
-  // converges every seed onto the same few flex carries).
-  const beamWidth = opts.beamWidth ?? 60;
+  const beamWidth = opts.beamWidth ?? 30;
   const topN = opts.topN ?? 24;
   const star = opts.star ?? DEFAULT_STAR;
-  const maxPerCarry = opts.maxPerCarry ?? 3;
+  // At most this many surfaced boards may share one suggested carry — kept low so
+  // the list spans many carries instead of re-running the single best one.
+  const maxPerCarry = opts.maxPerCarry ?? 2;
   // Two boards sharing more than this many units are "the same comp" for
-  // surfacing. size−3 means an accepted board differs by at least 3 units from
-  // every higher-scoring one — enough to suppress near-identical verticals that
-  // only swap a unit or two (e.g. eight Rogue-5 boards sharing the same core).
+  // surfacing (size−3 ⇒ differ by ≥3), suppressing near-identical verticals.
   const maxOverlap = opts.maxOverlap ?? boardSize - 3;
+
+  // Standalone carry rank for every unit, once — drives anchor choice + exclusion.
+  const rankOf = new Map<string, number>();
+  for (const u of ALL_UNITS) rankOf.set(u.name, standaloneCarryRank(u, star));
 
   const seen = new Set<string>();
   const candidates: BoardScore[] = [];
+  const collect = (board: BoardScore): void => {
+    if (board.units.length < boardSize) return;
+    const key = boardKey(board.units);
+    if (seen.has(key)) return;
+    seen.add(key);
+    candidates.push(board);
+  };
 
+  // (a) Carry-anchored: the best board built around each of the top carries, so
+  //     EVERY strong carry gets a board where it's genuinely the carry. Without
+  //     this, one or two units (Jhin/Fiora) end up the carry of every high-score
+  //     board and the Lab's carry filter collapses to a couple of options.
+  const anchors = [...ALL_UNITS]
+    .filter((u) => (rankOf.get(u.name) ?? 0) > 0)
+    .sort((a, b) => (rankOf.get(b.name) ?? 0) - (rankOf.get(a.name) ?? 0))
+    .slice(0, CARRY_ANCHORS);
+  for (const anchor of anchors) {
+    const boards = searchFromCarry(anchor, rankOf, boardSize, beamWidth, star);
+    boards.sort((a, b) => b.score - a.score);
+    for (const board of boards.slice(0, 3)) collect(board);
+  }
+
+  // (b) Trait-anchored verticals: keeps deep single-trait combos in the mix
+  //     alongside the carry-anchored variety.
   for (const traitName of Object.keys(TRAIT_MATH)) {
     const pool = ALL_UNITS.filter((u) => u.traits.includes(traitName));
     if (pool.length < 2) continue;
-
-    for (const board of searchFromSeed(pool, boardSize, beamWidth, star)) {
-      if (board.units.length < boardSize) continue;
-      const key = boardKey(board.units);
-      if (seen.has(key)) continue;
-      seen.add(key);
-      candidates.push(board);
-    }
+    for (const board of searchFromSeed(pool, boardSize, beamWidth, star)) collect(board);
   }
 
   candidates.sort((a, b) => b.score - a.score);
 
   // Greedy diversity filter: accept a board only if it differs from every
-  // already-accepted (higher-scoring) board by more than `maxOverlap` units AND
-  // its suggested carry isn't already over-represented. A discovery list's value
-  // is VARIETY, so a couple of flex 5-cost carries (Sona, Fiora) shouldn't anchor
-  // most of the slots — the per-carry cap forces distinct carry archetypes up.
+  // already-accepted board by >maxOverlap units AND its suggested carry isn't
+  // already over-represented — so the list shows VARIED ideas across many carries.
   const results: BoardScore[] = [];
   const carryCount = new Map<string, number>();
   for (const board of candidates) {
