@@ -836,7 +836,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 16.6,
-    "carryPower": 639.088,
+    "carryPower": 639.086,
     "frontPower": 15093,
     "score": 38.696,
     "suggestedCarry": "Shen",
@@ -845,7 +845,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 343.568,
+    "suggestedCarryDps": 343.565,
     "suggestedEmblem": "Meeple"
   },
   {
@@ -888,7 +888,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 18.6,
-    "carryPower": 659.591,
+    "carryPower": 659.59,
     "frontPower": 12845,
     "score": 38.369,
     "suggestedCarry": "Shen",
@@ -897,60 +897,8 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 343.568,
+    "suggestedCarryDps": 343.565,
     "suggestedEmblem": "Rogue"
-  },
-  {
-    "units": [
-      "Blitzcrank",
-      "Ornn",
-      "Shen",
-      "Nasus",
-      "Nami",
-      "Teemo",
-      "Rammus",
-      "Jax"
-    ],
-    "cost": 25,
-    "activeTraits": [
-      {
-        "name": "Space Groove",
-        "count": 5,
-        "tierLevel": 3
-      },
-      {
-        "name": "Bastion",
-        "count": 4,
-        "tierLevel": 2
-      },
-      {
-        "name": "Vanguard",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Party Animal",
-        "count": 1,
-        "tierLevel": 1
-      },
-      {
-        "name": "Bulwark",
-        "count": 1,
-        "tierLevel": 1
-      }
-    ],
-    "traitScore": 18.6,
-    "carryPower": 674.886,
-    "frontPower": 12640.5,
-    "score": 38.269,
-    "suggestedCarry": "Blitzcrank",
-    "suggestedCarryItems": [
-      "Infinity Edge",
-      "Last Whisper",
-      "Giant Slayer"
-    ],
-    "suggestedCarryDps": 370.017,
-    "suggestedEmblem": "Replicator"
   },
   {
     "units": [
@@ -992,9 +940,9 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 18.6,
-    "carryPower": 608.831,
+    "carryPower": 622.703,
     "frontPower": 13043.475,
-    "score": 38.166,
+    "score": 38.282,
     "suggestedCarry": "Milio",
     "suggestedCarryItems": [
       "Rabadon's Deathcap",
@@ -1002,6 +950,58 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       "Giant Slayer"
     ],
     "suggestedCarryDps": 547.57,
+    "suggestedEmblem": "Replicator"
+  },
+  {
+    "units": [
+      "Blitzcrank",
+      "Ornn",
+      "Shen",
+      "Nasus",
+      "Nami",
+      "Teemo",
+      "Rammus",
+      "Jax"
+    ],
+    "cost": 25,
+    "activeTraits": [
+      {
+        "name": "Space Groove",
+        "count": 5,
+        "tierLevel": 3
+      },
+      {
+        "name": "Bastion",
+        "count": 4,
+        "tierLevel": 2
+      },
+      {
+        "name": "Vanguard",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Party Animal",
+        "count": 1,
+        "tierLevel": 1
+      },
+      {
+        "name": "Bulwark",
+        "count": 1,
+        "tierLevel": 1
+      }
+    ],
+    "traitScore": 18.6,
+    "carryPower": 674.884,
+    "frontPower": 12640.5,
+    "score": 38.269,
+    "suggestedCarry": "Blitzcrank",
+    "suggestedCarryItems": [
+      "Infinity Edge",
+      "Last Whisper",
+      "Giant Slayer"
+    ],
+    "suggestedCarryDps": 370.017,
     "suggestedEmblem": "Replicator"
   },
   {
@@ -1220,6 +1220,6 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
 ];
 
 /** When the discovery search was last run. */
-export const THEORYCRAFT_UPDATED_AT = "2026-06-06T14:18:01.690Z";
+export const THEORYCRAFT_UPDATED_AT = "2026-06-08T16:03:46.030Z";
 /** Provenance of the underlying unit math the search ran on. */
 export const THEORYCRAFT_SOURCE = "cdragon:TFTSet17";
