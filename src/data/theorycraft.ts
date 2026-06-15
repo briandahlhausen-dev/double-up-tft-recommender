@@ -134,63 +134,6 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
   },
   {
     "units": [
-      "Fizz",
-      "Gwen",
-      "Briar",
-      "Fiora",
-      "Riven",
-      "Talon",
-      "Urgot",
-      "Tahm Kench"
-    ],
-    "cost": 23,
-    "activeTraits": [
-      {
-        "name": "Rogue",
-        "count": 5,
-        "tierLevel": 4
-      },
-      {
-        "name": "Marauder",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Brawler",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Space Groove",
-        "count": 1,
-        "tierLevel": 1
-      },
-      {
-        "name": "Divine Duelist",
-        "count": 1,
-        "tierLevel": 1
-      },
-      {
-        "name": "Oracle",
-        "count": 1,
-        "tierLevel": 1
-      }
-    ],
-    "traitScore": 23.4,
-    "carryPower": 1245.562,
-    "frontPower": 14976,
-    "score": 50.42,
-    "suggestedCarry": "Fiora",
-    "suggestedCarryItems": [
-      "Infinity Edge",
-      "Last Whisper",
-      "Giant Slayer"
-    ],
-    "suggestedCarryDps": 779.948,
-    "suggestedEmblem": "Anima"
-  },
-  {
-    "units": [
       "Viktor",
       "Master Yi",
       "Fiora",
@@ -253,6 +196,130 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
   },
   {
     "units": [
+      "Fizz",
+      "Gwen",
+      "Briar",
+      "Fiora",
+      "Riven",
+      "Talon",
+      "Urgot",
+      "Tahm Kench"
+    ],
+    "cost": 23,
+    "activeTraits": [
+      {
+        "name": "Rogue",
+        "count": 5,
+        "tierLevel": 4
+      },
+      {
+        "name": "Marauder",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Brawler",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Space Groove",
+        "count": 1,
+        "tierLevel": 1
+      },
+      {
+        "name": "Divine Duelist",
+        "count": 1,
+        "tierLevel": 1
+      },
+      {
+        "name": "Oracle",
+        "count": 1,
+        "tierLevel": 1
+      }
+    ],
+    "traitScore": 23.4,
+    "carryPower": 1212.055,
+    "frontPower": 14976,
+    "score": 50.14,
+    "suggestedCarry": "Fiora",
+    "suggestedCarryItems": [
+      "Infinity Edge",
+      "Last Whisper",
+      "Giant Slayer"
+    ],
+    "suggestedCarryDps": 779.948,
+    "suggestedEmblem": "Anima"
+  },
+  {
+    "units": [
+      "Diana",
+      "Bel'Veth",
+      "Fiora",
+      "Kindred",
+      "Maokai",
+      "Tahm Kench",
+      "Jinx",
+      "Briar"
+    ],
+    "cost": 24,
+    "activeTraits": [
+      {
+        "name": "Challenger",
+        "count": 4,
+        "tierLevel": 3
+      },
+      {
+        "name": "Anima",
+        "count": 3,
+        "tierLevel": 1
+      },
+      {
+        "name": "Primordian",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Marauder",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "N.O.V.A.",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Brawler",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Divine Duelist",
+        "count": 1,
+        "tierLevel": 1
+      },
+      {
+        "name": "Oracle",
+        "count": 1,
+        "tierLevel": 1
+      }
+    ],
+    "traitScore": 19.4,
+    "carryPower": 1374.614,
+    "frontPower": 15273,
+    "score": 47.825,
+    "suggestedCarry": "Kindred",
+    "suggestedCarryItems": [
+      "Infinity Edge",
+      "Last Whisper",
+      "Giant Slayer"
+    ],
+    "suggestedCarryDps": 865.038,
+    "suggestedEmblem": "Challenger"
+  },
+  {
+    "units": [
       "Gwen",
       "Fizz",
       "Riven",
@@ -291,17 +358,84 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 25.4,
-    "carryPower": 1047.71,
+    "carryPower": 1014.204,
     "frontPower": 10784.25,
-    "score": 46.113,
+    "score": 45.834,
     "suggestedCarry": "Gwen",
     "suggestedCarryItems": [
       "Infinity Edge",
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 695.733,
+    "suggestedCarryDps": 654.808,
     "suggestedEmblem": "Timebreaker"
+  },
+  {
+    "units": [
+      "Diana",
+      "Bel'Veth",
+      "Fiora",
+      "Kindred",
+      "Jinx",
+      "Illaoi",
+      "Blitzcrank",
+      "Akali"
+    ],
+    "cost": 26,
+    "activeTraits": [
+      {
+        "name": "Challenger",
+        "count": 4,
+        "tierLevel": 3
+      },
+      {
+        "name": "Marauder",
+        "count": 3,
+        "tierLevel": 1
+      },
+      {
+        "name": "Anima",
+        "count": 3,
+        "tierLevel": 1
+      },
+      {
+        "name": "N.O.V.A.",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Vanguard",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Divine Duelist",
+        "count": 1,
+        "tierLevel": 1
+      },
+      {
+        "name": "Party Animal",
+        "count": 1,
+        "tierLevel": 1
+      },
+      {
+        "name": "Space Groove",
+        "count": 1,
+        "tierLevel": 1
+      }
+    ],
+    "traitScore": 19.4,
+    "carryPower": 1374.614,
+    "frontPower": 13203,
+    "score": 45.525,
+    "suggestedCarry": "Kindred",
+    "suggestedCarryItems": [
+      "Infinity Edge",
+      "Last Whisper",
+      "Giant Slayer"
+    ],
+    "suggestedCarryDps": 865.038,
+    "suggestedEmblem": "Challenger"
   },
   {
     "units": [
@@ -343,9 +477,9 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 22.4,
-    "carryPower": 1047.71,
+    "carryPower": 1014.204,
     "frontPower": 11697.8,
-    "score": 44.128,
+    "score": 43.849,
     "suggestedCarry": "Corki",
     "suggestedCarryItems": [
       "Infinity Edge",
@@ -357,39 +491,29 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
   },
   {
     "units": [
-      "Kindred",
-      "Maokai",
-      "Tahm Kench",
-      "Urgot",
-      "Rek'Sai",
       "Bel'Veth",
-      "Jinx",
-      "Diana"
+      "Briar",
+      "Riven",
+      "Fizz",
+      "Kai'Sa",
+      "Talon",
+      "Rek'Sai",
+      "Tahm Kench"
     ],
-    "cost": 22,
+    "cost": 19,
     "activeTraits": [
       {
-        "name": "Challenger",
-        "count": 4,
-        "tierLevel": 3
-      },
-      {
-        "name": "Brawler",
-        "count": 4,
-        "tierLevel": 2
-      },
-      {
-        "name": "N.O.V.A.",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Marauder",
-        "count": 2,
-        "tierLevel": 1
+        "name": "Rogue",
+        "count": 5,
+        "tierLevel": 4
       },
       {
         "name": "Primordian",
+        "count": 3,
+        "tierLevel": 2
+      },
+      {
+        "name": "Brawler",
         "count": 2,
         "tierLevel": 1
       },
@@ -399,17 +523,17 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
         "tierLevel": 1
       }
     ],
-    "traitScore": 20,
-    "carryPower": 1157.515,
-    "frontPower": 12097.35,
-    "score": 43.087,
-    "suggestedCarry": "Kindred",
+    "traitScore": 24.2,
+    "carryPower": 812.275,
+    "frontPower": 10219.5,
+    "score": 42.324,
+    "suggestedCarry": "Bel'Veth",
     "suggestedCarryItems": [
       "Infinity Edge",
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 758.722,
+    "suggestedCarryDps": 379.692,
     "suggestedEmblem": "Challenger"
   },
   {
@@ -471,66 +595,14 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
   },
   {
     "units": [
-      "Xayah",
-      "Nunu & Willump",
-      "Blitzcrank",
-      "Talon",
-      "Riven",
-      "Kai'Sa",
-      "Briar",
-      "Fizz"
-    ],
-    "cost": 25,
-    "activeTraits": [
-      {
-        "name": "Rogue",
-        "count": 5,
-        "tierLevel": 4
-      },
-      {
-        "name": "Stargazer",
-        "count": 3,
-        "tierLevel": 1
-      },
-      {
-        "name": "Vanguard",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Party Animal",
-        "count": 1,
-        "tierLevel": 1
-      },
-      {
-        "name": "Space Groove",
-        "count": 1,
-        "tierLevel": 1
-      }
-    ],
-    "traitScore": 22.4,
-    "carryPower": 816.975,
-    "frontPower": 10855.656,
-    "score": 41.27,
-    "suggestedCarry": "Xayah",
-    "suggestedCarryItems": [
-      "Infinity Edge",
-      "Last Whisper",
-      "Giant Slayer"
-    ],
-    "suggestedCarryDps": 430.336,
-    "suggestedEmblem": "Sniper"
-  },
-  {
-    "units": [
       "Samira",
       "Ezreal",
       "Pantheon",
       "Tahm Kench",
       "Riven",
       "Milio",
-      "Xayah",
-      "Gnar"
+      "Gnar",
+      "Xayah"
     ],
     "cost": 22,
     "activeTraits": [
@@ -561,16 +633,16 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 23.4,
-    "carryPower": 680.578,
+    "carryPower": 662.139,
     "frontPower": 10784.25,
-    "score": 41.054,
+    "score": 40.9,
     "suggestedCarry": "Samira",
     "suggestedCarryItems": [
       "Infinity Edge",
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 430.959,
+    "suggestedCarryDps": 417.228,
     "suggestedEmblem": "Replicator"
   },
   {
@@ -618,9 +690,9 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 17,
-    "carryPower": 881.919,
+    "carryPower": 888.419,
     "frontPower": 14842.575,
-    "score": 40.841,
+    "score": 40.895,
     "suggestedCarry": "Urgot",
     "suggestedCarryItems": [
       "Infinity Edge",
@@ -629,58 +701,6 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
     ],
     "suggestedCarryDps": 453.526,
     "suggestedEmblem": "Psionic"
-  },
-  {
-    "units": [
-      "Karma",
-      "Kai'Sa",
-      "Riven",
-      "Fizz",
-      "Briar",
-      "Talon",
-      "Rek'Sai",
-      "Tahm Kench"
-    ],
-    "cost": 21,
-    "activeTraits": [
-      {
-        "name": "Rogue",
-        "count": 5,
-        "tierLevel": 4
-      },
-      {
-        "name": "Dark Star",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Primordian",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Brawler",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Oracle",
-        "count": 1,
-        "tierLevel": 1
-      }
-    ],
-    "traitScore": 22.4,
-    "carryPower": 812.275,
-    "frontPower": 10334.25,
-    "score": 40.651,
-    "suggestedCarry": "Karma",
-    "suggestedCarryItems": [
-      "Rabadon's Deathcap",
-      "Jeweled Gauntlet",
-      "Giant Slayer"
-    ],
-    "suggestedCarryDps": 552.266,
-    "suggestedEmblem": "Primordian"
   },
   {
     "units": [
@@ -741,24 +761,24 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
   },
   {
     "units": [
-      "Jinx",
-      "Aurora",
-      "The Mighty Mech",
-      "Meepsie",
-      "Pyke",
-      "Karma",
-      "Illaoi",
-      "Blitzcrank"
+      "Xayah",
+      "Nunu & Willump",
+      "Talon",
+      "Riven",
+      "Kai'Sa",
+      "Briar",
+      "Fizz",
+      "Mordekaiser"
     ],
-    "cost": 25,
+    "cost": 22,
     "activeTraits": [
       {
-        "name": "Voyager",
+        "name": "Rogue",
         "count": 5,
         "tierLevel": 4
       },
       {
-        "name": "Anima",
+        "name": "Stargazer",
         "count": 3,
         "tierLevel": 1
       },
@@ -768,28 +788,23 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
         "tierLevel": 1
       },
       {
-        "name": "Party Animal",
-        "count": 1,
-        "tierLevel": 1
-      },
-      {
-        "name": "Space Groove",
-        "count": 1,
+        "name": "Dark Star",
+        "count": 2,
         "tierLevel": 1
       }
     ],
-    "traitScore": 22.4,
-    "carryPower": 706.749,
-    "frontPower": 9819,
-    "score": 39.2,
-    "suggestedCarry": "Jinx",
+    "traitScore": 21.4,
+    "carryPower": 812.275,
+    "frontPower": 10850.031,
+    "score": 40.225,
+    "suggestedCarry": "Xayah",
     "suggestedCarryItems": [
       "Infinity Edge",
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 462.834,
-    "suggestedEmblem": "Voyager"
+    "suggestedCarryDps": 395.783,
+    "suggestedEmblem": "Sniper"
   },
   {
     "units": [
@@ -836,7 +851,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 16.6,
-    "carryPower": 639.086,
+    "carryPower": 639.088,
     "frontPower": 15093,
     "score": 38.696,
     "suggestedCarry": "Shen",
@@ -845,8 +860,60 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 343.565,
+    "suggestedCarryDps": 343.568,
     "suggestedEmblem": "Meeple"
+  },
+  {
+    "units": [
+      "Samira",
+      "Ornn",
+      "Shen",
+      "Rammus",
+      "Poppy",
+      "Gnar",
+      "Ezreal",
+      "Xayah"
+    ],
+    "cost": 23,
+    "activeTraits": [
+      {
+        "name": "Sniper",
+        "count": 4,
+        "tierLevel": 3
+      },
+      {
+        "name": "Bastion",
+        "count": 4,
+        "tierLevel": 2
+      },
+      {
+        "name": "Meeple",
+        "count": 3,
+        "tierLevel": 1
+      },
+      {
+        "name": "Space Groove",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Bulwark",
+        "count": 1,
+        "tierLevel": 1
+      }
+    ],
+    "traitScore": 18.8,
+    "carryPower": 673.246,
+    "frontPower": 12755,
+    "score": 38.583,
+    "suggestedCarry": "Samira",
+    "suggestedCarryItems": [
+      "Infinity Edge",
+      "Last Whisper",
+      "Giant Slayer"
+    ],
+    "suggestedCarryDps": 417.228,
+    "suggestedEmblem": "Space Groove"
   },
   {
     "units": [
@@ -888,7 +955,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 18.6,
-    "carryPower": 659.59,
+    "carryPower": 659.591,
     "frontPower": 12845,
     "score": 38.369,
     "suggestedCarry": "Shen",
@@ -897,8 +964,60 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 343.565,
+    "suggestedCarryDps": 343.568,
     "suggestedEmblem": "Rogue"
+  },
+  {
+    "units": [
+      "Blitzcrank",
+      "Ornn",
+      "Shen",
+      "Nasus",
+      "Nami",
+      "Samira",
+      "Rammus",
+      "Jax"
+    ],
+    "cost": 27,
+    "activeTraits": [
+      {
+        "name": "Space Groove",
+        "count": 5,
+        "tierLevel": 3
+      },
+      {
+        "name": "Bastion",
+        "count": 4,
+        "tierLevel": 2
+      },
+      {
+        "name": "Vanguard",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Party Animal",
+        "count": 1,
+        "tierLevel": 1
+      },
+      {
+        "name": "Bulwark",
+        "count": 1,
+        "tierLevel": 1
+      }
+    ],
+    "traitScore": 18.6,
+    "carryPower": 674.886,
+    "frontPower": 12640.5,
+    "score": 38.269,
+    "suggestedCarry": "Blitzcrank",
+    "suggestedCarryItems": [
+      "Infinity Edge",
+      "Last Whisper",
+      "Giant Slayer"
+    ],
+    "suggestedCarryDps": 370.017,
+    "suggestedEmblem": "Replicator"
   },
   {
     "units": [
@@ -940,9 +1059,9 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 18.6,
-    "carryPower": 622.703,
+    "carryPower": 612.137,
     "frontPower": 13043.475,
-    "score": 38.282,
+    "score": 38.194,
     "suggestedCarry": "Milio",
     "suggestedCarryItems": [
       "Rabadon's Deathcap",
@@ -951,100 +1070,6 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
     ],
     "suggestedCarryDps": 547.57,
     "suggestedEmblem": "Replicator"
-  },
-  {
-    "units": [
-      "Blitzcrank",
-      "Ornn",
-      "Shen",
-      "Nasus",
-      "Nami",
-      "Teemo",
-      "Rammus",
-      "Jax"
-    ],
-    "cost": 25,
-    "activeTraits": [
-      {
-        "name": "Space Groove",
-        "count": 5,
-        "tierLevel": 3
-      },
-      {
-        "name": "Bastion",
-        "count": 4,
-        "tierLevel": 2
-      },
-      {
-        "name": "Vanguard",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Party Animal",
-        "count": 1,
-        "tierLevel": 1
-      },
-      {
-        "name": "Bulwark",
-        "count": 1,
-        "tierLevel": 1
-      }
-    ],
-    "traitScore": 18.6,
-    "carryPower": 674.884,
-    "frontPower": 12640.5,
-    "score": 38.269,
-    "suggestedCarry": "Blitzcrank",
-    "suggestedCarryItems": [
-      "Infinity Edge",
-      "Last Whisper",
-      "Giant Slayer"
-    ],
-    "suggestedCarryDps": 370.017,
-    "suggestedEmblem": "Replicator"
-  },
-  {
-    "units": [
-      "The Mighty Mech",
-      "Aurelion Sol",
-      "Mordekaiser",
-      "Bard",
-      "Viktor",
-      "Zoe",
-      "Leona",
-      "Diana"
-    ],
-    "cost": 24,
-    "activeTraits": [
-      {
-        "name": "Conduit",
-        "count": 5,
-        "tierLevel": 4
-      },
-      {
-        "name": "Arbiter",
-        "count": 3,
-        "tierLevel": 2
-      },
-      {
-        "name": "Vanguard",
-        "count": 2,
-        "tierLevel": 1
-      }
-    ],
-    "traitScore": 23,
-    "carryPower": 592.874,
-    "frontPower": 8518.5,
-    "score": 37.406,
-    "suggestedCarry": "The Mighty Mech",
-    "suggestedCarryItems": [
-      "Infinity Edge",
-      "Last Whisper",
-      "Giant Slayer"
-    ],
-    "suggestedCarryDps": 306.312,
-    "suggestedEmblem": "Mecha"
   },
   {
     "units": [
@@ -1096,69 +1121,59 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 16,
-    "carryPower": 820.896,
+    "carryPower": 835.032,
     "frontPower": 13043.475,
-    "score": 37.334,
+    "score": 37.451,
     "suggestedCarry": "Akali",
     "suggestedCarryItems": [
       "Infinity Edge",
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 585.828,
+    "suggestedCarryDps": 598.827,
     "suggestedEmblem": "Challenger"
   },
   {
     "units": [
-      "Bel'Veth",
-      "Rek'Sai",
-      "Tahm Kench",
-      "Maokai",
-      "Pantheon",
-      "Briar",
-      "Riven",
-      "Fizz"
+      "The Mighty Mech",
+      "Aurelion Sol",
+      "Mordekaiser",
+      "Bard",
+      "Viktor",
+      "Zoe",
+      "Leona",
+      "Diana"
     ],
-    "cost": 20,
+    "cost": 24,
     "activeTraits": [
       {
-        "name": "Brawler",
-        "count": 4,
-        "tierLevel": 2
+        "name": "Conduit",
+        "count": 5,
+        "tierLevel": 4
       },
       {
-        "name": "Primordian",
+        "name": "Arbiter",
         "count": 3,
         "tierLevel": 2
       },
       {
-        "name": "Rogue",
-        "count": 3,
-        "tierLevel": 2
-      },
-      {
-        "name": "Timebreaker",
+        "name": "Vanguard",
         "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Oracle",
-        "count": 1,
         "tierLevel": 1
       }
     ],
-    "traitScore": 16.6,
-    "carryPower": 610.231,
-    "frontPower": 12854.25,
-    "score": 35.968,
-    "suggestedCarry": "Bel'Veth",
+    "traitScore": 23,
+    "carryPower": 592.874,
+    "frontPower": 8518.5,
+    "score": 37.406,
+    "suggestedCarry": "The Mighty Mech",
     "suggestedCarryItems": [
       "Infinity Edge",
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 366.748,
-    "suggestedEmblem": "Rogue"
+    "suggestedCarryDps": 306.312,
+    "suggestedEmblem": "Mecha"
   },
   {
     "units": [
@@ -1216,10 +1231,62 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
     ],
     "suggestedCarryDps": 289.551,
     "suggestedEmblem": "Rogue"
+  },
+  {
+    "units": [
+      "Ezreal",
+      "Pantheon",
+      "Tahm Kench",
+      "Maokai",
+      "Rek'Sai",
+      "Riven",
+      "Briar",
+      "Talon"
+    ],
+    "cost": 17,
+    "activeTraits": [
+      {
+        "name": "Brawler",
+        "count": 4,
+        "tierLevel": 2
+      },
+      {
+        "name": "Timebreaker",
+        "count": 3,
+        "tierLevel": 2
+      },
+      {
+        "name": "Rogue",
+        "count": 3,
+        "tierLevel": 2
+      },
+      {
+        "name": "Primordian",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Oracle",
+        "count": 1,
+        "tierLevel": 1
+      }
+    ],
+    "traitScore": 16.6,
+    "carryPower": 572.969,
+    "frontPower": 12854.25,
+    "score": 35.657,
+    "suggestedCarry": "Ezreal",
+    "suggestedCarryItems": [
+      "Infinity Edge",
+      "Last Whisper",
+      "Giant Slayer"
+    ],
+    "suggestedCarryDps": 379.035,
+    "suggestedEmblem": "Timebreaker"
   }
 ];
 
 /** When the discovery search was last run. */
-export const THEORYCRAFT_UPDATED_AT = "2026-06-08T16:03:46.030Z";
+export const THEORYCRAFT_UPDATED_AT = "2026-06-15T17:30:21.603Z";
 /** Provenance of the underlying unit math the search ran on. */
 export const THEORYCRAFT_SOURCE = "cdragon:TFTSet17";

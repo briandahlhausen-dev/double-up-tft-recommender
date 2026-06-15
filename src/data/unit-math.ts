@@ -156,10 +156,10 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "DamageAD",
           "value": [
             27,
-            37,
-            56,
-            84,
-            140,
+            39,
+            59,
+            88,
+            150,
             72,
             72
           ]
@@ -432,8 +432,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "DamagePerSecond",
           "value": [
             2,
-            220,
-            330,
+            240,
+            360,
             3000,
             5000,
             2,
@@ -581,10 +581,10 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "ADDamage",
           "value": [
             50,
-            20,
-            30,
-            45,
-            77,
+            22,
+            33,
+            50,
+            85,
             0,
             0
           ]
@@ -871,10 +871,10 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "Damage",
           "value": [
             145,
-            170,
-            255,
-            510,
-            875,
+            190,
+            285,
+            540,
+            925,
             455,
             455
           ]
@@ -1355,10 +1355,10 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "ADDamage",
           "value": [
             0,
-            160,
-            240,
-            365,
-            620,
+            170,
+            255,
+            380,
+            650,
             0,
             0
           ]
@@ -1556,9 +1556,9 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "DashDamage",
           "value": [
             80,
-            120,
-            180,
-            290,
+            140,
+            210,
+            310,
             470,
             250,
             250
@@ -2015,7 +2015,7 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "armor": 50,
       "magicResist": 50,
       "damage": 50,
-      "attackSpeed": 0.85,
+      "attackSpeed": 0.8,
       "critChance": 0.25,
       "critMultiplier": 1.4,
       "mana": 30,
@@ -2057,8 +2057,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
             120,
             75,
             110,
-            190,
-            325,
+            215,
+            365,
             420,
             420
           ]
@@ -2889,7 +2889,7 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "hp": 850,
       "armor": 30,
       "magicResist": 30,
-      "damage": 55,
+      "damage": 58,
       "attackSpeed": 0.8,
       "critChance": 0.25,
       "critMultiplier": 1.4,
@@ -3054,8 +3054,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "BoltDamage",
           "value": [
             0,
-            80,
-            120,
+            85,
+            130,
             750,
             540,
             0,
@@ -3639,9 +3639,9 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "InitialShield",
           "value": [
             0,
-            300,
-            375,
-            500,
+            350,
+            425,
+            550,
             650,
             200,
             240
@@ -3926,10 +3926,10 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "MaxHealth",
           "value": [
             400,
-            250,
-            350,
-            550,
-            750,
+            300,
+            400,
+            600,
+            800,
             700,
             700
           ]
@@ -4137,13 +4137,13 @@ export const UNIT_MATH: Record<string, UnitMath> = {
         {
           "name": "GrooveDuration",
           "value": [
-            3,
-            3,
-            3,
-            3,
-            3,
-            3,
-            3
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5,
+            2.5
           ]
         }
       ]
@@ -4406,7 +4406,7 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "attackSpeed": 0.65,
       "critChance": 0.25,
       "critMultiplier": 1.4,
-      "mana": 90,
+      "mana": 80,
       "initialMana": 20,
       "range": 1
     },
@@ -4490,13 +4490,13 @@ export const UNIT_MATH: Record<string, UnitMath> = {
         {
           "name": "FlatDRPerMeep",
           "value": [
-            4,
-            4,
-            4,
-            4,
-            4,
-            4,
-            4
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
           ]
         },
         {
@@ -4817,7 +4817,7 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "attackSpeed": 0.75,
       "critChance": 0.25,
       "critMultiplier": 1.4,
-      "mana": 60,
+      "mana": 65,
       "initialMana": 0,
       "range": 6
     },
@@ -4877,13 +4877,13 @@ export const UNIT_MATH: Record<string, UnitMath> = {
         {
           "name": "StunDuration",
           "value": [
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25,
-            1.25
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
           ]
         }
       ]
@@ -5331,10 +5331,10 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "MagicDamage",
           "value": [
             60,
-            65,
-            95,
-            170,
-            300,
+            70,
+            105,
+            190,
+            325,
             180,
             180
           ]
@@ -5560,10 +5560,10 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "Damage",
           "value": [
             250,
-            310,
-            465,
-            700,
-            1190,
+            330,
+            495,
+            750,
+            1200,
             825,
             825
           ]
@@ -5635,8 +5635,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "ShadowHandMagicDamage",
           "value": [
             200,
-            130,
-            195,
+            140,
+            210,
             1000,
             9999,
             200,
@@ -7108,7 +7108,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "minUnits": 5,
         "maxUnits": 6,
         "variables": {
-          "BonusHealth": 400,
+          "BonusHealth": 350,
           "Meeps": 3
         }
       },
@@ -7116,7 +7116,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "minUnits": 7,
         "maxUnits": 9,
         "variables": {
-          "BonusHealth": 400,
+          "BonusHealth": 450,
           "Meeps": 4
         }
       },
@@ -7124,7 +7124,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "minUnits": 10,
         "maxUnits": 25000,
         "variables": {
-          "BonusHealth": 500,
+          "BonusHealth": 550,
           "Meeps": 6
         }
       }
@@ -7395,7 +7395,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "maxUnits": 9,
         "variables": {
           "ADAPPerSecond": 5,
-          "EffectBonus": 15,
+          "EffectBonus": 10,
           "StartOfCombatDuration": 4
         }
       },
@@ -7794,7 +7794,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
 };
 
 /** When this module was last regenerated. */
-export const UNIT_MATH_UPDATED_AT = "2026-06-08T15:46:34.353Z";
+export const UNIT_MATH_UPDATED_AT = "2026-06-15T17:12:20.207Z";
 /** Provenance string. */
 export const UNIT_MATH_SOURCE = "cdragon:TFTSet17";
 
