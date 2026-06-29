@@ -204,10 +204,10 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "NovaDamagePerSecond",
           "value": [
             12,
-            12,
-            18,
-            24,
-            30,
+            15,
+            22,
+            28,
+            34,
             22,
             22
           ]
@@ -280,8 +280,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "DamagePerSecond",
           "value": [
             250,
-            320,
-            480,
+            335,
+            505,
             2000,
             2000,
             1650,
@@ -918,13 +918,13 @@ export const UNIT_MATH: Record<string, UnitMath> = {
         {
           "name": "NovaHeadshotModifier",
           "value": [
-            0.4,
-            0.4,
-            0.4,
-            0.4,
-            0.4,
-            0.4,
-            0.4
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ]
         }
       ]
@@ -1727,7 +1727,7 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "hp": 550,
       "armor": 20,
       "magicResist": 20,
-      "damage": 50,
+      "damage": 48,
       "attackSpeed": 0.75,
       "critChance": 0.25,
       "critMultiplier": 1.4,
@@ -2794,8 +2794,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "Damage",
           "value": [
             0,
-            570,
-            855,
+            630,
+            945,
             5000,
             6000,
             0,
@@ -2989,13 +2989,13 @@ export const UNIT_MATH: Record<string, UnitMath> = {
         {
           "name": "NovaDamageAmp",
           "value": [
-            0.1,
-            0.1,
-            0.1,
-            0.1,
-            0.1,
-            0.1,
-            0.1
+            0.15,
+            0.15,
+            0.15,
+            0.15,
+            0.15,
+            0.15,
+            0.15
           ]
         }
       ]
@@ -3030,8 +3030,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "BasicAttackDamage",
           "value": [
             0,
-            62,
-            93,
+            66,
+            99,
             250,
             450,
             0,
@@ -3054,8 +3054,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "BoltDamage",
           "value": [
             0,
-            85,
-            130,
+            95,
+            145,
             750,
             540,
             0,
@@ -3411,8 +3411,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "DamageAD",
           "value": [
             60,
-            50,
-            75,
+            55,
+            85,
             600,
             720,
             450,
@@ -3640,9 +3640,9 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "value": [
             0,
             350,
-            425,
-            550,
-            650,
+            450,
+            625,
+            775,
             200,
             240
           ]
@@ -3652,9 +3652,9 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "value": [
             0,
             75,
-            90,
-            105,
-            120,
+            100,
+            115,
+            130,
             0,
             0
           ]
@@ -3738,8 +3738,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "APHealthGain",
           "value": [
             0,
-            525,
-            625,
+            600,
+            700,
             2500,
             2500,
             2500,
@@ -3810,8 +3810,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "APHealing",
           "value": [
             0,
-            100,
-            150,
+            125,
+            185,
             3000,
             0,
             0,
@@ -3850,8 +3850,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "Damage",
           "value": [
             260,
-            440,
-            660,
+            460,
+            690,
             5000,
             3600,
             4000,
@@ -3874,8 +3874,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "FirstBounceDamage",
           "value": [
             120,
-            110,
-            165,
+            125,
+            185,
             1000,
             2000,
             1200,
@@ -4912,7 +4912,7 @@ export const UNIT_MATH: Record<string, UnitMath> = {
     "ability": {
       "name": "Reality Tear",
       "scaling": "AP",
-      "desc": "<spellPassive>Passive:</spellPassive> On cast, attacks gain <magicDamage>@ModifiedBonusDamage@&nbsp;(%i:scaleHealth%%i:scaleAP%)</magicDamage> stacking bonus magic damage. Starting from the third cast, gain <trueDamage>true damage</trueDamage> instead.<br><br><spellActive>Active:</spellActive> Gain <TFTBonus>@ModifiedShield@&nbsp;(%i:scaleHealth%%i:scaleAP%)</TFTBonus> Shield for @ShieldDuration@ seconds, then slice open a rift on the largest group of champions dealing the Passive's bonus damage to all enemies within. Enemies have their Attack Speed slowed by <TFTBonus>@ASSlow*100@%</TFTBonus> while allies within gain <TFTBonus>@BonusAS*100@%</TFTBonus> Attack Speed, both rapidly decaying over @BuffDebuffDuration@ seconds.",
+      "desc": "<spellPassive>Passive:</spellPassive> On cast, attacks gain <magicDamage>@ModifiedBonusDamage@&nbsp;(%i:scaleHealth%%i:scaleAP%)</magicDamage> stacking bonus magic damage. Starting from the third cast, gain <trueDamage>true damage</trueDamage> instead.<br><br><spellActive>Active:</spellActive> Gain <TFTBonus>@ModifiedShield@&nbsp;(%i:scaleHealth%%i:scaleAP%)</TFTBonus> Shield for @ShieldDuration@ seconds, then slice open a rift on the largest group of champions dealing the Passive's bonus damage to all enemies within. Enemies have their Attack Speed slowed by <TFTBonus>@ASSlow*100@%</TFTBonus> while allies within gain <TFTBonus>@BonusAS*100@%</TFTBonus> Attack Speed, both rapidly decaying over @BuffDebuffDuration@ seconds. Shen always gains his rift's full bonus for this duration.",
       "variables": [
         {
           "name": "BonusDamageOnAttack",
@@ -5419,10 +5419,10 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "DamageMin",
           "value": [
             180,
-            190,
-            285,
-            430,
-            730,
+            205,
+            305,
+            460,
+            800,
             500,
             500
           ]
@@ -5431,10 +5431,10 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "DamageMax",
           "value": [
             330,
-            380,
-            570,
-            860,
-            1460,
+            410,
+            610,
+            920,
+            1565,
             1000,
             1000
           ]
@@ -5723,9 +5723,9 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "Damage",
           "value": [
             200,
-            190,
-            290,
-            500,
+            200,
+            300,
+            530,
             850,
             505,
             505
@@ -6599,6 +6599,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "minUnits": 3,
         "maxUnits": 5,
         "variables": {
+          "PairsPartnerWinMultiplier": 0.85,
           "TechBreakpoint": 100,
           "TechPerCombat": 20,
           "TechPerCombat_DU": 20,
@@ -6606,14 +6607,14 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
           "TechPerKill": 2,
           "TechPerLoss": 5,
           "TechPerLoss_DU": 5,
-          "TechPerRound_PVE": 20,
-          "{18a09431}": 0.85
+          "TechPerRound_PVE": 20
         }
       },
       {
         "minUnits": 6,
         "maxUnits": 25000,
         "variables": {
+          "PairsPartnerWinMultiplier": 0.85,
           "TechBreakpoint": 100,
           "TechPerCombat": 20,
           "TechPerCombat_DU": 20,
@@ -6621,8 +6622,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
           "TechPerKill": 2,
           "TechPerLoss": 5,
           "TechPerLoss_DU": 5,
-          "TechPerRound_PVE": 20,
-          "{18a09431}": 0.85
+          "TechPerRound_PVE": 20
         }
       }
     ]
@@ -6864,7 +6864,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "maxUnits": 1,
         "variables": {
           "Durability": 0.04,
-          "{816175b9}": 0.1
+          "TransformedDurability": 0.1
         }
       }
     ]
@@ -7074,8 +7074,8 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "minUnits": 4,
         "maxUnits": 5,
         "variables": {
-          "AD": 0.45,
-          "AP": 45,
+          "AD": 0.4,
+          "AP": 40,
           "TeamSize": 1,
           "TransformedPercentHealth": 0.4
         }
@@ -7084,8 +7084,8 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "minUnits": 6,
         "maxUnits": 25000,
         "variables": {
-          "AD": 0.35,
-          "AP": 35,
+          "AD": 0.4,
+          "AP": 40,
           "TeamSize": 1,
           "TransformedPercentHealth": 0.4
         }
@@ -7423,6 +7423,9 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
           "Family_BaseSharePercent": 0.1,
           "Family_HexesToReveal_TOOLTIPONLY": 3,
           "Family_Stats": 10,
+          "Fountain_HealthRegen": 0.04,
+          "Fountain_HealthRegen_Teamwide": 0.02,
+          "Fountain_StackingADAP": 2,
           "Huntress_AS": 0.3,
           "Huntress_AS_Teamwide": 0.15,
           "Huntress_Heal": 0.05,
@@ -7446,7 +7449,6 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
           "Wolf_Gold": 1,
           "Wolf_Health": 0.02,
           "Wolf_Health_Teamwide": 0.08,
-          "{13a2a786}": 2,
           "{326db998}": 0.15,
           "{37204635}": 10,
           "{3d49cc86}": 20,
@@ -7459,10 +7461,8 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
           "{abed8603}": 1.3,
           "{b44d11c3}": 0.1,
           "{c32af02f}": 0.05,
-          "{d7e6d620}": 0.02,
           "{e5275a69}": 0.02,
-          "{e8338a44}": 0.15,
-          "{f2840aed}": 0.04
+          "{e8338a44}": 0.15
         }
       },
       {
@@ -7472,6 +7472,9 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
           "Family_BaseSharePercent": 0.1,
           "Family_HexesToReveal_TOOLTIPONLY": 2,
           "Family_Stats": 35,
+          "Fountain_HealthRegen": 0.04,
+          "Fountain_HealthRegen_Teamwide": 0.02,
+          "Fountain_StackingADAP": 4,
           "Huntress_AS": 0.45,
           "Huntress_AS_Teamwide": 0.15,
           "Huntress_Heal": 0.08,
@@ -7494,7 +7497,6 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
           "Wolf_Gold": 2,
           "Wolf_Health": 0.08,
           "Wolf_Health_Teamwide": 0.08,
-          "{13a2a786}": 4,
           "{326db998}": 0.25,
           "{37204635}": 10,
           "{3d49cc86}": 30,
@@ -7507,10 +7509,8 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
           "{abed8603}": 1.5,
           "{b44d11c3}": 0.1,
           "{c32af02f}": 0.05,
-          "{d7e6d620}": 0.02,
           "{e5275a69}": 0.03,
-          "{e8338a44}": 0.15,
-          "{f2840aed}": 0.04
+          "{e8338a44}": 0.15
         }
       },
       {
@@ -7520,6 +7520,9 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
           "Family_BaseSharePercent": 0.1,
           "Family_EmpoweredSharePercent": 0.3,
           "Family_Stats": 35,
+          "Fountain_HealthRegen": 0.04,
+          "Fountain_HealthRegen_Teamwide": 0.02,
+          "Fountain_StackingADAP": 4,
           "Huntress_AS": 0.6,
           "Huntress_AS_Teamwide": 0.15,
           "Huntress_Heal": 0.1,
@@ -7542,7 +7545,6 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
           "Wolf_Gold": 4,
           "Wolf_Health": 0.15,
           "Wolf_Health_Teamwide": 0.08,
-          "{13a2a786}": 4,
           "{326db998}": 0.35,
           "{37204635}": 10,
           "{3d49cc86}": 40,
@@ -7557,10 +7559,8 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
           "{b44d11c3}": 0.1,
           "{c32af02f}": 0.05,
           "{c4d51662}": 2,
-          "{d7e6d620}": 0.02,
           "{e5275a69}": 0.04,
-          "{e8338a44}": 0.15,
-          "{f2840aed}": 0.04
+          "{e8338a44}": 0.15
         }
       },
       {
@@ -7568,6 +7568,8 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "maxUnits": 25000,
         "variables": {
           "Family_BaseSharePercent": 0.1,
+          "Fountain_HealthRegen": 0.04,
+          "Fountain_HealthRegen_Teamwide": 0.02,
           "Huntress_AS_Teamwide": 0.15,
           "Medallion_IncreasePer3Star": 20,
           "Mountain_RoundsPerEmblem": 5,
@@ -7592,9 +7594,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
           "{aa686d69}": 10,
           "{b44d11c3}": 0.1,
           "{c32af02f}": 0.05,
-          "{d7e6d620}": 0.02,
-          "{e8338a44}": 0.15,
-          "{f2840aed}": 0.04
+          "{e8338a44}": 0.15
         }
       },
       {
@@ -7602,6 +7602,8 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "maxUnits": 25000,
         "variables": {
           "Family_BaseSharePercent": 0.1,
+          "Fountain_HealthRegen": 0.04,
+          "Fountain_HealthRegen_Teamwide": 0.02,
           "Huntress_AS_Teamwide": 0.15,
           "Medallion_IncreasePer3Star": 20,
           "Mountain_ADAP": 0.12,
@@ -7625,9 +7627,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
           "{aa686d69}": 10,
           "{b44d11c3}": 0.1,
           "{c32af02f}": 0.05,
-          "{d7e6d620}": 0.02,
-          "{e8338a44}": 0.15,
-          "{f2840aed}": 0.04
+          "{e8338a44}": 0.15
         }
       },
       {
@@ -7635,6 +7635,8 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "maxUnits": 25000,
         "variables": {
           "Family_BaseSharePercent": 0.1,
+          "Fountain_HealthRegen": 0.04,
+          "Fountain_HealthRegen_Teamwide": 0.02,
           "Huntress_AS_Teamwide": 0.15,
           "Medallion_IncreasePer3Star": 20,
           "Mountain_ADAP": 0.12,
@@ -7659,9 +7661,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
           "{aa686d69}": 10,
           "{b44d11c3}": 0.1,
           "{c32af02f}": 0.05,
-          "{d7e6d620}": 0.02,
-          "{e8338a44}": 0.15,
-          "{f2840aed}": 0.04
+          "{e8338a44}": 0.15
         }
       }
     ]
@@ -7794,7 +7794,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
 };
 
 /** When this module was last regenerated. */
-export const UNIT_MATH_UPDATED_AT = "2026-06-22T16:52:20.444Z";
+export const UNIT_MATH_UPDATED_AT = "2026-06-29T15:42:13.710Z";
 /** Provenance string. */
 export const UNIT_MATH_SOURCE = "cdragon:TFTSet17";
 
