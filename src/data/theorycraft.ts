@@ -518,14 +518,14 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
   },
   {
     "units": [
-      "Xayah",
+      "Samira",
       "Ezreal",
       "Pantheon",
       "Tahm Kench",
-      "Samira",
-      "Gnar",
       "Riven",
-      "Milio"
+      "Milio",
+      "Xayah",
+      "Gnar"
     ],
     "cost": 22,
     "activeTraits": [
@@ -545,27 +545,27 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
         "tierLevel": 1
       },
       {
-        "name": "Oracle",
+        "name": "Space Groove",
         "count": 1,
         "tierLevel": 1
       },
       {
-        "name": "Space Groove",
+        "name": "Oracle",
         "count": 1,
         "tierLevel": 1
       }
     ],
     "traitScore": 23.4,
-    "carryPower": 678.336,
+    "carryPower": 665.466,
     "frontPower": 10784.25,
-    "score": 41.035,
-    "suggestedCarry": "Xayah",
+    "score": 40.928,
+    "suggestedCarry": "Samira",
     "suggestedCarryItems": [
       "Infinity Edge",
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 439.584,
+    "suggestedCarryDps": 417.228,
     "suggestedEmblem": "Replicator"
   },
   {
@@ -684,6 +684,53 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
   },
   {
     "units": [
+      "Xayah",
+      "Nunu & Willump",
+      "Talon",
+      "Riven",
+      "Kai'Sa",
+      "Briar",
+      "Fizz",
+      "Mordekaiser"
+    ],
+    "cost": 22,
+    "activeTraits": [
+      {
+        "name": "Rogue",
+        "count": 5,
+        "tierLevel": 4
+      },
+      {
+        "name": "Stargazer",
+        "count": 3,
+        "tierLevel": 1
+      },
+      {
+        "name": "Vanguard",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Dark Star",
+        "count": 2,
+        "tierLevel": 1
+      }
+    ],
+    "traitScore": 21.4,
+    "carryPower": 812.275,
+    "frontPower": 10850.031,
+    "score": 40.225,
+    "suggestedCarry": "Xayah",
+    "suggestedCarryItems": [
+      "Infinity Edge",
+      "Last Whisper",
+      "Giant Slayer"
+    ],
+    "suggestedCarryDps": 413.843,
+    "suggestedEmblem": "Sniper"
+  },
+  {
+    "units": [
       "Shen",
       "Rammus",
       "Ornn",
@@ -727,7 +774,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 16.6,
-    "carryPower": 639.088,
+    "carryPower": 639.086,
     "frontPower": 15093,
     "score": 38.696,
     "suggestedCarry": "Shen",
@@ -736,19 +783,19 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 343.568,
+    "suggestedCarryDps": 343.565,
     "suggestedEmblem": "Meeple"
   },
   {
     "units": [
-      "Xayah",
-      "Gnar",
-      "Rammus",
-      "Shen",
       "Samira",
-      "Ezreal",
+      "Ornn",
+      "Shen",
+      "Rammus",
       "Poppy",
-      "Ornn"
+      "Gnar",
+      "Ezreal",
+      "Xayah"
     ],
     "cost": 23,
     "activeTraits": [
@@ -779,16 +826,16 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 18.8,
-    "carryPower": 681.899,
+    "carryPower": 673.244,
     "frontPower": 12755,
-    "score": 38.655,
-    "suggestedCarry": "Xayah",
+    "score": 38.583,
+    "suggestedCarry": "Samira",
     "suggestedCarryItems": [
       "Infinity Edge",
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 439.584,
+    "suggestedCarryDps": 417.228,
     "suggestedEmblem": "Space Groove"
   },
   {
@@ -831,7 +878,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 18.6,
-    "carryPower": 659.591,
+    "carryPower": 659.59,
     "frontPower": 12845,
     "score": 38.369,
     "suggestedCarry": "Shen",
@@ -840,60 +887,8 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 343.568,
+    "suggestedCarryDps": 343.565,
     "suggestedEmblem": "Rogue"
-  },
-  {
-    "units": [
-      "Milio",
-      "Pantheon",
-      "Tahm Kench",
-      "Riven",
-      "Ezreal",
-      "Maokai",
-      "Gragas",
-      "Caitlyn"
-    ],
-    "cost": 19,
-    "activeTraits": [
-      {
-        "name": "Timebreaker",
-        "count": 4,
-        "tierLevel": 3
-      },
-      {
-        "name": "Brawler",
-        "count": 4,
-        "tierLevel": 2
-      },
-      {
-        "name": "Fateweaver",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "N.O.V.A.",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Oracle",
-        "count": 1,
-        "tierLevel": 1
-      }
-    ],
-    "traitScore": 18.6,
-    "carryPower": 629.086,
-    "frontPower": 13043.475,
-    "score": 38.335,
-    "suggestedCarry": "Milio",
-    "suggestedCarryItems": [
-      "Rabadon's Deathcap",
-      "Jeweled Gauntlet",
-      "Giant Slayer"
-    ],
-    "suggestedCarryDps": 547.57,
-    "suggestedEmblem": "Replicator"
   },
   {
     "units": [
@@ -935,7 +930,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 18.6,
-    "carryPower": 674.886,
+    "carryPower": 674.884,
     "frontPower": 12640.5,
     "score": 38.269,
     "suggestedCarry": "Blitzcrank",
@@ -946,6 +941,58 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
     ],
     "suggestedCarryDps": 370.017,
     "suggestedEmblem": "Replicator"
+  },
+  {
+    "units": [
+      "Ezreal",
+      "Pantheon",
+      "Tahm Kench",
+      "Riven",
+      "Milio",
+      "Maokai",
+      "Gragas",
+      "Caitlyn"
+    ],
+    "cost": 19,
+    "activeTraits": [
+      {
+        "name": "Timebreaker",
+        "count": 4,
+        "tierLevel": 3
+      },
+      {
+        "name": "Brawler",
+        "count": 4,
+        "tierLevel": 2
+      },
+      {
+        "name": "Fateweaver",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "N.O.V.A.",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Oracle",
+        "count": 1,
+        "tierLevel": 1
+      }
+    ],
+    "traitScore": 18.6,
+    "carryPower": 615.075,
+    "frontPower": 13043.475,
+    "score": 38.218,
+    "suggestedCarry": "Ezreal",
+    "suggestedCarryItems": [
+      "Infinity Edge",
+      "Last Whisper",
+      "Giant Slayer"
+    ],
+    "suggestedCarryDps": 384.911,
+    "suggestedEmblem": "Sniper"
   },
   {
     "units": [
@@ -1053,6 +1100,58 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
   },
   {
     "units": [
+      "Milio",
+      "Pantheon",
+      "Tahm Kench",
+      "Maokai",
+      "Rek'Sai",
+      "Riven",
+      "Briar",
+      "Fizz"
+    ],
+    "cost": 20,
+    "activeTraits": [
+      {
+        "name": "Brawler",
+        "count": 4,
+        "tierLevel": 2
+      },
+      {
+        "name": "Timebreaker",
+        "count": 3,
+        "tierLevel": 2
+      },
+      {
+        "name": "Rogue",
+        "count": 3,
+        "tierLevel": 2
+      },
+      {
+        "name": "Primordian",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Oracle",
+        "count": 1,
+        "tierLevel": 1
+      }
+    ],
+    "traitScore": 16.6,
+    "carryPower": 586.248,
+    "frontPower": 12854.25,
+    "score": 35.768,
+    "suggestedCarry": "Milio",
+    "suggestedCarryItems": [
+      "Rabadon's Deathcap",
+      "Jeweled Gauntlet",
+      "Giant Slayer"
+    ],
+    "suggestedCarryDps": 547.57,
+    "suggestedEmblem": "Timebreaker"
+  },
+  {
+    "units": [
       "Nunu & Willump",
       "Talon",
       "Riven",
@@ -1107,119 +1206,10 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
     ],
     "suggestedCarryDps": 289.551,
     "suggestedEmblem": "Rogue"
-  },
-  {
-    "units": [
-      "Ezreal",
-      "Pantheon",
-      "Tahm Kench",
-      "Maokai",
-      "Rek'Sai",
-      "Riven",
-      "Briar",
-      "Talon"
-    ],
-    "cost": 17,
-    "activeTraits": [
-      {
-        "name": "Brawler",
-        "count": 4,
-        "tierLevel": 2
-      },
-      {
-        "name": "Timebreaker",
-        "count": 3,
-        "tierLevel": 2
-      },
-      {
-        "name": "Rogue",
-        "count": 3,
-        "tierLevel": 2
-      },
-      {
-        "name": "Primordian",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Oracle",
-        "count": 1,
-        "tierLevel": 1
-      }
-    ],
-    "traitScore": 16.6,
-    "carryPower": 573.336,
-    "frontPower": 12854.25,
-    "score": 35.66,
-    "suggestedCarry": "Ezreal",
-    "suggestedCarryItems": [
-      "Infinity Edge",
-      "Last Whisper",
-      "Giant Slayer"
-    ],
-    "suggestedCarryDps": 379.769,
-    "suggestedEmblem": "Timebreaker"
-  },
-  {
-    "units": [
-      "Caitlyn",
-      "Maokai",
-      "Tahm Kench",
-      "Gragas",
-      "Cho'Gath",
-      "Mordekaiser",
-      "Viktor",
-      "Zoe"
-    ],
-    "cost": 18,
-    "activeTraits": [
-      {
-        "name": "Brawler",
-        "count": 4,
-        "tierLevel": 2
-      },
-      {
-        "name": "Conduit",
-        "count": 3,
-        "tierLevel": 2
-      },
-      {
-        "name": "N.O.V.A.",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Psionic",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Dark Star",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Oracle",
-        "count": 1,
-        "tierLevel": 1
-      }
-    ],
-    "traitScore": 14.8,
-    "carryPower": 617.949,
-    "frontPower": 13043.475,
-    "score": 34.442,
-    "suggestedCarry": "Caitlyn",
-    "suggestedCarryItems": [
-      "Infinity Edge",
-      "Last Whisper",
-      "Giant Slayer"
-    ],
-    "suggestedCarryDps": 345.723,
-    "suggestedEmblem": "Conduit"
   }
 ];
 
 /** When the discovery search was last run. */
-export const THEORYCRAFT_UPDATED_AT = "2026-06-29T15:57:57.200Z";
+export const THEORYCRAFT_UPDATED_AT = "2026-07-06T15:37:46.865Z";
 /** Provenance of the underlying unit math the search ran on. */
 export const THEORYCRAFT_SOURCE = "cdragon:TFTSet17";
