@@ -1221,8 +1221,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
             100,
             275,
             325,
-            475,
-            460,
+            515,
+            605,
             100,
             100
           ]
@@ -1305,8 +1305,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
             50,
             60,
             90,
-            145,
-            250,
+            160,
+            270,
             240,
             330
           ]
@@ -1390,13 +1390,13 @@ export const UNIT_MATH: Record<string, UnitMath> = {
         {
           "name": "TakedownsToDrone",
           "value": [
-            8,
-            8,
-            8,
-            8,
-            8,
-            8,
-            8
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
           ]
         },
         {
@@ -3386,8 +3386,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "attackSpeed": 0.85,
       "critChance": 0.25,
       "critMultiplier": 1.4,
-      "mana": 70,
-      "initialMana": 30,
+      "mana": 60,
+      "initialMana": 20,
       "range": 1
     },
     "ability": {
@@ -4895,6 +4895,7 @@ export const UNIT_MATH: Record<string, UnitMath> = {
     "cost": 5,
     "traits": [
       "Bulwark",
+      "Timebreaker",
       "Bastion"
     ],
     "stats": {
@@ -5269,8 +5270,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
             2.5,
             400,
             600,
-            1000,
-            1700,
+            1100,
+            1850,
             2.5,
             2.5
           ]
@@ -5600,7 +5601,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
     "name": "Vex",
     "cost": 5,
     "traits": [
-      "Doomer"
+      "Doomer",
+      "Stargazer"
     ],
     "stats": {
       "hp": 900,
@@ -5635,8 +5637,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "ShadowHandMagicDamage",
           "value": [
             200,
-            140,
-            210,
+            130,
+            195,
             1000,
             9999,
             200,
@@ -5935,8 +5937,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "value": [
             0.33,
             0.33,
-            0.45,
-            0.45,
+            0.4,
+            0.4,
             0.33,
             0.33,
             0.33
@@ -5998,10 +6000,10 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "SecondaryDamage",
           "value": [
             20,
-            34,
-            51,
-            77,
-            130,
+            36,
+            54,
+            88,
+            150,
             105,
             60
           ]
@@ -6597,7 +6599,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
     "tiers": [
       {
         "minUnits": 3,
-        "maxUnits": 5,
+        "maxUnits": 4,
         "variables": {
           "PairsPartnerWinMultiplier": 0.85,
           "TechBreakpoint": 100,
@@ -6611,7 +6613,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         }
       },
       {
-        "minUnits": 6,
+        "minUnits": 5,
         "maxUnits": 25000,
         "variables": {
           "PairsPartnerWinMultiplier": 0.85,
@@ -7264,7 +7266,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "minUnits": 4,
         "maxUnits": 25000,
         "variables": {
-          "Effectiveness": 0.45
+          "Effectiveness": 0.5
         }
       }
     ]
@@ -7297,8 +7299,8 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "minUnits": 4,
         "maxUnits": 4,
         "variables": {
-          "AD": 0.4,
-          "AP": 40,
+          "AD": 0.45,
+          "AP": 45,
           "Duration": 3,
           "HealthThreshold": 0.5
         }
@@ -7307,8 +7309,8 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "minUnits": 5,
         "maxUnits": 25000,
         "variables": {
-          "AD": 0.55,
-          "AP": 55,
+          "AD": 0.6,
+          "AP": 60,
           "Duration": 3,
           "HealthThreshold": 0.5
         }
@@ -7674,14 +7676,14 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "minUnits": 2,
         "maxUnits": 2,
         "variables": {
-          "AttackSpeed": 0.15
+          "AttackSpeed": 0.12
         }
       },
       {
         "minUnits": 3,
         "maxUnits": 3,
         "variables": {
-          "AttackSpeed": 0.15,
+          "AttackSpeed": 0.12,
           "{aaae13a0}": 1
         }
       },
@@ -7689,7 +7691,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "minUnits": 4,
         "maxUnits": 25000,
         "variables": {
-          "AttackSpeed": 0.15,
+          "AttackSpeed": 0.12,
           "TimebreakerAdditionalAS": 0.5,
           "{aaae13a0}": 1
         }
@@ -7794,7 +7796,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
 };
 
 /** When this module was last regenerated. */
-export const UNIT_MATH_UPDATED_AT = "2026-07-13T14:29:13.979Z";
+export const UNIT_MATH_UPDATED_AT = "2026-07-20T14:00:34.665Z";
 /** Provenance string. */
 export const UNIT_MATH_SOURCE = "cdragon:TFTSet17";
 
