@@ -281,7 +281,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 28,
-    "carryPower": 872.539,
+    "carryPower": 872.538,
     "frontPower": 9400.5,
     "score": 45.716,
     "suggestedCarry": "Kai'Sa",
@@ -395,16 +395,16 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 24.6,
-    "carryPower": 732.578,
+    "carryPower": 714.884,
     "frontPower": 11709,
-    "score": 43.715,
+    "score": 43.567,
     "suggestedCarry": "Xayah",
     "suggestedCarryItems": [
       "Infinity Edge",
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 459.725,
+    "suggestedCarryDps": 424.339,
     "suggestedEmblem": "Bastion"
   },
   {
@@ -675,7 +675,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 22.2,
-    "carryPower": 715.494,
+    "carryPower": 715.493,
     "frontPower": 12083.4,
     "score": 41.588,
     "suggestedCarry": "Blitzcrank",
@@ -803,63 +803,6 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
   },
   {
     "units": [
-      "Gnar",
-      "Rammus",
-      "Shen",
-      "Poppy",
-      "Ornn",
-      "Ezreal",
-      "Riven",
-      "Milio"
-    ],
-    "cost": 22,
-    "activeTraits": [
-      {
-        "name": "Timebreaker",
-        "count": 4,
-        "tierLevel": 3
-      },
-      {
-        "name": "Bastion",
-        "count": 4,
-        "tierLevel": 2
-      },
-      {
-        "name": "Meeple",
-        "count": 3,
-        "tierLevel": 1
-      },
-      {
-        "name": "Sniper",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Bulwark",
-        "count": 1,
-        "tierLevel": 1
-      },
-      {
-        "name": "Space Groove",
-        "count": 1,
-        "tierLevel": 1
-      }
-    ],
-    "traitScore": 20,
-    "carryPower": 701.218,
-    "frontPower": 12845,
-    "score": 40.116,
-    "suggestedCarry": "Gnar",
-    "suggestedCarryItems": [
-      "Rabadon's Deathcap",
-      "Jeweled Gauntlet",
-      "Giant Slayer"
-    ],
-    "suggestedCarryDps": 994.48,
-    "suggestedEmblem": "Sniper"
-  },
-  {
-    "units": [
       "Akali",
       "Maokai",
       "Pantheon",
@@ -898,7 +841,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 18.4,
-    "carryPower": 778.167,
+    "carryPower": 778.166,
     "frontPower": 13309.2,
     "score": 39.673,
     "suggestedCarry": "Akali",
@@ -1116,6 +1059,6 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
 ];
 
 /** When the discovery search was last run. */
-export const THEORYCRAFT_UPDATED_AT = "2026-07-20T14:11:17.660Z";
+export const THEORYCRAFT_UPDATED_AT = "2026-07-27T14:36:59.779Z";
 /** Provenance of the underlying unit math the search ran on. */
 export const THEORYCRAFT_SOURCE = "cdragon:TFTSet17";
