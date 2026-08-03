@@ -204,9 +204,9 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "NovaDamagePerSecond",
           "value": [
             12,
-            15,
-            22,
-            28,
+            14,
+            18,
+            25,
             34,
             22,
             22
@@ -754,7 +754,7 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "hp": 650,
       "armor": 35,
       "magicResist": 35,
-      "damage": 35,
+      "damage": 40,
       "attackSpeed": 0.75,
       "critChance": 0.25,
       "critMultiplier": 1.4,
@@ -1194,7 +1194,7 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "attackSpeed": 0.8,
       "critChance": 0.25,
       "critMultiplier": 1.4,
-      "mana": 50,
+      "mana": 40,
       "initialMana": 0,
       "range": 1
     },
@@ -1219,9 +1219,9 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "Shield",
           "value": [
             100,
-            275,
-            325,
-            515,
+            230,
+            280,
+            450,
             605,
             100,
             100
@@ -1721,6 +1721,7 @@ export const UNIT_MATH: Record<string, UnitMath> = {
     "cost": 2,
     "traits": [
       "Meeple",
+      "Brawler",
       "Sniper"
     ],
     "stats": {
@@ -3715,7 +3716,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
     "name": "Morgana",
     "cost": 4,
     "traits": [
-      "Dark Lady"
+      "Dark Lady",
+      "Conduit"
     ],
     "stats": {
       "hp": 1300,
@@ -3725,8 +3727,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "attackSpeed": 0.65,
       "critChance": 0.25,
       "critMultiplier": 1.4,
-      "mana": 80,
-      "initialMana": 30,
+      "mana": 95,
+      "initialMana": 45,
       "range": 1
     },
     "ability": {
@@ -3738,8 +3740,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "APHealthGain",
           "value": [
             0,
-            600,
-            700,
+            550,
+            650,
             2500,
             2500,
             2500,
@@ -4754,8 +4756,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "Damage",
           "value": [
             180,
-            90,
-            135,
+            100,
+            150,
             1000,
             1250,
             0,
@@ -4766,8 +4768,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "WaveDamage",
           "value": [
             300,
-            160,
-            240,
+            180,
+            270,
             2000,
             1350,
             0,
@@ -4830,10 +4832,10 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "PassiveAD",
           "value": [
             60,
-            55,
-            80,
-            130,
-            220,
+            45,
+            68,
+            115,
+            200,
             210,
             210
           ]
@@ -4877,13 +4879,13 @@ export const UNIT_MATH: Record<string, UnitMath> = {
         {
           "name": "StunDuration",
           "value": [
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75,
+            0.75
           ]
         }
       ]
@@ -5432,10 +5434,10 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "DamageMax",
           "value": [
             330,
-            410,
-            610,
-            920,
-            1565,
+            450,
+            675,
+            1015,
+            1725,
             1000,
             1000
           ]
@@ -5936,8 +5938,8 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "HPPenalty",
           "value": [
             0.33,
-            0.33,
-            0.4,
+            0.25,
+            0.35,
             0.4,
             0.33,
             0.33,
@@ -6852,7 +6854,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
         "variables": {
           "ChannelerManaRegen": 9,
           "InnateManaGain": 0.2,
-          "TeamManaRegen": 3
+          "TeamManaRegen": 2
         }
       }
     ]
@@ -7796,7 +7798,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
 };
 
 /** When this module was last regenerated. */
-export const UNIT_MATH_UPDATED_AT = "2026-07-27T14:27:50.902Z";
+export const UNIT_MATH_UPDATED_AT = "2026-08-03T14:33:23.278Z";
 /** Provenance string. */
 export const UNIT_MATH_SOURCE = "cdragon:TFTSet17";
 
