@@ -2031,23 +2031,23 @@ export const UNIT_MATH: Record<string, UnitMath> = {
         {
           "name": "GrooveThreshold",
           "value": [
-            0.4,
-            0.4,
-            0.4,
-            0.4,
-            0.4,
-            0.4,
-            0.4
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
           ]
         },
         {
           "name": "Damage",
           "value": [
             180,
-            145,
-            220,
-            410,
-            700,
+            155,
+            235,
+            440,
+            750,
             840,
             840
           ]
@@ -2181,12 +2181,12 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "hp": 950,
       "armor": 45,
       "magicResist": 45,
-      "damage": 65,
-      "attackSpeed": 0.55,
+      "damage": 20,
+      "attackSpeed": 0.65,
       "critChance": 0.25,
       "critMultiplier": 1.4,
-      "mana": 100,
-      "initialMana": 50,
+      "mana": 55,
+      "initialMana": 0,
       "range": 1
     },
     "ability": {
@@ -2195,67 +2195,67 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "desc": "Heal <scaleHealth>@ModifiedHeal@ (%i:scaleHealth%%i:scaleAP%)</scaleHealth> Health over @HealDuration@ seconds. Slam the target, dealing <magicDamage>@ModifiedDamage@ (%i:scaleAP%)</magicDamage> magic damage and knocking up for <scaleLevel>@StunDuration@</scaleLevel> seconds. The impact creates meepwaves that deal @PercentEffects*100@% of these effects in the target's row.<br><br><mainText enabled=TFT17_Astronaut_IsActive alternate=rules><spellActive enabled=TFT17_Astronaut_IsActive alternate=rules>Meep Bonus:</spellActive><TFTBonus><ShowIfNot.TFT17_Astronaut_IsActive></ShowIfNot.TFT17_Astronaut_IsActive><ShowIf.TFT17_Astronaut_IsActive></ShowIf.TFT17_Astronaut_IsActive></TFTBonus> Meeps water Meepsie's flower, increasing all incoming Healing and Shielding by <TFTBonus>@ModifiedHealingAndShielding@ (%i:set14AmpIcon%)</TFTBonus>.</mainText>",
       "variables": [
         {
-          "name": "HealingPercentHealth",
+          "name": "LeapHexRange",
           "value": [
-            0.08,
-            0.08,
-            0.08,
-            0.08,
-            0.08,
-            0.08,
-            0.08
-          ]
-        },
-        {
-          "name": "HealingAP",
-          "value": [
-            80,
-            380,
-            430,
-            600,
-            770,
-            80,
-            80
-          ]
-        },
-        {
-          "name": "HealDuration",
-          "value": [
-            3,
-            3,
-            3,
-            3,
-            3,
-            3,
-            3
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
           ]
         },
         {
           "name": "Damage",
           "value": [
-            200,
-            160,
-            240,
-            360,
-            600,
-            450,
-            450
+            300,
+            180,
+            270,
+            425,
+            725,
+            900,
+            900
+          ]
+        },
+        {
+          "name": "FalloffPerHex",
+          "value": [
+            0.35,
+            0.35,
+            0.35,
+            0.35,
+            0.35,
+            0.35,
+            0.35
           ]
         },
         {
           "name": "StunDuration",
           "value": [
+            1,
+            1,
+            1,
             1.5,
             1.5,
-            1.75,
             2,
-            2.25,
-            1.5,
-            1.5
+            2
           ]
         },
         {
-          "name": "PercentEffects",
+          "name": "BonusDamage",
+          "value": [
+            45,
+            30,
+            45,
+            70,
+            95,
+            13545,
+            135
+          ]
+        },
+        {
+          "name": "BonusDamagePerMeep",
           "value": [
             0.5,
             0.5,
@@ -2267,27 +2267,63 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           ]
         },
         {
-          "name": "HealingAndShieldingPerAstro",
+          "name": "BonusAS",
           "value": [
-            0.12,
-            0.12,
-            0.12,
-            0.12,
-            0.12,
-            0.12,
-            0.12
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
           ]
         },
         {
-          "name": "MeepsPerAstro",
+          "name": "BonusBAD",
           "value": [
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1
+            -45,
+            -45,
+            -45,
+            -45,
+            -45,
+            -45,
+            -45
+          ]
+        },
+        {
+          "name": "NewManaCost",
+          "value": [
+            50,
+            50,
+            50,
+            50,
+            50,
+            50,
+            50
+          ]
+        },
+        {
+          "name": "StartingManaModification",
+          "value": [
+            -50,
+            -50,
+            -50,
+            -50,
+            -50,
+            -50,
+            -50
+          ]
+        },
+        {
+          "name": "EnemiesKnockedUp",
+          "value": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
           ]
         }
       ]
@@ -3296,7 +3332,7 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "armor": 40,
       "magicResist": 40,
       "damage": 60,
-      "attackSpeed": 0.6,
+      "attackSpeed": 0.7,
       "critChance": 0.25,
       "critMultiplier": 1.4,
       "mana": 100,
@@ -3359,13 +3395,13 @@ export const UNIT_MATH: Record<string, UnitMath> = {
         {
           "name": "NovaHealthDamage",
           "value": [
-            0.08,
-            0.08,
-            0.08,
-            0.08,
-            0.08,
-            0.08,
-            0.08
+            0.12,
+            0.12,
+            0.12,
+            0.12,
+            0.12,
+            0.12,
+            0.12
           ]
         }
       ]
@@ -3494,16 +3530,16 @@ export const UNIT_MATH: Record<string, UnitMath> = {
     "ability": {
       "name": "Mega Time Kick",
       "scaling": "AP",
-      "desc": "Kick a ball at the current target that deals <magicDamage>@ModifiedDamage@&nbsp;(%i:scaleAP%)</magicDamage> magic damage. On impact, the ball has a 100%&nbsp;<ShowIf.TFT17_Fateweaver_LuckyAbility><TFTKeyword>Lucky </TFTKeyword></ShowIf.TFT17_Fateweaver_LuckyAbility>chance to bounce to a new target dealing <magicDamage>@ModifiedBounceDamage@&nbsp;(%i:scaleAP%)</magicDamage> magic damage. These bounces can trigger additional bounces, but the odds halve with each bounce.<br><br><ShowIf.TFT17_Fateweaver_LuckyAbility><rules>Lucky: Check twice and take the better outcome.</rules></ShowIf.TFT17_Fateweaver_LuckyAbility>",
+      "desc": "Kick a ball at the current target that deals <magicDamage>@ModifiedDamage@&nbsp;(%i:scaleAP%)</magicDamage> magic damage. On impact, the ball has a 100%&nbsp;<ShowIf.TFT17_Fateweaver_LuckyAbility><TFTKeyword>Lucky </TFTKeyword></ShowIf.TFT17_Fateweaver_LuckyAbility>chance to bounce to a new target dealing <magicDamage>@ModifiedBounceDamage@&nbsp;(%i:scaleAP%)</magicDamage> magic damage. These bounces can trigger additional bounces, but the odds halve with each bounce.<br><br>Milio has a 40% chance to cast an additional time at an additional target. Bonus casts can trigger more bonus casts.<br><br><ShowIf.TFT17_Fateweaver_LuckyAbility><rules>Lucky: Check twice and take the better outcome.</rules></ShowIf.TFT17_Fateweaver_LuckyAbility>",
       "variables": [
         {
           "name": "Damage",
           "value": [
             200,
-            255,
-            380,
-            575,
-            975,
+            200,
+            300,
+            470,
+            800,
             900,
             700
           ]
@@ -3512,10 +3548,10 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "BounceDamage",
           "value": [
             80,
-            85,
-            130,
-            190,
-            325,
+            60,
+            90,
+            150,
+            255,
             330,
             330
           ]
@@ -4619,13 +4655,13 @@ export const UNIT_MATH: Record<string, UnitMath> = {
         {
           "name": "Duration",
           "value": [
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
           ]
         },
         {
@@ -4668,9 +4704,9 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "Damage",
           "value": [
             0.2,
-            120,
-            180,
-            300,
+            400,
+            600,
+            1000,
             510,
             0.2,
             0.2
@@ -5416,16 +5452,16 @@ export const UNIT_MATH: Record<string, UnitMath> = {
     "ability": {
       "name": "Fate's Gambit",
       "scaling": "AP",
-      "desc": "Draw a card with a value between 1 and 9 by<ShowIf.TFT17_Fateweaver_LuckyAbility> <TFTKeyword>Lucky</TFTKeyword></ShowIf.TFT17_Fateweaver_LuckyAbility> chance, then throw it at the target. Based on the card drawn, deal between <magicDamage>@ModifiedDamageMin@&nbsp;(%i:scaleAP%)</magicDamage> and <magicDamage>@ModifiedDamageMax@&nbsp;(%i:scaleAP%)</magicDamage> magic damage. Overkill damage bounces to the nearest enemy. <br><br><spellActive>3-Star Bonus:</spellActive> If a 9 is thrown, generate 1 gold.<br><br><ShowIf.TFT17_Fateweaver_LuckyAbility><rules>Lucky: Check twice and take the better outcome.</rules></ShowIf.TFT17_Fateweaver_LuckyAbility>",
+      "desc": "Draw a card with a value between 1 and 9 by<ShowIf.TFT17_Fateweaver_LuckyAbility> <TFTKeyword>Lucky</TFTKeyword></ShowIf.TFT17_Fateweaver_LuckyAbility> chance, then throw it at the target. Based on the card drawn, deal between <magicDamage>@ModifiedDamageMin@&nbsp;(%i:scaleAP%)</magicDamage> and <magicDamage>@ModifiedDamageMax@&nbsp;(%i:scaleAP%)</magicDamage> magic damage. Overkill damage bounces to the nearest enemy. <br><br>If a 9 is thrown, generate 1 gold. If a 1 is thrown, take <trueDamage>@MaxHealthDamage*100@%</trueDamage> max health true damage.<br><br><ShowIf.TFT17_Fateweaver_LuckyAbility><rules>Lucky: Check twice and take the better outcome.</rules></ShowIf.TFT17_Fateweaver_LuckyAbility>",
       "variables": [
         {
           "name": "DamageMin",
           "value": [
             180,
-            205,
-            305,
-            460,
-            800,
+            30,
+            45,
+            70,
+            120,
             500,
             500
           ]
@@ -5434,12 +5470,24 @@ export const UNIT_MATH: Record<string, UnitMath> = {
           "name": "DamageMax",
           "value": [
             330,
-            450,
-            675,
-            1015,
-            1725,
+            680,
+            1020,
+            1550,
+            2650,
             1000,
             1000
+          ]
+        },
+        {
+          "name": "MaxHealthDamage",
+          "value": [
+            0.15,
+            0.15,
+            0.15,
+            0.15,
+            0.15,
+            0.15,
+            0.15
           ]
         }
       ]
@@ -5918,7 +5966,7 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "Galaxy Hunter"
     ],
     "stats": {
-      "hp": 1300,
+      "hp": 1100,
       "armor": 60,
       "magicResist": 60,
       "damage": 85,
@@ -7798,7 +7846,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
 };
 
 /** When this module was last regenerated. */
-export const UNIT_MATH_UPDATED_AT = "2026-08-10T13:01:17.847Z";
+export const UNIT_MATH_UPDATED_AT = "2026-08-17T12:38:03.687Z";
 /** Provenance string. */
 export const UNIT_MATH_SOURCE = "cdragon:TFTSet17";
 
