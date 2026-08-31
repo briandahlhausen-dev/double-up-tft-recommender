@@ -2190,9 +2190,9 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "range": 1
     },
     "ability": {
-      "name": "Meep Impact",
+      "name": "The Big Bang",
       "scaling": "AP",
-      "desc": "Heal <scaleHealth>@ModifiedHeal@ (%i:scaleHealth%%i:scaleAP%)</scaleHealth> Health over @HealDuration@ seconds. Slam the target, dealing <magicDamage>@ModifiedDamage@ (%i:scaleAP%)</magicDamage> magic damage and knocking up for <scaleLevel>@StunDuration@</scaleLevel> seconds. The impact creates meepwaves that deal @PercentEffects*100@% of these effects in the target's row.<br><br><mainText enabled=TFT17_Astronaut_IsActive alternate=rules><spellActive enabled=TFT17_Astronaut_IsActive alternate=rules>Meep Bonus:</spellActive><TFTBonus><ShowIfNot.TFT17_Astronaut_IsActive></ShowIfNot.TFT17_Astronaut_IsActive><ShowIf.TFT17_Astronaut_IsActive></ShowIf.TFT17_Astronaut_IsActive></TFTBonus> Meeps water Meepsie's flower, increasing all incoming Healing and Shielding by <TFTBonus>@ModifiedHealingAndShielding@ (%i:set14AmpIcon%)</TFTBonus>.</mainText>",
+      "desc": "<spellPassive>Passive:</spellPassive> Attacks deal <magicDamage>@TotalBonusDamage@ (%i:scaleAP%%i:set14AmpIcon%)</magicDamage> bonus magic damage.<br><br><spellActive>Active:</spellActive> Leap to largest group of enemies within @LeapHexRange@ hexes and slam the ground, dealing <magicDamage>@DamageTotal@ (%i:scaleAP%)</magicDamage> magic damage in a three hex radius, reduced by @FalloffPerHex*100@% per hex from the epicenter. The closest @EnemiesKnockedUp@ enemies are knocked up for <scaleLevel>@StunDuration@</scaleLevel> seconds.<br><br><mainText enabled=TFT17_Astronaut_IsActive alternate=rules><spellActive enabled=TFT17_Astronaut_IsActive alternate=rules>Meep Bonus:</spellActive><TFTBonus><ShowIfNot.TFT17_Astronaut_IsActive></ShowIfNot.TFT17_Astronaut_IsActive><ShowIf.TFT17_Astronaut_IsActive></ShowIf.TFT17_Astronaut_IsActive></TFTBonus> The passive's bonus damage is increased by <TFTBonus>@BonusDamagePerMeep*100@%</TFTBonus> per Meep.</mainText>",
       "variables": [
         {
           "name": "LeapHexRange",
@@ -3523,7 +3523,7 @@ export const UNIT_MATH: Record<string, UnitMath> = {
       "attackSpeed": 0.7,
       "critChance": 0.25,
       "critMultiplier": 1.4,
-      "mana": 30,
+      "mana": 40,
       "initialMana": 0,
       "range": 4
     },
@@ -7846,7 +7846,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
 };
 
 /** When this module was last regenerated. */
-export const UNIT_MATH_UPDATED_AT = "2026-08-24T12:42:46.660Z";
+export const UNIT_MATH_UPDATED_AT = "2026-08-31T18:44:59.606Z";
 /** Provenance string. */
 export const UNIT_MATH_SOURCE = "cdragon:TFTSet17";
 
