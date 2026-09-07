@@ -348,7 +348,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 28,
-    "carryPower": 872.538,
+    "carryPower": 872.539,
     "frontPower": 9400.5,
     "score": 45.716,
     "suggestedCarry": "Kai'Sa",
@@ -529,7 +529,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 24.8,
-    "carryPower": 713.853,
+    "carryPower": 713.854,
     "frontPower": 11709,
     "score": 43.759,
     "suggestedCarry": "Samira",
@@ -761,13 +761,13 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
   },
   {
     "units": [
-      "Gnar",
-      "Tahm Kench",
-      "Maokai",
-      "Pantheon",
       "Shen",
+      "Pantheon",
+      "Tahm Kench",
       "Ezreal",
       "Milio",
+      "Gnar",
+      "Maokai",
       "Aatrox"
     ],
     "cost": 20,
@@ -783,6 +783,11 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
         "tierLevel": 2
       },
       {
+        "name": "Bastion",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
         "name": "Sniper",
         "count": 2,
         "tierLevel": 1
@@ -793,117 +798,50 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
         "tierLevel": 1
       },
       {
-        "name": "Bastion",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Oracle",
+        "name": "Bulwark",
         "count": 1,
         "tierLevel": 1
       },
       {
-        "name": "Bulwark",
+        "name": "Oracle",
         "count": 1,
         "tierLevel": 1
       }
     ],
     "traitScore": 21.2,
-    "carryPower": 729.809,
+    "carryPower": 729.81,
     "frontPower": 13683.6,
     "score": 42.486,
-    "suggestedCarry": "Gnar",
-    "suggestedCarryItems": [
-      "Rabadon's Deathcap",
-      "Jeweled Gauntlet",
-      "Giant Slayer"
-    ],
-    "suggestedCarryDps": 994.48,
-    "suggestedEmblem": "Sniper"
-  },
-  {
-    "units": [
-      "Shen",
-      "Pantheon",
-      "Riven",
-      "Ezreal",
-      "Tahm Kench",
-      "Ornn",
-      "Rammus",
-      "Aatrox"
-    ],
-    "cost": 24,
-    "activeTraits": [
-      {
-        "name": "Timebreaker",
-        "count": 4,
-        "tierLevel": 3
-      },
-      {
-        "name": "Bastion",
-        "count": 4,
-        "tierLevel": 2
-      },
-      {
-        "name": "Brawler",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Bulwark",
-        "count": 1,
-        "tierLevel": 1
-      },
-      {
-        "name": "Oracle",
-        "count": 1,
-        "tierLevel": 1
-      },
-      {
-        "name": "Space Groove",
-        "count": 1,
-        "tierLevel": 1
-      }
-    ],
-    "traitScore": 19.6,
-    "carryPower": 685.201,
-    "frontPower": 14157,
-    "score": 41.04,
     "suggestedCarry": "Shen",
     "suggestedCarryItems": [
       "Infinity Edge",
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 384.793,
-    "suggestedEmblem": "Replicator"
+    "suggestedCarryDps": 384.796,
+    "suggestedEmblem": "Sniper"
   },
   {
     "units": [
-      "Nami",
-      "Pantheon",
-      "Shen",
-      "Riven",
-      "Ezreal",
+      "Gnar",
+      "Bard",
+      "Morgana",
+      "Mordekaiser",
+      "Aurelion Sol",
+      "Viktor",
       "Tahm Kench",
-      "Kai'Sa",
-      "Briar"
+      "Rammus"
     ],
-    "cost": 24,
+    "cost": 28,
     "activeTraits": [
       {
-        "name": "Timebreaker",
-        "count": 4,
-        "tierLevel": 3
+        "name": "Conduit",
+        "count": 5,
+        "tierLevel": 4
       },
       {
-        "name": "Rogue",
+        "name": "Meeple",
         "count": 3,
-        "tierLevel": 2
-      },
-      {
-        "name": "Replicator",
-        "count": 2,
         "tierLevel": 1
       },
       {
@@ -912,12 +850,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
         "tierLevel": 1
       },
       {
-        "name": "Space Groove",
-        "count": 1,
-        "tierLevel": 1
-      },
-      {
-        "name": "Bulwark",
+        "name": "Dark Lady",
         "count": 1,
         "tierLevel": 1
       },
@@ -927,18 +860,18 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
         "tierLevel": 1
       }
     ],
-    "traitScore": 20.8,
-    "carryPower": 764.579,
-    "frontPower": 11709,
-    "score": 40.181,
-    "suggestedCarry": "Nami",
+    "traitScore": 22.4,
+    "carryPower": 577.851,
+    "frontPower": 12562,
+    "score": 41.173,
+    "suggestedCarry": "Gnar",
     "suggestedCarryItems": [
-      "Rabadon's Deathcap",
-      "Jeweled Gauntlet",
+      "Infinity Edge",
+      "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 524.055,
-    "suggestedEmblem": "Rogue"
+    "suggestedCarryDps": 340.222,
+    "suggestedEmblem": "Sniper"
   },
   {
     "units": [
@@ -980,7 +913,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 18.4,
-    "carryPower": 778.166,
+    "carryPower": 778.167,
     "frontPower": 13309.2,
     "score": 39.673,
     "suggestedCarry": "Akali",
@@ -1141,16 +1074,16 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 18.6,
-    "carryPower": 569.235,
+    "carryPower": 566.782,
     "frontPower": 12430.125,
-    "score": 37.155,
+    "score": 37.134,
     "suggestedCarry": "Ezreal",
     "suggestedCarryItems": [
       "Infinity Edge",
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 374.87,
+    "suggestedCarryDps": 369.964,
     "suggestedEmblem": "Rogue"
   },
   {
@@ -1213,6 +1146,6 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
 ];
 
 /** When the discovery search was last run. */
-export const THEORYCRAFT_UPDATED_AT = "2026-08-31T18:53:38.685Z";
+export const THEORYCRAFT_UPDATED_AT = "2026-09-07T17:22:27.104Z";
 /** Provenance of the underlying unit math the search ran on. */
 export const THEORYCRAFT_SOURCE = "cdragon:TFTSet17";
