@@ -7846,7 +7846,7 @@ export const TRAIT_MATH: Record<string, TraitMath> = {
 };
 
 /** When this module was last regenerated. */
-export const UNIT_MATH_UPDATED_AT = "2026-09-21T17:51:26.946Z";
+export const UNIT_MATH_UPDATED_AT = "2026-09-28T19:13:41.608Z";
 /** Provenance string. */
 export const UNIT_MATH_SOURCE = "cdragon:TFTSet17";
 
