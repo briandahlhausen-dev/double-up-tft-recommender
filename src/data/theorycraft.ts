@@ -321,16 +321,16 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 19.4,
-    "carryPower": 1382.134,
+    "carryPower": 1374.614,
     "frontPower": 15273,
-    "score": 47.888,
+    "score": 47.825,
     "suggestedCarry": "Kindred",
     "suggestedCarryItems": [
       "Infinity Edge",
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 880.077,
+    "suggestedCarryDps": 865.038,
     "suggestedEmblem": "Challenger"
   },
   {
@@ -429,73 +429,6 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
   },
   {
     "units": [
-      "Illaoi",
-      "Fiora",
-      "Blitzcrank",
-      "Bel'Veth",
-      "Jinx",
-      "Kindred",
-      "Diana",
-      "Akali"
-    ],
-    "cost": 26,
-    "activeTraits": [
-      {
-        "name": "Challenger",
-        "count": 4,
-        "tierLevel": 3
-      },
-      {
-        "name": "Anima",
-        "count": 3,
-        "tierLevel": 1
-      },
-      {
-        "name": "Marauder",
-        "count": 3,
-        "tierLevel": 1
-      },
-      {
-        "name": "Vanguard",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "N.O.V.A.",
-        "count": 2,
-        "tierLevel": 1
-      },
-      {
-        "name": "Divine Duelist",
-        "count": 1,
-        "tierLevel": 1
-      },
-      {
-        "name": "Party Animal",
-        "count": 1,
-        "tierLevel": 1
-      },
-      {
-        "name": "Space Groove",
-        "count": 1,
-        "tierLevel": 1
-      }
-    ],
-    "traitScore": 19.4,
-    "carryPower": 1382.134,
-    "frontPower": 13203,
-    "score": 45.588,
-    "suggestedCarry": "Kindred",
-    "suggestedCarryItems": [
-      "Infinity Edge",
-      "Last Whisper",
-      "Giant Slayer"
-    ],
-    "suggestedCarryDps": 880.077,
-    "suggestedEmblem": "Challenger"
-  },
-  {
-    "units": [
       "Corki",
       "Fizz",
       "Gwen",
@@ -550,6 +483,73 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
     ],
     "suggestedCarryDps": 647.203,
     "suggestedEmblem": "Timebreaker"
+  },
+  {
+    "units": [
+      "Illaoi",
+      "Fiora",
+      "Blitzcrank",
+      "Bel'Veth",
+      "Jinx",
+      "Kindred",
+      "Diana",
+      "Akali"
+    ],
+    "cost": 26,
+    "activeTraits": [
+      {
+        "name": "Challenger",
+        "count": 4,
+        "tierLevel": 3
+      },
+      {
+        "name": "Anima",
+        "count": 3,
+        "tierLevel": 1
+      },
+      {
+        "name": "Marauder",
+        "count": 3,
+        "tierLevel": 1
+      },
+      {
+        "name": "Vanguard",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "N.O.V.A.",
+        "count": 2,
+        "tierLevel": 1
+      },
+      {
+        "name": "Divine Duelist",
+        "count": 1,
+        "tierLevel": 1
+      },
+      {
+        "name": "Party Animal",
+        "count": 1,
+        "tierLevel": 1
+      },
+      {
+        "name": "Space Groove",
+        "count": 1,
+        "tierLevel": 1
+      }
+    ],
+    "traitScore": 19.4,
+    "carryPower": 1374.614,
+    "frontPower": 13203,
+    "score": 45.525,
+    "suggestedCarry": "Kindred",
+    "suggestedCarryItems": [
+      "Infinity Edge",
+      "Last Whisper",
+      "Giant Slayer"
+    ],
+    "suggestedCarryDps": 865.038,
+    "suggestedEmblem": "Challenger"
   },
   {
     "units": [
@@ -895,7 +895,7 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       "Jeweled Gauntlet",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 1212.549,
+    "suggestedCarryDps": 994.48,
     "suggestedEmblem": "Sniper"
   },
   {
@@ -1181,16 +1181,16 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
       }
     ],
     "traitScore": 19,
-    "carryPower": 700.639,
+    "carryPower": 690.887,
     "frontPower": 13033.8,
-    "score": 39.321,
+    "score": 39.239,
     "suggestedCarry": "Xayah",
     "suggestedCarryItems": [
       "Infinity Edge",
       "Last Whisper",
       "Giant Slayer"
     ],
-    "suggestedCarryDps": 395.85,
+    "suggestedCarryDps": 376.346,
     "suggestedEmblem": "Sniper"
   },
   {
@@ -1362,6 +1362,6 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
 ];
 
 /** When the discovery search was last run. */
-export const THEORYCRAFT_UPDATED_AT = "2026-10-05T20:39:11.505Z";
+export const THEORYCRAFT_UPDATED_AT = "2026-10-12T21:02:47.610Z";
 /** Provenance of the underlying unit math the search ran on. */
 export const THEORYCRAFT_SOURCE = "cdragon:TFTSet17";
