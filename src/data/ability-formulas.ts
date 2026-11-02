@@ -448,7 +448,7 @@ export const ABILITY_FORMULAS: Record<string, AbilityFormula> = {
 };
 
 /** When this module was last regenerated. */
-export const ABILITY_FORMULAS_UPDATED_AT = "2026-10-26T18:14:09.812Z";
+export const ABILITY_FORMULAS_UPDATED_AT = "2026-11-02T21:24:04.020Z";
 /** Provenance string. */
 export const ABILITY_FORMULAS_SOURCE = "manual+authored:claude-opus-4.7+claude-cli";
 
