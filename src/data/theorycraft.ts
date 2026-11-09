@@ -1156,6 +1156,6 @@ export const DISCOVERED_BOARDS: BoardScore[] = [
 ];
 
 /** When the discovery search was last run. */
-export const THEORYCRAFT_UPDATED_AT = "2026-11-02T21:24:10.488Z";
+export const THEORYCRAFT_UPDATED_AT = "2026-11-09T21:56:03.430Z";
 /** Provenance of the underlying unit math the search ran on. */
 export const THEORYCRAFT_SOURCE = "cdragon:TFTSet17";
